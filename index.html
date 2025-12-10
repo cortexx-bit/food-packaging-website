@@ -13,7 +13,278 @@
     <div data-include="./partials/_header.html"></div>
 
     <main>
+      <section class="hero-section relative w-full h-[600px] md:h-[700px] flex items-center justify-center">
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('/img/forest.jpg');">
+          <div class="absolute inset-0 bg-black/40"></div>
+        </div>
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+          <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+            Quality Packaging That Protects Your Brand.
+          </h1>
+          <p class="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+            From sturdy shipping boxes to custom food-grade cartons, we provide reliable packaging that ensures your products arrive safe, fresh, and ready to impress.
+          </p>
+          <a href="/products.html" class="inline-flex items-center gap-2 bg-[var(--color-primary)] text-white font-bold py-4 px-8 rounded-lg hover:bg-[#1557B8] transition-colors text-lg">
+            View Products
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </div>
+      </section>
 
+      <section class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl md:text-4xl font-bold text-center text-[var(--color-text)] mb-12 md:mb-16">
+            Our Product Range
+          </h2>
+          
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-12">
+            <a href="/product-1.html" class="group bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow overflow-hidden border border-gray-200">
+              <div class="aspect-square bg-gray-100 overflow-hidden">
+                <img src="/public/img/box.png" alt="Product 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+              </div>
+              <div class="p-6">
+                <p class="text-[var(--color-text)] text-center group-hover:text-[var(--color-primary)] transition-colors">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.
+                </p>
+              </div>
+            </a>
+
+            <a href="/product-2.html" class="group bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow overflow-hidden border border-gray-200">
+              <div class="aspect-square bg-gray-100 overflow-hidden">
+                <img src="/public/img/box.png" alt="Product 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+              </div>
+              <div class="p-6">
+                <p class="text-[var(--color-text)] text-center group-hover:text-[var(--color-primary)] transition-colors">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.
+                </p>
+              </div>
+            </a>
+
+            <a href="/product-3.html" class="group bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow overflow-hidden border border-gray-200">
+              <div class="aspect-square bg-gray-100 overflow-hidden">
+                <img src="public/img/box.png" alt="Product 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+              </div>
+              <div class="p-6">
+                <p class="text-[var(--color-text)] text-center group-hover:text-[var(--color-primary)] transition-colors">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.
+                </p>
+              </div>
+            </a>
+          </div>
+
+          <div class="text-center">
+            <a href="/products.html" class="inline-flex items-center gap-2 bg-[var(--color-primary)] text-white font-bold py-4 px-8 rounded-lg hover:bg-[#1557B8] transition-colors text-lg">
+              See All Products
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-16 md:py-24 bg-[var(--color-background)]">
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl md:text-4xl font-bold text-center text-[var(--color-text)] mb-6">
+            Who we serve
+          </h2>
+          
+          <p class="text-center text-[var(--color-text)] mb-8 max-w-3xl mx-auto">
+            We provide quality packaging solutions for food businesses 
+            across the UK. Whether you're a small café or a growing 
+            restaurant chain, we have the right packaging for your needs.
+          </p>
+
+          <p class="text-center text-[var(--color-text)] font-semibold mb-8">
+            Perfect for:
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
+            <div class="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow border border-gray-200">
+              <div class="flex items-center gap-4">
+                <div class="flex-shrink-0 w-16 h-16 bg-orange-100 rounded-lg flex items-center justify-center">
+                  <svg class="w-8 h-8 text-orange-600" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8.1 13.34l2.83-2.83L3.91 3.5c-1.56 1.56-1.56 4.09 0 5.66l4.19 4.18zm6.78-1.81c1.53.71 3.68.21 5.27-1.38 1.91-1.91 2.28-4.65.81-6.12-1.46-1.46-4.2-1.1-6.12.81-1.59 1.59-2.09 3.74-1.38 5.27L3.7 19.87l1.41 1.41L12 14.41l6.88 6.88 1.41-1.41L13.41 13l1.47-1.47z"/>
+                  </svg>
+                </div>
+                <p class="text-lg font-semibold text-[var(--color-text)]">Restaurants & Takeaways</p>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow border border-gray-200">
+              <div class="flex items-center gap-4">
+                <div class="flex-shrink-0 w-16 h-16 bg-amber-100 rounded-lg flex items-center justify-center">
+                  <svg class="w-8 h-8 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.701 2.701 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18zm-3-9v-2a2 2 0 00-2-2H8a2 2 0 00-2 2v2h12z"></path>
+                  </svg>
+                </div>
+                <p class="text-lg font-semibold text-[var(--color-text)]">Bakeries & Cafes</p>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow border border-gray-200">
+              <div class="flex items-center gap-4">
+                <div class="flex-shrink-0 w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center">
+                  <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                  </svg>
+                </div>
+                <p class="text-lg font-semibold text-[var(--color-text)]">Food Retailers</p>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow border border-gray-200">
+              <div class="flex items-center gap-4">
+                <div class="flex-shrink-0 w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center">
+                  <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                  </svg>
+                </div>
+                <p class="text-lg font-semibold text-[var(--color-text)]">Food Manufacturers</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl md:text-4xl font-bold text-center text-[var(--color-text)] mb-12 md:mb-16">
+            Why Choose Us
+          </h2>
+          
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
+            <div class="bg-white rounded-lg p-8 shadow-md hover:shadow-lg transition-shadow border border-gray-200 text-center">
+              <div class="flex justify-center mb-4">
+                <div class="w-16 h-16 bg-red-100 rounded-lg flex items-center justify-center">
+                  <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                  </svg>
+                </div>
+              </div>
+              <h3 class="text-xl font-bold text-[var(--color-text)] mb-3">Food-Safe Certified</h3>
+              <div class="w-16 h-0.5 bg-[var(--color-primary)] mx-auto mb-4"></div>
+              <p class="text-[var(--color-text)]">All products meet food safety standards</p>
+            </div>
+
+            <div class="bg-white rounded-lg p-8 shadow-md hover:shadow-lg transition-shadow border border-gray-200 text-center">
+              <div class="flex justify-center mb-4">
+                <div class="w-16 h-16 bg-yellow-100 rounded-lg flex items-center justify-center">
+                  <svg class="w-8 h-8 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                  </svg>
+                </div>
+              </div>
+              <h3 class="text-xl font-bold text-[var(--color-text)] mb-3">Fast Delivery</h3>
+              <div class="w-16 h-0.5 bg-[var(--color-primary)] mx-auto mb-4"></div>
+              <p class="text-[var(--color-text)]">Standard orders ready in 5-7 days</p>
+            </div>
+
+            <div class="bg-white rounded-lg p-8 shadow-md hover:shadow-lg transition-shadow border border-gray-200 text-center">
+              <div class="flex justify-center mb-4">
+                <div class="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center">
+                  <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                  </svg>
+                </div>
+              </div>
+              <h3 class="text-xl font-bold text-[var(--color-text)] mb-3">Eco-Friendly</h3>
+              <div class="w-16 h-0.5 bg-[var(--color-primary)] mx-auto mb-4"></div>
+              <p class="text-[var(--color-text)]">Recyclable & sustainable options</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-16 md:py-24 bg-[var(--color-background)]">
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl md:text-4xl font-bold text-center text-[var(--color-text)] mb-6">
+            Certifications Quality, From Source to You
+          </h2>
+          
+          <p class="text-center text-[var(--color-text)] mb-8 max-w-3xl mx-auto">
+            We ensure every product meets the highest standards by partnering with suppliers who hold globally recognized certifications. This, combined with our product-specific verifications, guarantees your packaging is safe, sustainable, and reliable.
+          </p>
+
+          <div class="max-w-4xl mx-auto mb-12">
+            <ul class="space-y-6 text-[var(--color-text)]">
+              <li class="flex items-start gap-4">
+                <div class="flex-shrink-0 mt-1">
+                  <svg class="w-6 h-6 text-[var(--color-primary)]" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <div>
+                  <strong class="font-semibold">BRCGS Certified Manufacturing:</strong> Our packaging is produced in a facility that holds the BRCGS Global Standard for Packaging Materials—the benchmark for food safety required by UK retailers.
+                </div>
+              </li>
+
+              <li class="flex items-start gap-4">
+                <div class="flex-shrink-0 mt-1">
+                  <svg class="w-6 h-6 text-[var(--color-primary)]" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <div>
+                  <strong class="font-semibold">FSC® Certified Materials:</strong> We exclusively use paperboard from suppliers with Forest Stewardship Council® (FSC®) certification, ensuring all materials are from sustainably managed forests.
+                </div>
+              </li>
+
+              <li class="flex items-start gap-4">
+                <div class="flex-shrink-0 mt-1">
+                  <svg class="w-6 h-6 text-[var(--color-primary)]" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <div>
+                  <strong class="font-semibold">Certified Compostable:</strong> Our products are certified to the EN 13432 standard and by TÜV Austria, guaranteeing they will break down completely in home or industrial composting facilities.
+                </div>
+              </li>
+
+              <li class="flex items-start gap-4">
+                <div class="flex-shrink-0 mt-1">
+                  <svg class="w-6 h-6 text-[var(--color-primary)]" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <div>
+                  <strong class="font-semibold">ISO Certified Supplier:</strong> Our supplier's operations are certified to ISO 9001 (Quality) and ISO 14001 (Environmental), ensuring consistent quality and a commitment to reducing environmental impact.
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12 max-w-4xl mx-auto">
+            <img src="/img/en-13432.jpg" alt="EN 13432 Certification" class="h-20 md:h-24 w-auto object-contain">
+            <img src="/img/tuv-austria-industrial.png" alt="TÜV Austria Industrial Compost Certification" class="h-20 md:h-24 w-auto object-contain">
+            <img src="/img/tuv-austria-home.png" alt="TÜV Austria Home Compost Certification" class="h-20 md:h-24 w-auto object-contain">
+            <img src="/img/fda-logo.png" alt="FDA Compliant" class="h-20 md:h-24 w-auto object-contain">
+          </div>
+        </div>
+      </section>
+
+      <section class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl md:text-4xl font-bold text-center text-[var(--color-text)] mb-6">
+            Ready to order?
+          </h2>
+          
+          <p class="text-center text-[var(--color-text)] mb-8 max-w-2xl mx-auto text-lg">
+            We're here to help with your packaging needs. Get a quote within 24 hours.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-2xl mx-auto">
+            <a href="https://wa.me/15551234567" target="_blank" class="w-full sm:w-auto bg-green-500 text-white font-bold py-4 px-8 rounded-lg hover:bg-green-600 transition-colors text-lg text-center">
+              WhatsApp: Chat Now
+            </a>
+            <a href="/contact.html" class="w-full sm:w-auto border-2 border-[var(--color-primary)] text-[var(--color-primary)] font-bold py-4 px-8 rounded-lg hover:bg-[var(--color-primary)] hover:text-white transition-colors text-lg text-center">
+              Contact Form
+            </a>
+          </div>
+        </div>
+      </section>
     </main>
 
     <div data-include="./partials/_footer.html"></div>
