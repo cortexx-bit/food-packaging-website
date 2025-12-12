@@ -1,7 +1,7 @@
 <header class="bg-white shadow-md">
   <div class="container mx-auto px-4 py-5 relative flex items-center">
     <a href="/" class="flex items-center gap-3">
-      <img src="/public/img/kmz-logo.jpg" alt="Company logo" class="h-16 w-auto">
+      <img src="/img/kmz-logo.jpg" alt="Company logo" class="h-16 w-auto">
       <span class="text-2xl font-bold text-[var(--color-text)]">KMZ-Packaging</span>
     </a>
     <nav class="hidden md:flex items-center gap-8 absolute left-1/2 transform -translate-x-1/2">
@@ -15,14 +15,15 @@
       </a>
     </div>
     <div class="md:hidden ml-auto">
-      <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
+      <button id="mobile-menu-button" 
+        class="bg-gray-100 text-gray-600 hover:bg-gray-200 focus:outline-none p-2 rounded-md">
         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
         </svg>
       </button>
     </div>
   </div>
-  <div id="mobile-menu" class="hidden md:hidden bg-[var(--color-background)]">
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-500 shadow-lg">
     <a href="/products.html" class="block py-2 px-4 text-sm text-[var(--color-text)] hover:text-[var(--color-primary)] nav-link-mobile">Products</a>
     <a href="/about.html" class="block py-2 px-4 text-sm text-[var(--color-text)] hover:text-[var(--color-primary)] nav-link-mobile">About</a>
     <a href="/contact.html" class="block py-2 px-4 text-sm text-[var(--color-text)] hover:text-[var(--color-primary)] nav-link-mobile">Contact</a>
