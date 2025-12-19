@@ -11,6 +11,8 @@ export default defineConfig({
         main: './index.html',
         about: './about.html',
         contact: './contact.html',
+        products: './products.html',
+        product: './product.html'
       }
     }
   }
