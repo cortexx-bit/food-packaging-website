@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Products</title>
+  </head>
+  <body class="font-inter">
+    <div data-include="./partials/_header.html"></div>
+
+    <main>
+      <section class="py-16 md:py-24 bg-[var(--color-background)]">
+        <div class="container mx-auto px-4">
+          <h1 class="text-3xl md:text-4xl font-bold text-center text-[var(--color-text)] mb-6">
+            Our Products
+          </h1>
+          <p class="text-center text-[var(--color-text)] mb-12 md:mb-16 max-w-3xl mx-auto text-lg">
+            Make a positive impact with every order. Our collection of 100% compostable food packaging is designed for businesses that care about quality and the planet. Made from natural sugarcane bagasse, each container is sturdy, grease-resistant, and microwave-safe. Choose a smarter, greener way to serve your customers and enhance your brand's commitment to sustainability.
+          </p>
+          
+          <div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            <!-- JS script to load the products -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div data-include="./partials/_footer.html"></div>
+
+    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/products.js"></script>
+  </body>
+</html>
