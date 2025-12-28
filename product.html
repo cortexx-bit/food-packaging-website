@@ -32,45 +32,65 @@
               <!-- Left: Product Images -->
               <div>
                 <div class="relative mb-4 max-w-lg mx-auto lg:mx-0">
-                  <div class="aspect-square bg-gray-100 rounded-lg overflow-hidden border border-gray-200 cursor-zoom-in">
-                    <img id="main-product-image" src="" alt="Product image" class="w-full h-full object-cover transition-transform duration-200 ease-out">
+                  <div class="aspect-square bg-gray-100 rounded-lg overflow-hidden border border-gray-200 cursor-pointer">
+                    <img id="main-product-image" src="" alt="Product image" class="w-full h-full object-cover transition-transform duration-300 ease-out">
                   </div>
                   <!-- Navigation Arrows -->
-                  <button id="prev-image" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white rounded-full p-2 shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed" aria-label="Previous image">
-                    <svg class="w-6 h-6 text-[var(--color-text)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <button id="prev-image" class="absolute left-4 top-1/2 -translate-y-1/2 bg-transparent hover:bg-white/20 rounded-full p-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed" aria-label="Previous image">
+                    <svg class="w-6 h-6 text-white drop-shadow-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                     </svg>
                   </button>
-                  <button id="next-image" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white rounded-full p-2 shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed" aria-label="Next image">
-                    <svg class="w-6 h-6 text-[var(--color-text)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <button id="next-image" class="absolute right-4 top-1/2 -translate-y-1/2 bg-transparent hover:bg-white/20 rounded-full p-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed" aria-label="Next image">
+                    <svg class="w-6 h-6 text-white drop-shadow-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                     </svg>
                   </button>
                 </div>
                 <!-- Thumbnails -->
                 <div id="thumbnail-container" class="flex flex-wrap gap-2 justify-center lg:justify-start">
-                  <!-- Thumbnails will be loaded here -->
                 </div>
               </div>
 
               <!-- Right: Product Information -->
               <div>
+                <p class="text-[var(--color-text)] mb-4">
+                  <span class="font-bold">Item No.:</span> <span id="product-sku"></span>
+                </p>
                 <h1 id="product-name" class="text-3xl md:text-4xl font-bold text-[var(--color-text)] mb-4 pb-4 border-b border-gray-300"></h1>
                 
                 <div class="mb-6">
-                  <p class="text-[var(--color-text)] mb-4">
-                    <span class="font-bold">Item No.:</span> <span id="product-sku"></span>
-                  </p>
                   <p id="product-description" class="text-[var(--color-text)] leading-relaxed"></p>
                 </div>
 
-                <div class="mb-6 space-y-2">
-                  <p class="text-[var(--color-text)]">
-                    <span class="font-semibold">Size:</span> <span id="product-size"></span>
-                  </p>
-                  <p class="text-[var(--color-text)]">
-                    <span class="font-semibold">Material:</span> <span id="product-material"></span>
-                  </p>
+                <div class="mb-6">
+                  <h2 class="text-xl font-bold text-[var(--color-text)] mb-4">Key Features</h2>
+                  <div class="space-y-4">
+                    <div class="flex items-start gap-3">
+                      <img src="/img/save-the-world.png" alt="Compostable" class="w-8 h-8 flex-shrink-0 mt-1">
+                      <p class="text-[var(--color-text)]">
+                        <span class="font-semibold">100% Compostable & Sustainable:</span> Made from natural sugarcane bagasse.
+                      </p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                      <img src="/img/oil-free.png" alt="Grease Resistant" class="w-8 h-8 flex-shrink-0 mt-1">
+                      <p class="text-[var(--color-text)]">
+                        <span class="font-semibold">Grease & Water Resistant:</span> Perfect for hot, crispy, or saucy foods.
+                      </p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                      <img src="/img/microwave-safe.png" alt="Microwave Safe" class="w-8 h-8 flex-shrink-0 mt-1">
+                      <p class="text-[var(--color-text)]">
+                        <span class="font-semibold">Microwave & Freezer Safe:</span> Versatile for a wide range of uses.
+                      </p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                      <img src="/img/link.png" alt="Sturdy" class="w-8 h-8 flex-shrink-0 mt-1">
+                      <p class="text-[var(--color-text)]">
+                        <span class="font-semibold">Sturdy & Secure:</span> Rigid construction with a secure locking mechanism.
+                      </p>
+                    </div>
+                  </div>
                 </div>
 
                 <div class="flex flex-col sm:flex-row gap-4">

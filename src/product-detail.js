@@ -38,12 +38,14 @@ async function loadProduct() {
 
 function showNotFound() {
   document.getElementById('product-loading').classList.add('hidden');
+  document.getElementById('product-detail').classList.add('hidden');
   document.getElementById('product-not-found').classList.remove('hidden');
 }
 
 function displayProduct() {
   
   document.getElementById('product-loading').classList.add('hidden');
+  document.getElementById('product-not-found').classList.add('hidden');
   document.getElementById('product-detail').classList.remove('hidden');
   
   document.title = `${productData.name} - KMZ-Packaging`;
@@ -51,8 +53,6 @@ function displayProduct() {
   document.getElementById('product-name').textContent = productData.name;
   document.getElementById('product-sku').textContent = productData.sku;
   document.getElementById('product-description').textContent = productData.full_description;
-  document.getElementById('product-size').textContent = productData.size;
-  document.getElementById('product-material').textContent = productData.material;
   
   galleryImages = productData.gallery_images || [productData.card_image];
   currentImageIndex = 0;
@@ -61,6 +61,7 @@ function displayProduct() {
   createThumbnails();
   setupNavigation();
   setupImageZoom();
+  displaySpecifications();
 }
 
 function updateMainImage() {
@@ -70,31 +71,51 @@ function updateMainImage() {
     mainImage.alt = `${productData.name} - Image ${currentImageIndex + 1}`;
   }
   
+  // Reset zoom when image changes
+  if (isZoomed) {
+    mainImage.style.transform = 'scale(1)';
+    mainImage.style.transformOrigin = 'center center';
+    isZoomed = false;
+    const imageWrapper = document.querySelector('.relative.mb-4.max-w-lg .aspect-square');
+    if (imageWrapper) {
+      imageWrapper.style.cursor = 'pointer';
+    }
+  }
+  
   updateThumbnailActiveState();
   updateArrowStates();
 }
 
 let zoomSetupDone = false;
+let isZoomed = false;
 
 function setupImageZoom() {
   if (zoomSetupDone) return;
   
   const imageContainer = document.querySelector('.relative.mb-4.max-w-lg');
+  const imageWrapper = imageContainer?.querySelector('.aspect-square');
   const mainImage = document.getElementById('main-product-image');
   
-  if (!imageContainer || !mainImage) return;
+  if (!imageContainer || !imageWrapper || !mainImage) return;
   
-  imageContainer.addEventListener('mousemove', (e) => {
-    const rect = imageContainer.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width) * 100;
-    const y = ((e.clientY - rect.top) / rect.height) * 100;
-    
-    mainImage.style.transformOrigin = `${x}% ${y}%`;
-    mainImage.style.transform = 'scale(2)';
-  });
-  
-  imageContainer.addEventListener('mouseleave', () => {
-    mainImage.style.transform = 'scale(1)';
+  imageWrapper.addEventListener('click', (e) => {
+    if (isZoomed) {
+      // Unzoom
+      mainImage.style.transform = 'scale(1)';
+      mainImage.style.transformOrigin = 'center center';
+      isZoomed = false;
+      imageWrapper.style.cursor = 'pointer';
+    } else {
+      // Zoom in
+      const rect = imageWrapper.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      
+      mainImage.style.transformOrigin = `${x}% ${y}%`;
+      mainImage.style.transform = 'scale(2)';
+      isZoomed = true;
+      imageWrapper.style.cursor = 'zoom-out';
+    }
   });
   
   zoomSetupDone = true;
@@ -184,6 +205,43 @@ function setupNavigation() {
       updateMainImage();
     }
   });
+}
+
+function displaySpecifications() {
+  const detailedInfoContainer = document.getElementById('detailed-info');
+  if (!detailedInfoContainer || !productData || !productData.specifications) {
+    return;
+  }
+
+  const specs = productData.specifications;
+  
+  const specLabels = {
+    'raw_material': 'Raw Material',
+    'capacity_ml': 'Capacity (ml)',
+    'weight_g': 'Weight (g)',
+    'open_size_mm': 'Open Size (mm)',
+    'fold_size_mm': 'Fold Size (mm)'
+  };
+
+  let tableHTML = '<div class="overflow-x-auto"><table class="w-full border-collapse border border-gray-300 rounded-lg overflow-hidden">';
+  tableHTML += '<thead><tr class="bg-gray-100">';
+  tableHTML += '<th class="border border-gray-300 px-6 py-3 text-left font-bold text-[var(--color-text)]">Specification</th>';
+  tableHTML += '<th class="border border-gray-300 px-6 py-3 text-left font-bold text-[var(--color-text)]">Value</th>';
+  tableHTML += '</tr></thead><tbody>';
+
+  Object.keys(specs).forEach(key => {
+    const label = specLabels[key] || key.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+    const value = specs[key];
+    
+    tableHTML += '<tr class="hover:bg-gray-50">';
+    tableHTML += `<td class="border border-gray-300 px-6 py-3 font-semibold text-[var(--color-text)]">${label}</td>`;
+    tableHTML += `<td class="border border-gray-300 px-6 py-3 text-[var(--color-text)]">${value}</td>`;
+    tableHTML += '</tr>';
+  });
+
+  tableHTML += '</tbody></table></div>';
+  
+  detailedInfoContainer.innerHTML = tableHTML;
 }
 
 if (document.readyState === 'loading') {
