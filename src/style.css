@@ -9,6 +9,15 @@
   --color-accent: #FFB74D;
   --color-text: #1A1A1A;
   --color-background: #F5F7FA;
+  
+  /* Shadows use #FFB74D color */
+  --shadow-sm: 0 1px 2px 0 rgb(255 183 77 / 0.15);
+  --shadow-md: 0 4px 6px -1px rgb(255 183 77 / 0.2), 0 2px 4px -2px rgb(255 183 77 / 0.15);
+  --shadow-lg: 0 10px 15px -3px rgb(255 183 77 / 0.25), 0 4px 6px -4px rgb(255 183 77 / 0.2);
+  --shadow-xl: 0 20px 25px -5px rgb(255 183 77 / 0.3), 0 8px 10px -6px rgb(255 183 77 / 0.25);
+  --shadow-2xl: 0 25px 50px -12px rgb(255 183 77 / 0.35);
+  --shadow-inner: inset 0 2px 4px 0 rgb(255 183 77 / 0.15);
+  --shadow-none: 0 0 #0000;
 }
 
 :root {
@@ -40,7 +49,7 @@ a {
 
 .nav-link {
   color: #1A1A1A !important;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 700;
 }
 .nav-link:hover {
@@ -72,8 +81,19 @@ body {
   color: var(--color-text);
 }
 
+/* Override all box shadows to use custom shadow color */
+* {
+  --tw-shadow-color: rgb(255 183 77 / 0.2);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+}
+
+/* Custom shadow color for SVG elements */
+.drop-shadow-lg {
+  filter: drop-shadow(0 10px 8px rgb(255 183 77 / 0.2)) drop-shadow(0 4px 3px rgb(255 183 77 / 0.15));
+}
+
 h1 {
-  font-size: 3.2em;
+  font-size: 3.0em;
   line-height: 1.1;
 }
 
