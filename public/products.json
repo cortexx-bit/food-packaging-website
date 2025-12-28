@@ -1,39 +1,49 @@
 [
   {
-    "id": "bagasse-burger-box-6in",
+    "id": "bagasse-burger-box-5in",
     "sku": "KMZ-001",
-    "name": "Bagasse Burger Box (6-inch)",
-    "card_image": "/img/products/bagasse-burger-box-6in/open.webp",
+    "name": "Bagasse Burger Box (5-inch)",
+    "card_image": "/img/products/bagasse-burger-box-5in/open.webp",
     "gallery_images": [
-      "/img/products/bagasse-burger-box-6in/open.webp",
-      "/img/products/bagasse-burger-box-6in/side-open.webp",
-      "/img/products/bagasse-burger-box-6in/above-open.webp",
-      "/img/products/bagasse-burger-box-6in/front.webp",
-      "/img/products/bagasse-burger-box-6in/side.webp",
-      "/img/products/bagasse-burger-box-6in/above.webp"
+      "/img/products/bagasse-burger-box-5in/open.webp",
+      "/img/products/bagasse-burger-box-5in/side-open.webp",
+      "/img/products/bagasse-burger-box-5in/above-open.webp",
+      "/img/products/bagasse-burger-box-5in/front.webp",
+      "/img/products/bagasse-burger-box-5in/side.webp",
+      "/img/products/bagasse-burger-box-5in/above.webp"
     ],
-    "short_description": "Our classic 6-inch square clamshell, perfect for standard burgers, pies, and side orders.",
-    "full_description": "The ideal eco-friendly solution for takeaways and food trucks. Made from 100% compostable sugarcane bagasse, this sturdy 6x6 inch container is grease-resistant and microwave-safe, keeping food secure and hot from your kitchen to your customer's hands.",
-    "size": "15cm x 15cm x 8cm (6\" x 6\")",
-    "material": "Sugarcane Bagasse Pulp"
+    "short_description": "Our classic 5-inch square clamshell, perfect for standard burgers, pies, and side orders.",
+    "full_description": "The ideal eco-friendly solution for takeaways and food trucks. Made from 100% compostable sugarcane bagasse, this sturdy 5x5 inch container is grease-resistant and microwave-safe, keeping food secure and hot from your kitchen to your customer's hands.",
+    "specifications": {
+    "raw_material": "Bagasse + Bamboo",
+    "capacity_ml": 350,
+    "weight_g": 21,
+    "open_size_mm": "/",
+    "fold_size_mm": "127 x 127 x H70"
+    }
   },
   {
-    "id": "bagasse-clamshell-8in",
+    "id": "bagasse-clamshell-12in",
     "sku": "KMZ-002",
-    "name": "Large Bagasse Clamshell (8-inch)",
-    "card_image": "/img/products/bagasse-clamshell-8in/open.webp",
+    "name": "Large Bagasse Clamshell (12-inch)",
+    "card_image": "/img/products/bagasse-clamshell-12in/open.webp",
     "gallery_images": [
-      "/img/products/bagasse-clamshell-8in/open.webp",
-      "/img/products/bagasse-clamshell-8in/side-open.webp",
-      "/img/products/bagasse-clamshell-8in/above-open.webp",
-      "/img/products/bagasse-clamshell-8in/front.webp",
-      "/img/products/bagasse-clamshell-8in/side.webp",
-      "/img/products/bagasse-clamshell-8in/above.webp"
+      "/img/products/bagasse-clamshell-12in/open.webp",
+      "/img/products/bagasse-clamshell-12in/side-open.webp",
+      "/img/products/bagasse-clamshell-12in/above-open.webp",
+      "/img/products/bagasse-clamshell-12in/front.webp",
+      "/img/products/bagasse-clamshell-12in/side.webp",
+      "/img/products/bagasse-clamshell-12in/above.webp"
     ],
-    "short_description": "An oversized 8-inch square container for larger meals, loaded fries, or sharing portions.",
-    "full_description": "When you need a bit more space, our 8x8 inch large clamshell delivers. It offers the same sustainable benefits and robust construction as our standard box but with extra capacity. Its secure locking mechanism ensures that even generous portions travel safely.",
-    "size": "20cm x 20cm x 8cm (8\" x 8\")",
-    "material": "Sugarcane Bagasse Pulp"
+    "short_description": "An oversized 12-inch square container for larger meals, loaded fries, or sharing portions.",
+    "full_description": "When you need a bit more space, our 6x12 inch large clamshell delivers. It offers the same sustainable benefits and robust construction as our standard box but with extra capacity. Its secure locking mechanism ensures that even generous portions travel safely.",
+    "specifications": {
+    "raw_material": "Bagasse + Bamboo",
+    "capacity_ml": 370,
+    "weight_g": 18,
+    "open_size_mm": "150 x 304 x H45",
+    "fold_size_mm": "/"
+    }
   },
   {
     "id": "thank-you-burger-box",
@@ -49,8 +59,13 @@
     ],
     "short_description": "Show your appreciation with this sturdy burger box featuring a friendly 'THANK YOU' message.",
     "full_description": "Elevate your customer's experience with a small touch of gratitude. This clamshell features 'THANK YOU' embossed on the lid, reinforcing your brand's commitment to service. It's fully compostable, durable, and perfect for building customer loyalty.",
-    "size": "15cm x 15cm x 8cm (6\" x 6\")",
-    "material": "Sugarcane Bagasse Pulp"
+    "specifications": {
+    "raw_material": "Bagasse + Bamboo",
+    "capacity_ml": 450,
+    "weight_g": 21,
+    "open_size_mm": "305 x 152 x H45",
+    "fold_size_mm": "152 x 152 x H76"
+    }
   },
   {
     "id": "heavy-duty-clamshell",
@@ -66,8 +81,13 @@
     ],
     "short_description": "A deeper and more rigid square container for heavier meals or those requiring extra protection.",
     "full_description": "Our Heavy-Duty Clamshell is engineered for maximum performance. With reinforced corners and a deeper base, it's the perfect choice for saucy dishes, street food, or any meal that needs extra stability. Fully compostable and microwave-safe.",
-    "size": "20cm x 20cm x 9cm (8\" x 8\" Deep)",
-    "material": "Reinforced Sugarcane Bagasse Pulp"
+    "specifications": {
+    "raw_material": "Bagasse + Bamboo",
+    "capacity_ml": 480,
+    "weight_g": 20,
+    "open_size_mm": "305 x 152 x H49",
+    "fold_size_mm": "155 x 155 x H77"
+    }
   },
   {
     "id": "bagasse-takeaway-container",
@@ -83,8 +103,13 @@
     ],
     "short_description": "A versatile rectangular container ideal for classic takeaway meals like fish and chips or curry.",
     "full_description": "This single-compartment rectangular container is designed to hold a complete meal. Its sustainable bagasse construction is naturally grease-resistant, making it a superior, eco-friendly alternative to plastic or foam trays.",
-    "size": "23cm x 15cm x 8cm (9\" x 6\")",
-    "material": "Sugarcane Bagasse Pulp"
+    "specifications": {
+    "raw_material": "Bagasse + Bamboo",
+    "capacity_ml": 600,
+    "weight_g": 20,
+    "open_size_mm": "275 x 182 x H45",
+    "fold_size_mm": "182 x 136 x H68"
+    }
   },
   {
     "id": "thank-you-takeaway-container",
@@ -100,7 +125,12 @@
     ],
     "short_description": "A rectangular meal container featuring an embossed 'THANK YOU' to delight your customers.",
     "full_description": "Combine functionality with appreciation. This takeaway container features the same great performance and sustainable credentials as our standard model, with the added touch of a 'THANK YOU' message on the lid to leave a lasting positive impression.",
-    "size": "23cm x 15cm x 8cm (9\" x 6\")",
-    "material": "Sugarcane Bagasse Pulp"
+    "specifications": {
+    "raw_material": "Bagasse + Bamboo",
+    "capacity_ml": 900,
+    "weight_g": 30,
+    "open_size_mm": "312 x 228 x H46.5",
+    "fold_size_mm": "229 x 153 x H80"
+    }
   }
 ]
