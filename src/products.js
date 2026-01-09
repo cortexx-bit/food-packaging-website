@@ -19,38 +19,69 @@ function renderProducts(products) {
   const grid = document.getElementById('products-grid');
   if (!grid) return;
 
-  if (products.length === 0) {
+  // Filter products to only show those in stock
+  const inStockProducts = products.filter(product => product.in_stock === true);
+
+  if (inStockProducts.length === 0) {
     grid.innerHTML = '<p class="text-center text-[var(--color-text)] col-span-full">No products available.</p>';
     return;
   }
 
-  grid.innerHTML = products.map(product => `
-    <a href="/product.html?id=${product.id}" class="group bg-transparent rounded-lg shadow-md hover:shadow-xl hover:bg-[#FFB74D]/10 transition-all duration-300 overflow-hidden border border-gray-200">
+  grid.innerHTML = inStockProducts.map(product => {
+    // Use default_image field from product data (specify in products.json)
+    // Falls back to front.webp if default_image is not specified
+    const defaultImage = product.default_image || `/img/products/${product.sku}/front.webp`;
+    
+    // Use hover_image field if provided, otherwise use default open.webp path
+    const hoverImage = product.hover_image || `/img/products/${product.sku}/open.webp`;
+    
+    return `
+    <a href="/product.html?id=${product.model_number}" class="group bg-transparent rounded-lg shadow-md hover:shadow-xl hover:bg-[#FFB74D]/10 transition-all duration-300 overflow-hidden border border-gray-200">
       <div class="px-6 pt-6 pb-4">
-        <div class="aspect-square bg-gray-100 overflow-hidden rounded-lg">
+        <div class="aspect-square bg-gray-100 overflow-hidden rounded-lg relative">
           <img 
-            src="${product.card_image}" 
+            src="${defaultImage}" 
             alt="${product.name}" 
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            class="product-card-image w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
+            data-sku="${product.sku}"
+            data-hover-src="${hoverImage}"
             onerror="this.src='/img/box.png'"
           >
         </div>
       </div>
       <div class="p-6 pt-0">
-        <p class="text-sm text-gray-600 mb-3">${product.sku}</p>
         <h3 class="text-xl font-bold text-[var(--color-text)] mb-2 transition-colors">
           ${product.name}
         </h3>
         <p class="text-[var(--color-text)] text-sm leading-relaxed mb-3">
           ${product.short_description}
         </p>
-        <div class="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0 hover:underline">
-          <img src="/img/details.png" alt="Details" class="w-5 h-5">
-          <span class="text-sm font-semibold text-[var(--color-text)]">Details</span>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0 hover:underline">
+            <img src="/img/details.png" alt="Details" class="w-5 h-5">
+            <span class="text-sm font-semibold text-[var(--color-text)]">Details</span>
+          </div>
+          <span class="text-xs text-gray-500">${product.sku}</span>
         </div>
       </div>
     </a>
-  `).join('');
+  `;
+  }).join('');
+  
+  // Swap images on hover
+  const productCards = grid.querySelectorAll('.product-card-image');
+  productCards.forEach(img => {
+    const hoverSrc = img.getAttribute('data-hover-src');
+    const defaultSrc = img.getAttribute('src');
+    
+    img.closest('a').addEventListener('mouseenter', () => {
+      img.src = hoverSrc;
+    });
+    
+    img.closest('a').addEventListener('mouseleave', () => {
+      img.src = defaultSrc;
+    });
+  });
 }
 
 if (document.readyState === 'loading') {

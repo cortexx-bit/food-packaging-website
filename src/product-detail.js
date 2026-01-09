@@ -3,15 +3,15 @@ let productData = null;
 let galleryImages = [];
 
 
-function getProductId() {
+function getProductModelNumber() {
   const urlParams = new URLSearchParams(window.location.search);
   return urlParams.get('id');
 }
 
 async function loadProduct() {
-  const productId = getProductId();
+  const productModelNumber = getProductModelNumber();
   
-  if (!productId) {
+  if (!productModelNumber) {
     showNotFound();
     return;
   }
@@ -22,9 +22,15 @@ async function loadProduct() {
       throw new Error('Failed to load products');
     }
     const products = await response.json();
-    productData = products.find(p => p.id === productId);
+    productData = products.find(p => p.model_number === productModelNumber);
     
     if (!productData) {
+      showNotFound();
+      return;
+    }
+    
+    // Check if product is out of stock
+    if (productData.in_stock === false) {
       showNotFound();
       return;
     }
@@ -229,11 +235,12 @@ function displaySpecifications() {
   tableHTML += '<th class="border border-gray-300 px-6 py-3 text-left font-bold text-[var(--color-text)]">Value</th>';
   tableHTML += '</tr></thead><tbody>';
 
-  Object.keys(specs).forEach(key => {
+  Object.keys(specs).forEach((key, index) => {
     const label = specLabels[key] || key.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
     const value = specs[key];
+    const rowClass = index % 2 === 0 ? 'bg-white hover:bg-gray-50' : 'bg-gray-50 hover:bg-gray-100';
     
-    tableHTML += '<tr class="hover:bg-gray-50">';
+    tableHTML += `<tr class="${rowClass}">`;
     tableHTML += `<td class="border border-gray-300 px-6 py-3 font-semibold text-[var(--color-text)]">${label}</td>`;
     tableHTML += `<td class="border border-gray-300 px-6 py-3 text-[var(--color-text)]">${value}</td>`;
     tableHTML += '</tr>';
