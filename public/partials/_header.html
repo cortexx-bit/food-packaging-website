@@ -5,7 +5,19 @@
       <span class="text-2xl font-bold text-[var(--color-text)]">KMZ-Packaging</span>
     </a>
     <nav class="hidden md:flex items-center gap-12 absolute left-1/2 transform -translate-x-1/2">
-      <a href="/products.html" class="nav-link transition-colors">Products</a>
+      <div class="relative group">
+        <button id="products-dropdown-button" class="nav-link transition-colors flex items-center gap-1">
+          Products
+          <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div id="products-dropdown" class="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+          <div id="products-dropdown-content" class="py-2">
+            <!-- Categories will be populated by JavaScript -->
+          </div>
+        </div>
+      </div>
       <a href="/about.html" class="nav-link transition-colors">About</a>
       <a href="/contact.html" class="nav-link transition-colors">Contact</a>
     </nav>
@@ -24,7 +36,19 @@
     </div>
   </div>
   <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-500 shadow-lg">
-    <a href="/products.html" class="block py-2 px-4 text-sm text-[var(--color-text)] hover:text-[var(--color-primary)] nav-link-mobile">Products</a>
+    <div>
+      <button id="mobile-products-button" class="w-full flex items-center justify-between py-2 px-4 text-sm text-[var(--color-text)] hover:text-[var(--color-primary)] nav-link-mobile">
+        <span>Products</span>
+        <svg id="mobile-products-arrow" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </button>
+      <div id="mobile-products-dropdown" class="hidden bg-gray-50">
+        <div id="mobile-products-dropdown-content">
+          <!-- Categories will be populated by JavaScript -->
+        </div>
+      </div>
+    </div>
     <a href="/about.html" class="block py-2 px-4 text-sm text-[var(--color-text)] hover:text-[var(--color-primary)] nav-link-mobile">About</a>
     <a href="/contact.html" class="block py-2 px-4 text-sm text-[var(--color-text)] hover:text-[var(--color-primary)] nav-link-mobile">Contact</a>
     <a href="https://wa.me/15551234567" target="_blank" class="block py-2 px-4 text-sm font-semibold bg-green-50 text-green-700">Chat on WhatsApp</a>

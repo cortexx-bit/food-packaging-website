@@ -57,6 +57,21 @@ a {
   color: var(--color-primary) !important;
 }
 
+/* Products dropdown button - no underline on hover */
+#products-dropdown-button:hover {
+  text-decoration: none;
+}
+
+/* Dropdown menu styling */
+#products-dropdown {
+  min-width: 200px;
+}
+
+#products-dropdown a {
+  display: block;
+  text-decoration: none;
+}
+
 
 .nav-link-mobile:hover {
   text-decoration: underline;
