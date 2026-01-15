@@ -143,3 +143,16 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+/* Product page category link styling */
+.category-link {
+  color: var(--color-text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-accent);
+  transition: border-color 0.3s ease;
+  padding-bottom: 1px;
+}
+
+.category-link:hover {
+  border-bottom-color: var(--color-primary);
+}
+

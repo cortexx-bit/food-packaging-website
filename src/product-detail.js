@@ -3,6 +3,7 @@ let productData = null;
 let galleryImages = [];
 let fancyboxInstance = null;
 let mainImageClickHandlerAdded = false;
+let categoriesData = null;
 
 
 function getProductModelNumber() {
@@ -19,11 +20,17 @@ async function loadProduct() {
   }
 
   try {
-    const response = await fetch('/products.json');
-    if (!response.ok) {
+    const [productsResponse, categoriesResponse] = await Promise.all([
+      fetch('/products.json'),
+      fetch('/categories.json')
+    ]);
+    
+    if (!productsResponse.ok) {
       throw new Error('Failed to load products');
     }
-    const products = await response.json();
+    
+    const products = await productsResponse.json();
+    categoriesData = await categoriesResponse.json(); 
     productData = products.find(p => p.model_number === productModelNumber);
     
     if (!productData) {
@@ -58,9 +65,19 @@ function displayProduct() {
   
   document.title = `${productData.name} - KMZ-Packaging`;
   
+  // Update breadcrumb
+  const breadcrumb = document.getElementById('breadcrumb');
+  const breadcrumbProductName = document.getElementById('breadcrumb-product-name');
+  if (breadcrumb && breadcrumbProductName) {
+    breadcrumbProductName.textContent = productData.name;
+    breadcrumb.classList.remove('hidden');
+  }
+  
   document.getElementById('product-name').textContent = productData.name;
   document.getElementById('product-sku').textContent = productData.sku;
   document.getElementById('product-description').textContent = productData.full_description;
+  
+  displayCategories();
   
   galleryImages = productData.gallery_images || [productData.card_image];
   currentImageIndex = 0;
@@ -279,6 +296,38 @@ function setupNavigation() {
       updateMainImage();
     }
   });
+}
+
+function displayCategories() {
+  const categoriesContainer = document.getElementById('product-categories-container');
+  const categoriesElement = document.getElementById('product-categories');
+  
+  if (!categoriesContainer || !categoriesElement) return;
+  
+  if (productData.categories && productData.categories.length > 0 && categoriesData) {
+    const categoryLinks = [];
+    
+    productData.categories.forEach(categorySlug => {
+      const category = categoriesData[categorySlug];
+      
+      if (category && category.name) {
+        const categoryName = category.name;
+        
+        const linkHTML = `<a href="/category.html?name=${categorySlug}" class="category-link">${categoryName}</a>`;
+        
+        categoryLinks.push(linkHTML);
+      }
+    });
+    
+    if (categoryLinks.length > 0) {
+      categoriesElement.innerHTML = categoryLinks.join(', ');
+      categoriesContainer.style.display = 'block';
+    } else {
+      categoriesContainer.style.display = 'none';
+    }
+  } else {
+    categoriesContainer.style.display = 'none';
+  }
 }
 
 function displaySpecifications() {

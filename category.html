@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Category - KMZ-Packaging</title>
+  </head>
+  <body class="font-inter">
+    <div data-include="./partials/_header.html"></div>
+
+    <main>
+      <section class="py-16 md:py-24 bg-[var(--color-background)]">
+        <div class="container mx-auto px-4">
+          <!-- Loading State -->
+          <div id="category-loading" class="text-center py-12">
+            <p class="text-[var(--color-text)]">Loading category...</p>
+          </div>
+          
+          <!-- Not Found State -->
+          <div id="category-not-found" class="text-center py-12 hidden">
+            <h1 class="text-3xl font-bold text-[var(--color-text)] mb-4">Category Not Found</h1>
+            <p class="text-[var(--color-text)] mb-8">The category you're looking for doesn't exist.</p>
+            <a href="/products.html" class="inline-flex items-center gap-2 bg-[var(--color-primary)] text-white font-bold py-4 px-8 rounded-lg hover:bg-[#1557B8] transition-colors">
+              Back to Products
+            </a>
+          </div>
+
+          <!-- Category Content -->
+          <div id="category-content" class="hidden">
+            <h1 id="category-title" class="text-3xl md:text-4xl font-bold text-center text-[var(--color-text)] mb-6">
+            </h1>
+            <p id="category-description" class="text-center text-[var(--color-text)] mb-12 md:mb-16 max-w-3xl mx-auto text-lg">
+            </p>
+            
+            <div id="category-products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+              <!-- JS script to load the products -->
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div data-include="./partials/_footer.html"></div>
+
+    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/category.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,18 @@
+{
+    "burger-boxes": {
+      "name": "Burger Boxes",
+      "description": "Discover our range of eco-friendly, compostable burger boxes. Perfect for takeaways and food trucks, these sturdy clamshells are available in multiple sizes to fit everything from standard burgers to gourmet creations."
+    },
+    "takeaway-containers": {
+      "name": "Takeaway Containers",
+      "description": "Our versatile takeaway containers are the ideal sustainable solution for a wide variety of meals. Strong, grease-resistant, and microwave-safe, they are perfect for curries, salads, and classic takeaway dishes."
+    },
+    "fish-and-chip-boxes": {
+      "name": "Fish & Chip Boxes",
+      "description": "Serve a British classic in truly sustainable style. Our fish and chip boxes are designed to handle hot, crispy food, offering excellent heat retention and grease resistance without the need for plastic."
+    },
+    "thank-you-range": {
+      "name": "'Thank You' Range",
+      "description": "Add a personal touch to every order with our 'Thank You' range. Featuring a friendly embossed message, this collection is a great way to enhance your customer's unboxing experience and build brand loyalty."
+    }
+} 

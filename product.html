@@ -16,6 +16,21 @@
     <main>
       <section class="py-16 md:py-24 bg-white">
         <div class="container mx-auto px-4">
+          <!-- Breadcrumb Navigation -->
+          <nav id="breadcrumb" class="mb-6 hidden" aria-label="Breadcrumb">
+            <ol class="flex items-center gap-2 text-sm text-[var(--color-text)]">
+              <li>
+                <a href="/" class="hover:text-[var(--color-primary)] transition-colors">Home</a>
+              </li>
+              <li class="text-gray-400">/</li>
+              <li>
+                <a href="/products.html" class="hover:text-[var(--color-primary)] transition-colors">Products</a>
+              </li>
+              <li class="text-gray-400">/</li>
+              <li id="breadcrumb-product-name" class="text-gray-600" aria-current="page"></li>
+            </ol>
+          </nav>
+          
           <div id="product-loading" class="text-center py-12">
             <p class="text-[var(--color-text)]">Loading product...</p>
           </div>
@@ -64,6 +79,9 @@
                 </div>
                 <p class="text-[var(--color-text)] mb-4">
                   <span class="font-bold">SKU:</span> <span id="product-sku"></span>
+                </p>
+                <p class="text-[var(--color-text)] mb-4" id="product-categories-container" style="display: none;">
+                  <span class="font-bold">Categories:</span> <span id="product-categories"></span>
                 </p>
 
                 <div class="mb-6">

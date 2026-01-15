@@ -13,6 +13,9 @@
       "/img/products/KMZ-CS-BG-HP7-ST/side.webp",
       "/img/products/KMZ-CS-BG-HP7-ST/above.webp"
     ],
+    "categories": [
+     "burger-boxes"
+    ],
     "short_description": "Our classic 5-inch square clamshell, perfect for standard burgers and side orders.",
     "full_description": "The ideal eco-friendly solution for takeaways and food trucks. Made from 100% compostable sugarcane bagasse, this sturdy 5x5 inch container is grease-resistant and microwave-safe, keeping food secure and hot from your kitchen to your customer's hands.",
     "specifications": {
@@ -35,6 +38,10 @@
       "/img/products/KMZ-CS-BG-06-TY/above-open.webp",
       "/img/products/KMZ-CS-BG-06-TY/front.webp",
       "/img/products/KMZ-CS-BG-06-TY/side.webp"
+    ],
+    "categories": [
+      "burger-boxes",
+      "thank-you-range"
     ],
     "short_description": "Show your appreciation with this sturdy 6x6\" burger box featuring a friendly 'THANK YOU' message.",
     "full_description": "Elevate your customer's experience with a small touch of gratitude. This clamshell features 'THANK YOU' embossed on the lid, reinforcing your brand's commitment to service. It's fully compostable, durable, and perfect for building customer loyalty.",
@@ -60,6 +67,9 @@
       "/img/products/KMZ-CS-BG-06-ST/side.webp",
       "/img/products/KMZ-CS-BG-06-ST/above.webp"
     ],
+    "categories": [
+      "burger-boxes"
+    ],
     "short_description": "Perfectly sized for 6-inch burgers, fries, and sides. Made from sustainable bagasse.",
     "full_description": "Sturdy 6-inch burger boxes crafted from renewable sugarcane fibers. This biodegradable clamshell is the perfect eco-friendly alternative to polystyrene, ideal for food on-the-go. Excellent for burgers, chips, loaded fries, chicken nuggets, and more.",
     "specifications": {
@@ -82,6 +92,9 @@
       "/img/products/KMZ-CS-BG-HP6-ST/above-open.webp",
       "/img/products/KMZ-CS-BG-HP6-ST/front.webp",
       "/img/products/KMZ-CS-BG-HP6-ST/side.webp"
+    ],
+    "categories": [
+      "burger-boxes"
     ],
     "short_description": "HP6 box for saucy, loaded burgers and messy meals. Made from sustainable bagasse.",
     "full_description": "Heavy-duty HP6 burger boxes engineered from robust sugarcane fibers for maximum performance. A fully compostable, microwave-safe alternative to plastic, featuring a secure lock for reliable transport.",
@@ -106,6 +119,10 @@
       "/img/products/KMZ-CS-BG-08-TY/front.webp",
       "/img/products/KMZ-CS-BG-08-TY/side.webp"
     ],
+    "categories": [
+      "burger-boxes",
+      "thank-you-range"
+    ],
     "short_description": "Large 8x8 (1200ml) eco clamshell, perfect for full meals.",
     "full_description": "Large 8x8 inch clamshell boxes made from 100% compostable sugarcane bagasse, perfect for packing generous portions and full meals. With a spacious 1200ml capacity, this sturdy eco-friendly container is ideal for loaded burgers, family-style sides, large salads, or complete dinner combos. The secure clamshell closure keeps food fresh during transport, while the natural bagasse material provides reliable performance with both hot and cold dishes.",
     "specifications": {
@@ -128,6 +145,9 @@
       "/img/products/KMZ-CS-BG-09-TY/above-open.webp",
       "/img/products/KMZ-CS-BG-09-TY/front.webp",
       "/img/products/KMZ-CS-BG-09-TY/side.webp"
+    ],
+    "categories": [
+      "burger-boxes"
     ],
     "short_description": "Large 9x9 (1500ml) eco clamshell, perfect for full meals.",
     "full_description": "Large 9x9 inch clamshell boxes made from 100% compostable sugarcane bagasse, perfect for packing generous portions and full meals. With a spacious 1500ml capacity, this sturdy eco-friendly container is ideal for loaded burgers, family-style sides, large salads, or complete dinner combos. The secure clamshell closure keeps food fresh during transport, while the natural bagasse material provides reliable performance with both hot and cold dishes.",
@@ -154,6 +174,9 @@
       "/img/products/KMZ-TC-BG-HP9L-ST/front.webp",
       "/img/products/KMZ-TC-BG-HP9L-ST/side.webp"
     ],
+    "categories": [
+      "takeaway-containers"
+    ],
     "short_description": "Versatile single-compartment box, perfect for a burger with chips or other takeaway combinations.",
     "full_description": "This versatile single-compartment container is designed to hold a complete meal like a burger with a side of chips. Its sustainable bagasse construction is naturally grease-resistant and features a secure lower lid, making it a superior, eco-friendly choice over plastic for a wide range of hot or cold takeaway foods.",
     "specifications": {
@@ -176,6 +199,9 @@
       "/img/products/KMZ-TC-BG-HP10-TY/above-open.webp",
       "/img/products/KMZ-TC-BG-HP10-TY/front.webp",
       "/img/products/KMZ-TC-BG-HP10-TY/side.webp"
+    ],
+    "categories": [
+      "takeaway-containers"
     ],
     "short_description": "The HP10 is our largest clamshell, built to handle serious portions and combo meals with confidence.",
     "full_description": "Meet the HP10 Box—the most spacious container in our hinged clamshell range. Designed for extra-large, hearty meals, it's the ideal choice for mega burgers, mixed grills, loaded rice boxes, and festival-sized portions. Constructed from durable, food-grade EPS, it provides superior heat retention, structural strength, and leak resistance to keep food secure and fresh during delivery. Perfect for high-volume takeaways, food trucks, and outdoor catering, the HP10 delivers dependable performance and a professional presentation even under demanding conditions.",
@@ -200,6 +226,9 @@
       "/img/products/KMZ-TC-BG-FC-SML/front.webp",
       "/img/products/KMZ-TC-BG-FC-SML/side.webp"
     ],
+    "categories": [
+      "fish-and-chip-boxes"
+    ],
     "short_description": "A 600ml compostable box for fish & chips, crafted from certified sugarcane bagasse for eco-friendly takeaways.",
     "full_description": "Made from 100% biodegradable sugarcane bagasse, these durable containers provide an eco-conscious solution for fish & chips and other classic takeaway meals. With a 600ml capacity and sturdy construction, they're certified by multiple environmental standards, ensuring peace of mind for both businesses and environmentally aware customers.",
     "specifications": {
@@ -223,6 +252,9 @@
       "/img/products/KMZ-TC-BG-FC-MED/above-open.webp",
       "/img/products/KMZ-TC-BG-FC-MED/front.webp",
       "/img/products/KMZ-TC-BG-FC-MED/side.webp"
+    ],
+    "categories": [
+      "fish-and-chip-boxes"
     ],
     "short_description": "A 1000ml compostable box for fish & chips, crafted from certified sugarcane bagasse for eco-friendly takeaways.",
     "full_description": "Made from 100% biodegradable sugarcane bagasse, these durable containers provide an eco-conscious solution for fish & chips and other classic takeaway meals. With a 1000ml capacity and sturdy construction, they're certified by multiple environmental standards, ensuring peace of mind for both businesses and environmentally aware customers.",
