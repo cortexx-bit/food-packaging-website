@@ -1,6 +1,8 @@
 let currentImageIndex = 0;
 let productData = null;
 let galleryImages = [];
+let fancyboxInstance = null;
+let mainImageClickHandlerAdded = false;
 
 
 function getProductModelNumber() {
@@ -66,25 +68,22 @@ function displayProduct() {
   updateMainImage();
   createThumbnails();
   setupNavigation();
-  setupImageZoom();
+  setupFancybox();
   displaySpecifications();
 }
 
 function updateMainImage() {
   const mainImage = document.getElementById('main-product-image');
-  if (galleryImages.length > 0) {
-    mainImage.src = galleryImages[currentImageIndex];
-    mainImage.alt = `${productData.name} - Image ${currentImageIndex + 1}`;
-  }
+  const mainImageLink = document.getElementById('main-image-link');
   
-  // Reset zoom when image changes
-  if (isZoomed) {
-    mainImage.style.transform = 'scale(1)';
-    mainImage.style.transformOrigin = 'center center';
-    isZoomed = false;
-    const imageWrapper = document.querySelector('.relative.mb-4.max-w-lg .aspect-square');
-    if (imageWrapper) {
-      imageWrapper.style.cursor = 'pointer';
+  if (galleryImages.length > 0) {
+    const currentImage = galleryImages[currentImageIndex];
+    mainImage.src = currentImage;
+    mainImage.alt = `${productData.name} - Image ${currentImageIndex + 1}`;
+    
+    if (mainImageLink) {
+      mainImageLink.href = currentImage;
+      mainImageLink.setAttribute('data-caption', `${productData.name} - Image ${currentImageIndex + 1}`);
     }
   }
   
@@ -92,39 +91,92 @@ function updateMainImage() {
   updateArrowStates();
 }
 
-let zoomSetupDone = false;
-let isZoomed = false;
+function setupFancybox() {
 
-function setupImageZoom() {
-  if (zoomSetupDone) return;
+  if (fancyboxInstance) {
+    fancyboxInstance.destroy();
+  }
   
-  const imageContainer = document.querySelector('.relative.mb-4.max-w-lg');
-  const imageWrapper = imageContainer?.querySelector('.aspect-square');
-  const mainImage = document.getElementById('main-product-image');
+  // Create hidden links for all gallery images
+  createFancyboxGalleryLinks();
   
-  if (!imageContainer || !imageWrapper || !mainImage) return;
-  
-  imageWrapper.addEventListener('click', (e) => {
-    if (isZoomed) {
-      // Unzoom
-      mainImage.style.transform = 'scale(1)';
-      mainImage.style.transformOrigin = 'center center';
-      isZoomed = false;
-      imageWrapper.style.cursor = 'pointer';
-    } else {
-      // Zoom in
-      const rect = imageWrapper.getBoundingClientRect();
-      const x = ((e.clientX - rect.left) / rect.width) * 100;
-      const y = ((e.clientY - rect.top) / rect.height) * 100;
-      
-      mainImage.style.transformOrigin = `${x}% ${y}%`;
-      mainImage.style.transform = 'scale(2)';
-      isZoomed = true;
-      imageWrapper.style.cursor = 'zoom-out';
+  fancyboxInstance = Fancybox.bind('[data-fancybox="product-gallery"]', {
+    Toolbar: {
+      display: {
+        left: ['infobar'],
+        middle: [],
+        right: ['slideshow', 'download', 'thumbs', 'close']
+      }
+    },
+    Thumbs: {
+      autoStart: true,
+      axis: 'x'
+    },
+    Images: {
+      zoom: {
+        maxRatio: 1.5  // Reduced zoom level (1.5x = 150% zoom)
+      },
+      wheel: 'slide'
+    },
+    Carousel: {
+      infinite: true
+    },
+    on: {
+      ready: (fancybox, slide) => {
+        // Set initial slide based on currentImageIndex when opening
+        if (slide) {
+          currentImageIndex = slide.index;
+          updateMainImage();
+        }
+      },
+      change: (fancybox, carousel, slide) => {
+        // Sync currentImageIndex when navigating in Fancybox
+        if (slide) {
+          currentImageIndex = slide.index;
+          updateMainImage();
+        }
+      }
     }
   });
   
-  zoomSetupDone = true;
+  if (!mainImageClickHandlerAdded) {
+    const mainImageLink = document.getElementById('main-image-link');
+    if (mainImageLink) {
+      mainImageLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        // Find the gallery link at currentImageIndex and click it
+        const galleryLinks = document.querySelectorAll('[data-fancybox="product-gallery"]');
+        const targetLink = Array.from(galleryLinks).find(link => {
+          const linkIndex = parseInt(link.getAttribute('data-gallery-index'));
+          return linkIndex === currentImageIndex;
+        }) || galleryLinks[currentImageIndex] || galleryLinks[0];
+        
+        if (targetLink) {
+          targetLink.click();
+        }
+      });
+      mainImageClickHandlerAdded = true;
+    }
+  }
+}
+
+function createFancyboxGalleryLinks() {
+  const existingLinks = document.querySelectorAll('[data-fancybox="product-gallery"]');
+  existingLinks.forEach(link => link.remove());
+  
+  galleryImages.forEach((image, index) => {
+    const link = document.createElement('a');
+    link.href = image;
+    link.setAttribute('data-fancybox', 'product-gallery');
+    link.setAttribute('data-caption', `${productData.name} - Image ${index + 1}`);
+    link.style.display = 'none';
+    link.setAttribute('data-gallery-index', index);
+    document.body.appendChild(link);
+  });
+  
+  if (fancyboxInstance) {
+    setupFancybox();
+  }
 }
 
 function createThumbnails() {
@@ -141,6 +193,21 @@ function createThumbnails() {
     thumbnail.addEventListener('click', () => {
       currentImageIndex = index;
       updateMainImage();
+      if (fancyboxInstance) {
+        if (fancyboxInstance.isVisible) {
+          fancyboxInstance.jumpTo(index);
+        } else {
+          const galleryLinks = document.querySelectorAll('[data-fancybox="product-gallery"]');
+          if (galleryLinks[index]) {
+            galleryLinks[index].click();
+          }
+        }
+      } else {
+        const mainImageLink = document.getElementById('main-image-link');
+        if (mainImageLink) {
+          mainImageLink.click();
+        }
+      }
     });
     
     const img = document.createElement('img');
@@ -199,9 +266,10 @@ function setupNavigation() {
     updateMainImage();
   });
   
-  // Keyboard navigation
   document.addEventListener('keydown', (e) => {
     if (document.getElementById('product-detail').classList.contains('hidden')) return;
+    
+    if (fancyboxInstance && fancyboxInstance.isVisible) return;
     
     if (e.key === 'ArrowLeft') {
       currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;

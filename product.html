@@ -8,6 +8,7 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product Details</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6/dist/fancybox/fancybox.css" />
   </head>
   <body class="font-inter">
     <div data-include="./partials/_header.html"></div>
@@ -33,7 +34,9 @@
               <div>
                 <div class="relative mb-4 max-w-lg mx-auto lg:mx-0">
                   <div class="aspect-square bg-gray-100 rounded-lg overflow-hidden border border-gray-200 cursor-pointer">
-                    <img id="main-product-image" src="" alt="Product image" class="w-full h-full object-cover transition-transform duration-300 ease-out">
+                    <a id="main-image-link" href="" data-caption="" class="block w-full h-full">
+                      <img id="main-product-image" src="" alt="Product image" class="w-full h-full object-cover transition-transform duration-300 ease-out">
+                    </a>
                   </div>
                   <!-- Navigation Arrows -->
                   <button id="prev-image" class="absolute left-4 top-1/2 -translate-y-1/2 bg-transparent hover:bg-white/20 rounded-full p-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed" aria-label="Previous image">
@@ -165,6 +168,7 @@
 
     <script type="module" src="/src/main.js"></script>
     <script type="module" src="/src/product-detail.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6/dist/fancybox/fancybox.umd.js"></script>
   </body>
 </html>
 

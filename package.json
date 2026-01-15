@@ -14,6 +14,7 @@
     "vite-plugin-html-inject": "^1.1.2"
   },
   "dependencies": {
+    "@fancyapps/ui": "^6.1.7",
     "@tailwindcss/vite": "^4.1.17",
     "tailwindcss": "^4.1.17"
   }
