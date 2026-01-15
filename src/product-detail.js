@@ -77,6 +77,18 @@ function displayProduct() {
   document.getElementById('product-sku').textContent = productData.sku;
   document.getElementById('product-description').textContent = productData.full_description;
   
+  // Update Request Quote button to include SKU
+  const requestQuoteBtn = document.getElementById('request-quote-btn');
+  if (requestQuoteBtn) {
+    requestQuoteBtn.href = `/contact.html?sku=${encodeURIComponent(productData.sku)}`;
+  }
+  
+  // Update Request Sample button to include SKU and sample parameter
+  const requestSampleBtn = document.getElementById('request-sample-btn');
+  if (requestSampleBtn) {
+    requestSampleBtn.href = `/contact.html?sku=${encodeURIComponent(productData.sku)}&sample=true`;
+  }
+  
   displayCategories();
   
   galleryImages = productData.gallery_images || [productData.card_image];

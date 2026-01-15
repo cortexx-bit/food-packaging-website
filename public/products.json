@@ -1,17 +1,17 @@
 [
   {
-    "sku": "KMZ-CS-BG-HP7-ST",
+    "sku": "KMZ-CS-HP7-ST",
     "in_stock": true,
     "model_number": "HP7",
     "name": "HP7 (5\") Bagasse Burger Box",
     "default_image": "/img/products/misc/HP7-two.webp",
     "gallery_images": [
-      "/img/products/KMZ-CS-BG-HP7-ST/open.webp",
-      "/img/products/KMZ-CS-BG-HP7-ST/side-open.webp",
-      "/img/products/KMZ-CS-BG-HP7-ST/above-open.webp",
-      "/img/products/KMZ-CS-BG-HP7-ST/front.webp",
-      "/img/products/KMZ-CS-BG-HP7-ST/side.webp",
-      "/img/products/KMZ-CS-BG-HP7-ST/above.webp"
+      "/img/products/KMZ-CS-HP7-ST/open.webp",
+      "/img/products/KMZ-CS-HP7-ST/side-open.webp",
+      "/img/products/KMZ-CS-HP7-ST/above-open.webp",
+      "/img/products/KMZ-CS-HP7-ST/front.webp",
+      "/img/products/KMZ-CS-HP7-ST/side.webp",
+      "/img/products/KMZ-CS-HP7-ST/above.webp"
     ],
     "categories": [
      "burger-boxes"
@@ -27,17 +27,17 @@
     }
   },
   {
-    "sku": "KMZ-CS-BG-06-TY",
+    "sku": "KMZ-CS-06-TY",
     "in_stock": true,
     "name": "6\" Bagasse Burger Box",
     "model_number": "6x6-TY",
-    "default_image": "/img/products/KMZ-CS-BG-06-TY/front.webp",
+    "default_image": "/img/products/KMZ-CS-06-TY/front.webp",
     "gallery_images": [
-      "/img/products/KMZ-CS-BG-06-TY/open.webp",
-      "/img/products/KMZ-CS-BG-06-TY/side-open.webp",
-      "/img/products/KMZ-CS-BG-06-TY/above-open.webp",
-      "/img/products/KMZ-CS-BG-06-TY/front.webp",
-      "/img/products/KMZ-CS-BG-06-TY/side.webp"
+      "/img/products/KMZ-CS-06-TY/open.webp",
+      "/img/products/KMZ-CS-06-TY/side-open.webp",
+      "/img/products/KMZ-CS-06-TY/above-open.webp",
+      "/img/products/KMZ-CS-06-TY/front.webp",
+      "/img/products/KMZ-CS-06-TY/side.webp"
     ],
     "categories": [
       "burger-boxes",
@@ -54,18 +54,18 @@
     }
   },
   {
-    "sku": "KMZ-CS-BG-06-ST",
+    "sku": "KMZ-CS-06-ST",
     "in_stock": true,
     "model_number": "6x6",
     "name": "6\" Bagasse Burger Box",
-    "default_image": "/img/products/KMZ-CS-BG-06-ST/front.webp",
+    "default_image": "/img/products/KMZ-CS-06-ST/front.webp",
     "gallery_images": [
-      "/img/products/KMZ-CS-BG-06-ST/open.webp",
-      "/img/products/KMZ-CS-BG-06-ST/side-open.webp",
-      "/img/products/KMZ-CS-BG-06-ST/above-open.webp",
-      "/img/products/KMZ-CS-BG-06-ST/front.webp",
-      "/img/products/KMZ-CS-BG-06-ST/side.webp",
-      "/img/products/KMZ-CS-BG-06-ST/above.webp"
+      "/img/products/KMZ-CS-06-ST/open.webp",
+      "/img/products/KMZ-CS-06-ST/side-open.webp",
+      "/img/products/KMZ-CS-06-ST/above-open.webp",
+      "/img/products/KMZ-CS-06-ST/front.webp",
+      "/img/products/KMZ-CS-06-ST/side.webp",
+      "/img/products/KMZ-CS-06-ST/above.webp"
     ],
     "categories": [
       "burger-boxes"
@@ -81,17 +81,17 @@
     }
   },
   {
-    "sku": "KMZ-CS-BG-HP6-ST",
+    "sku": "KMZ-CS-HP6-ST",
     "in_stock": true,
     "name": "HP6 Bagasse Burger Box",
     "model_number": "HP6",
-    "default_image": "/img/products/KMZ-CS-BG-HP6-ST/front.webp",
+    "default_image": "/img/products/KMZ-CS-HP6-ST/front.webp",
     "gallery_images": [
-      "/img/products/KMZ-CS-BG-HP6-ST/open.webp",
-      "/img/products/KMZ-CS-BG-HP6-ST/side-open.webp",
-      "/img/products/KMZ-CS-BG-HP6-ST/above-open.webp",
-      "/img/products/KMZ-CS-BG-HP6-ST/front.webp",
-      "/img/products/KMZ-CS-BG-HP6-ST/side.webp"
+      "/img/products/KMZ-CS-HP6-ST/open.webp",
+      "/img/products/KMZ-CS-HP6-ST/side-open.webp",
+      "/img/products/KMZ-CS-HP6-ST/above-open.webp",
+      "/img/products/KMZ-CS-HP6-ST/front.webp",
+      "/img/products/KMZ-CS-HP6-ST/side.webp"
     ],
     "categories": [
       "burger-boxes"
@@ -107,17 +107,17 @@
     }
   },
   {
-    "sku": "KMZ-CS-BG-08-TY",
+    "sku": "KMZ-CS-08-TY",
     "in_stock": true,
     "name": "8\" Bagasse Burger Box",
     "model_number": "8x8",
-    "default_image": "/img/products/KMZ-CS-BG-08-TY/front.webp",
+    "default_image": "/img/products/KMZ-CS-08-TY/front.webp",
     "gallery_images": [
-      "/img/products/KMZ-CS-BG-08-TY/open.webp",
-      "/img/products/KMZ-CS-BG-08-TY/side-open.webp",
-      "/img/products/KMZ-CS-BG-08-TY/above.webp",
-      "/img/products/KMZ-CS-BG-08-TY/front.webp",
-      "/img/products/KMZ-CS-BG-08-TY/side.webp"
+      "/img/products/KMZ-CS-08-TY/open.webp",
+      "/img/products/KMZ-CS-08-TY/side-open.webp",
+      "/img/products/KMZ-CS-08-TY/above.webp",
+      "/img/products/KMZ-CS-08-TY/front.webp",
+      "/img/products/KMZ-CS-08-TY/side.webp"
     ],
     "categories": [
       "burger-boxes",
@@ -134,20 +134,21 @@
     }
   },
   {
-    "sku": "KMZ-CS-BG-09-TY",
+    "sku": "KMZ-CS-09-TY",
     "in_stock": true,
     "name": "9\" Bagasse Burger Box",
     "model_number": "9x9",
-    "default_image": "/img/products/KMZ-CS-BG-09-TY/front.webp",
+    "default_image": "/img/products/KMZ-CS-09-TY/front.webp",
     "gallery_images": [
-      "/img/products/KMZ-CS-BG-09-TY/open.webp",
-      "/img/products/KMZ-CS-BG-09-TY/above.webp",
-      "/img/products/KMZ-CS-BG-09-TY/above-open.webp",
-      "/img/products/KMZ-CS-BG-09-TY/front.webp",
-      "/img/products/KMZ-CS-BG-09-TY/side.webp"
+      "/img/products/KMZ-CS-09-TY/open.webp",
+      "/img/products/KMZ-CS-09-TY/above.webp",
+      "/img/products/KMZ-CS-09-TY/above-open.webp",
+      "/img/products/KMZ-CS-09-TY/front.webp",
+      "/img/products/KMZ-CS-09-TY/side.webp"
     ],
     "categories": [
-      "burger-boxes"
+      "burger-boxes",
+      "thank-you-range"
     ],
     "short_description": "Large 9x9 (1500ml) eco clamshell, perfect for full meals.",
     "full_description": "Large 9x9 inch clamshell boxes made from 100% compostable sugarcane bagasse, perfect for packing generous portions and full meals. With a spacious 1500ml capacity, this sturdy eco-friendly container is ideal for loaded burgers, family-style sides, large salads, or complete dinner combos. The secure clamshell closure keeps food fresh during transport, while the natural bagasse material provides reliable performance with both hot and cold dishes.",
@@ -162,17 +163,17 @@
 
   
   {
-    "sku": "KMZ-TC-BG-HP9L-ST",
+    "sku": "KMZ-TC-HP9L-ST",
     "in_stock": true,
     "name": "HP9 (lower lid) Bagasse Container for Meals",
     "model_number": "HP9 (lower lid)",
-    "default_image": "/img/products/KMZ-TC-BG-HP9L-ST/front.webp",
+    "default_image": "/img/products/KMZ-TC-HP9L-ST/front.webp",
     "gallery_images": [
-      "/img/products/KMZ-TC-BG-HP9L-ST/open.webp",
-      "/img/products/KMZ-TC-BG-HP9L-ST/side-open.webp",
-      "/img/products/KMZ-TC-BG-HP9L-ST/above-open.webp",
-      "/img/products/KMZ-TC-BG-HP9L-ST/front.webp",
-      "/img/products/KMZ-TC-BG-HP9L-ST/side.webp"
+      "/img/products/KMZ-TC-HP9L-ST/open.webp",
+      "/img/products/KMZ-TC-HP9L-ST/side-open.webp",
+      "/img/products/KMZ-TC-HP9L-ST/above-open.webp",
+      "/img/products/KMZ-TC-HP9L-ST/front.webp",
+      "/img/products/KMZ-TC-HP9L-ST/side.webp"
     ],
     "categories": [
       "takeaway-containers"
@@ -188,20 +189,21 @@
     }
   },
   {
-    "sku": "KMZ-TC-BG-HP10-TY",
+    "sku": "KMZ-TC-HP10-TY",
     "in_stock": true,
     "name": "HP10 Extra Large Hinged Clamshell Containers",
     "model_number": "HP10",
-    "default_image": "/img/products/KMZ-TC-BG-HP10-TY/front.webp",
+    "default_image": "/img/products/KMZ-TC-HP10-TY/front.webp",
     "gallery_images": [
-      "/img/products/KMZ-TC-BG-HP10-TY/open.webp",
-      "/img/products/KMZ-TC-BG-HP10-TY/side-open.webp",
-      "/img/products/KMZ-TC-BG-HP10-TY/above-open.webp",
-      "/img/products/KMZ-TC-BG-HP10-TY/front.webp",
-      "/img/products/KMZ-TC-BG-HP10-TY/side.webp"
+      "/img/products/KMZ-TC-HP10-TY/open.webp",
+      "/img/products/KMZ-TC-HP10-TY/side-open.webp",
+      "/img/products/KMZ-TC-HP10-TY/above-open.webp",
+      "/img/products/KMZ-TC-HP10-TY/front.webp",
+      "/img/products/KMZ-TC-HP10-TY/side.webp"
     ],
     "categories": [
-      "takeaway-containers"
+      "takeaway-containers",
+      "thank-you-range"
     ],
     "short_description": "The HP10 is our largest clamshell, built to handle serious portions and combo meals with confidence.",
     "full_description": "Meet the HP10 Box—the most spacious container in our hinged clamshell range. Designed for extra-large, hearty meals, it's the ideal choice for mega burgers, mixed grills, loaded rice boxes, and festival-sized portions. Constructed from durable, food-grade EPS, it provides superior heat retention, structural strength, and leak resistance to keep food secure and fresh during delivery. Perfect for high-volume takeaways, food trucks, and outdoor catering, the HP10 delivers dependable performance and a professional presentation even under demanding conditions.",
@@ -214,17 +216,17 @@
     }
   },
   {
-    "sku": "KMZ-TC-BG-FC-SML",
+    "sku": "KMZ-TC-FC-SML",
     "in_stock": true,
     "name": "HP9 Fish & Chips Takeaway Container (Small)",
     "model_number": "Fish-and-Chips-HP9",
-    "default_image": "/img/products/KMZ-TC-BG-FC-SML/product-image.webp",
+    "default_image": "/img/products/KMZ-TC-FC-SML/product-image.webp",
     "gallery_images": [
-      "/img/products/KMZ-TC-BG-FC-SML/open.webp",
-      "/img/products/KMZ-TC-BG-FC-SML/above.webp",
-      "/img/products/KMZ-TC-BG-FC-SML/above-open.webp",
-      "/img/products/KMZ-TC-BG-FC-SML/front.webp",
-      "/img/products/KMZ-TC-BG-FC-SML/side.webp"
+      "/img/products/KMZ-TC-FC-SML/open.webp",
+      "/img/products/KMZ-TC-FC-SML/above.webp",
+      "/img/products/KMZ-TC-FC-SML/above-open.webp",
+      "/img/products/KMZ-TC-FC-SML/front.webp",
+      "/img/products/KMZ-TC-FC-SML/side.webp"
     ],
     "categories": [
       "fish-and-chip-boxes"
@@ -240,18 +242,18 @@
     }
   },
   {
-    "sku": "KMZ-TC-BG-FC-MED",
+    "sku": "KMZ-TC-FC-MED",
     "in_stock": true,
     "name": "Fish & Chips Takeaway Container (Medium)",
     "model_number": "Fish-and-Chips-MED",
-    "default_image": "/img/products/KMZ-TC-BG-FC-MED/product-image.webp",
+    "default_image": "/img/products/KMZ-TC-FC-MED/product-image.webp",
     "gallery_images": [
-      "/img/products/KMZ-TC-BG-FC-MED/open.webp",
-      "/img/products/KMZ-TC-BG-FC-MED/side-open.webp",
-      "/img/products/KMZ-TC-BG-FC-MED/above.webp",
-      "/img/products/KMZ-TC-BG-FC-MED/above-open.webp",
-      "/img/products/KMZ-TC-BG-FC-MED/front.webp",
-      "/img/products/KMZ-TC-BG-FC-MED/side.webp"
+      "/img/products/KMZ-TC-FC-MED/open.webp",
+      "/img/products/KMZ-TC-FC-MED/side-open.webp",
+      "/img/products/KMZ-TC-FC-MED/above.webp",
+      "/img/products/KMZ-TC-FC-MED/above-open.webp",
+      "/img/products/KMZ-TC-FC-MED/front.webp",
+      "/img/products/KMZ-TC-FC-MED/side.webp"
     ],
     "categories": [
       "fish-and-chip-boxes"
