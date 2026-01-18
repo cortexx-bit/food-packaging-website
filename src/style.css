@@ -2,14 +2,14 @@
 
 @theme {
   --font-inter: "Inter", sans-serif;
-  
+
   /* Color Palette */
   --color-primary: #1A73E8;
   --color-secondary: #5F6C7B;
   --color-accent: #FFB74D;
   --color-text: #1A1A1A;
   --color-background: #F5F7FA;
-  
+
   /* Shadows use #FFB74D color */
   --shadow-sm: 0 1px 2px 0 rgb(255 183 77 / 0.15);
   --shadow-md: 0 4px 6px -1px rgb(255 183 77 / 0.2), 0 2px 4px -2px rgb(255 183 77 / 0.15);
@@ -47,11 +47,33 @@ a {
   text-decoration: inherit;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
+/* Link styling for privacy page and emails */
+.cookie-policy-page main a,
+.privacy-page main a,
+a[href^="mailto:"] {
+  color: var(--color-primary, #1A73E8);
+  text-decoration: underline;
+  text-decoration-color: var(--color-primary, #1A73E8);
+  transition: color 0.3s ease, text-decoration-color 0.3s ease;
+}
+
+.cookie-policy-page main a:hover,
+.privacy-page main a:hover,
+a[href^="mailto:"]:hover {
+  color: var(--color-primary, #1A73E8);
+  text-decoration: none;
+}
+
 .nav-link {
   color: #1A1A1A !important;
   font-size: 1.5rem;
   font-weight: 700;
 }
+
 .nav-link:hover {
   text-decoration: underline;
   color: var(--color-primary) !important;
@@ -68,7 +90,7 @@ a {
 }
 
 #products-dropdown a {
-  display: block;
+  display: block !important;
   text-decoration: none;
 }
 
@@ -83,6 +105,7 @@ a {
   color: var(--color-text);
   transition: color 0.2s;
 }
+
 .footer-link:hover {
   color: var(--color-primary);
   text-decoration: underline;
@@ -112,6 +135,16 @@ h1 {
   line-height: 1.1;
 }
 
+h2 {
+  font-size: 2.0em;
+  line-height: 1.1;
+}
+
+h3 {
+  font-size: 1.5em;
+  line-height: 1.1;
+}
+
 #app {
   max-width: 1280px;
   margin: 0 auto;
@@ -125,9 +158,11 @@ h1 {
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.vanilla:hover {
   filter: drop-shadow(0 0 2em #f7df1eaa);
 }
@@ -150,9 +185,11 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -171,3 +208,46 @@ button:focus-visible {
   border-bottom-color: var(--color-primary);
 }
 
+
+
+/* Legal pages styling */
+.privacy-page {
+  background-color: white !important;
+}
+
+.privacy-page main {
+  text-align: left;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.privacy-page h1,
+.privacy-page h2,
+.privacy-page h3 {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.privacy-page p {
+  margin-bottom: 1em;
+}
+
+.privacy-page ul {
+  list-style-type: disc;
+  text-align: left;
+  display: inline-block;
+  margin: 1em 0;
+  padding-left: 2em;
+}
+
+.privacy-page ol {
+  list-style-type: decimal;
+  text-align: left;
+  display: inline-block;
+  margin: 1em 0;
+  padding-left: 2em;
+}
+
+.privacy-page li {
+  margin-bottom: 0.5em;
+}
