@@ -15,7 +15,7 @@ export default defineConfig({
         product: './product.html',
         category: './category.html',
         privacy_policy: './privacy.html',
-        cookie_policy: './cookie_policy.html',
+        cookie_policy: './cookie-policy.html',
         terms_of_use: './terms-of-use.html',
       }
     }
