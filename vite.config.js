@@ -13,7 +13,10 @@ export default defineConfig({
         contact: './contact.html',
         products: './products.html',
         product: './product.html',
-        category: './category.html'
+        category: './category.html',
+        privacy_policy: './privacy.html',
+        cookie_policy: './cookie_policy.html',
+        terms_of_use: './terms-of-use.html',
       }
     }
   }
