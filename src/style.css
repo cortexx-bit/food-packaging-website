@@ -2,14 +2,14 @@
 
 @theme {
   --font-inter: "Inter", sans-serif;
-
+  
   /* Color Palette */
   --color-primary: #1A73E8;
   --color-secondary: #5F6C7B;
   --color-accent: #FFB74D;
   --color-text: #1A1A1A;
   --color-background: #F5F7FA;
-
+  
   /* Shadows use #FFB74D color */
   --shadow-sm: 0 1px 2px 0 rgb(255 183 77 / 0.15);
   --shadow-md: 0 4px 6px -1px rgb(255 183 77 / 0.2), 0 2px 4px -2px rgb(255 183 77 / 0.15);
@@ -73,7 +73,6 @@ a[href^="mailto:"]:hover {
   font-size: 1.5rem;
   font-weight: 700;
 }
-
 .nav-link:hover {
   text-decoration: underline;
   color: var(--color-primary) !important;
@@ -105,7 +104,6 @@ a[href^="mailto:"]:hover {
   color: var(--color-text);
   transition: color 0.2s;
 }
-
 .footer-link:hover {
   color: var(--color-primary);
   text-decoration: underline;
@@ -158,11 +156,9 @@ h3 {
   will-change: filter;
   transition: filter 300ms;
 }
-
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
-
 .logo.vanilla:hover {
   filter: drop-shadow(0 0 2em #f7df1eaa);
 }
@@ -189,7 +185,6 @@ button {
 button:hover {
   border-color: #646cff;
 }
-
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;

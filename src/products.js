@@ -28,23 +28,26 @@ function renderProducts(products) {
   }
 
   grid.innerHTML = inStockProducts.map(product => {
-    // Use default_image field from product data (specify in products.json)
-    // Falls back to front.webp if default_image is not specified
-    const defaultImage = product.default_image || `/img/products/${product.sku}/front.webp`;
-    
-    // Use hover_image field if provided, otherwise use default open.webp path
-    const hoverImage = product.hover_image || `/img/products/${product.sku}/open.webp`;
-    
+    const gridImage = product.images?.grid_image;
+    const defaultImage = gridImage?.src || `/img/products/${product.sku}/front.webp`;
+    const defaultAlt = gridImage?.alt || product.name;
+
+    const firstGalleryImage = product.images?.gallery_images?.[0];
+    const hoverImage = firstGalleryImage?.src || `/img/products/${product.sku}/open.webp`;
+    const hoverAlt = firstGalleryImage?.alt || `${product.name} - open view`;
+
     return `
     <a href="/product.html?id=${product.model_number}" class="group bg-transparent rounded-lg shadow-md hover:shadow-xl hover:bg-[#FFB74D]/10 transition-all duration-300 overflow-hidden border border-gray-200">
       <div class="px-6 pt-6 pb-4">
         <div class="aspect-square bg-gray-100 overflow-hidden rounded-lg relative">
           <img 
             src="${defaultImage}" 
-            alt="${product.name}" 
+            alt="${defaultAlt}" 
             class="product-card-image w-full h-full object-cover group-hover:scale-105 transition-all duration-300"
             data-sku="${product.sku}"
             data-hover-src="${hoverImage}"
+            data-default-alt="${defaultAlt}"
+            data-hover-alt="${hoverAlt}"
             onerror="this.src='/img/box.png'"
           >
         </div>
@@ -67,19 +70,23 @@ function renderProducts(products) {
     </a>
   `;
   }).join('');
-  
-  // Swap images on hover
+
+  // Swap images and alt text on hover
   const productCards = grid.querySelectorAll('.product-card-image');
   productCards.forEach(img => {
     const hoverSrc = img.getAttribute('data-hover-src');
     const defaultSrc = img.getAttribute('src');
-    
+    const hoverAlt = img.getAttribute('data-hover-alt');
+    const defaultAlt = img.getAttribute('data-default-alt');
+
     img.closest('a').addEventListener('mouseenter', () => {
       img.src = hoverSrc;
+      img.alt = hoverAlt;
     });
-    
+
     img.closest('a').addEventListener('mouseleave', () => {
       img.src = defaultSrc;
+      img.alt = defaultAlt;
     });
   });
 }
