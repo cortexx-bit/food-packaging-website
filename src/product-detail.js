@@ -157,6 +157,8 @@ function createThumbnails() {
     const img = document.createElement('img');
     img.src = imageSrc;
     img.alt = imageAlt;
+    img.loading = 'lazy';
+    img.decoding = 'async';
     img.className = 'w-full h-full object-cover';
     img.onerror = function () {
       this.src = '/img/box.png';

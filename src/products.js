@@ -48,6 +48,8 @@ function renderProducts(products) {
             data-hover-src="${hoverImage}"
             data-default-alt="${defaultAlt}"
             data-hover-alt="${hoverAlt}"
+            loading="lazy"
+            decoding="async"
             onerror="this.src='/img/box.png'"
           >
         </div>
