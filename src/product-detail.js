@@ -2,6 +2,7 @@ let currentImageIndex = 0;
 let productData = null;
 let galleryImages = [];
 let categoriesData = null;
+let fancyboxInstance = null;
 
 function getProductModelNumber() {
   const urlParams = new URLSearchParams(window.location.search);
@@ -35,7 +36,6 @@ async function loadProduct() {
       return;
     }
 
-    // Check if product is out of stock
     if (productData.in_stock === false) {
       showNotFound();
       return;
@@ -61,7 +61,6 @@ function displayProduct() {
 
   document.title = `${productData.name} - KMZ-Packaging`;
 
-  // Update breadcrumb
   const breadcrumb = document.getElementById('breadcrumb');
   const breadcrumbProductName = document.getElementById('breadcrumb-product-name');
   if (breadcrumb && breadcrumbProductName) {
@@ -73,13 +72,11 @@ function displayProduct() {
   document.getElementById('product-sku').textContent = productData.sku;
   document.getElementById('product-description').textContent = productData.full_description;
 
-  // Update Request Quote button to include SKU
   const requestQuoteBtn = document.getElementById('request-quote-btn');
   if (requestQuoteBtn) {
     requestQuoteBtn.href = `/contact.html?sku=${encodeURIComponent(productData.sku)}`;
   }
 
-  // Update Request Sample button to include SKU and sample parameter
   const requestSampleBtn = document.getElementById('request-sample-btn');
   if (requestSampleBtn) {
     requestSampleBtn.href = `/contact.html?sku=${encodeURIComponent(productData.sku)}&sample=true`;
@@ -87,10 +84,8 @@ function displayProduct() {
 
   displayCategories();
 
-  // Build gallery images array from new structure
   galleryImages = productData.images?.gallery_images || [];
   
-  // Fallback to old format if new structure doesn't exist
   if (galleryImages.length === 0 && productData.gallery_images) {
     galleryImages = productData.gallery_images.map((src, index) => ({
       src: src,
@@ -98,7 +93,6 @@ function displayProduct() {
     }));
   }
   
-  // Final fallback to card_image
   if (galleryImages.length === 0 && productData.card_image) {
     galleryImages = [{
       src: productData.card_image,
@@ -110,7 +104,8 @@ function displayProduct() {
 
   updateMainImage();
   createThumbnails();
-  setupNavigation();
+  createFancyboxGallery();
+  initializeFancybox();
   displaySpecifications();
 }
 
@@ -123,6 +118,12 @@ function updateMainImage() {
     const imageSrc = currentImageData.src || currentImageData;
     const imageAlt = currentImageData.alt || `${productData.name} - Image ${currentImageIndex + 1}`;
     
+    // Add error handler for main image
+    mainImage.onerror = function() {
+      console.error('Failed to load image:', imageSrc);
+      this.src = '/img/box.png';
+    };
+    
     mainImage.src = imageSrc;
     mainImage.alt = imageAlt;
 
@@ -133,7 +134,6 @@ function updateMainImage() {
   }
 
   updateThumbnailActiveState();
-  updateArrowStates();
 }
 
 function createThumbnails() {
@@ -145,13 +145,17 @@ function createThumbnails() {
     const imageAlt = imageData.alt || `${productData.name} - Thumbnail ${index + 1}`;
     
     const thumbnail = document.createElement('button');
-    thumbnail.className = `w-20 h-20 bg-gray-100 rounded-lg overflow-hidden border-2 transition-all ${index === currentImageIndex
+    thumbnail.className = `thumbnail w-full aspect-square bg-gray-100 rounded-lg overflow-hidden border-2 transition-all ${index === currentImageIndex
       ? 'border-[var(--color-primary)] ring-2 ring-[var(--color-primary)] ring-offset-2 shadow-md'
       : 'border-gray-200 hover:border-gray-300'
       }`;
+    thumbnail.setAttribute('data-thumb-index', index);
     thumbnail.addEventListener('click', () => {
       currentImageIndex = index;
       updateMainImage();
+      if (fancyboxInstance && fancyboxInstance.isVisible) {
+        fancyboxInstance.jumpTo(index);
+      }
     });
 
     const img = document.createElement('img');
@@ -161,6 +165,7 @@ function createThumbnails() {
     img.decoding = 'async';
     img.className = 'w-full h-full object-cover';
     img.onerror = function () {
+      console.error('Failed to load image:', imageSrc);
       this.src = '/img/box.png';
     };
 
@@ -170,7 +175,7 @@ function createThumbnails() {
 }
 
 function updateThumbnailActiveState() {
-  const thumbnails = document.querySelectorAll('#thumbnail-container button');
+  const thumbnails = document.querySelectorAll('.thumbnail');
   thumbnails.forEach((thumb, index) => {
     if (index === currentImageIndex) {
       thumb.classList.remove('border-gray-200', 'border-gray-300', 'hover:border-gray-300');
@@ -182,53 +187,105 @@ function updateThumbnailActiveState() {
   });
 }
 
-function updateArrowStates() {
-  const prevBtn = document.getElementById('prev-image');
-  const nextBtn = document.getElementById('next-image');
-
-  if (!prevBtn || !nextBtn) return;
-
-  prevBtn.disabled = galleryImages.length <= 1;
-  nextBtn.disabled = galleryImages.length <= 1;
-
-  if (galleryImages.length <= 1) {
-    prevBtn.classList.add('hidden');
-    nextBtn.classList.add('hidden');
-  } else {
-    prevBtn.classList.remove('hidden');
-    nextBtn.classList.remove('hidden');
-  }
-}
-
-function setupNavigation() {
-  const prevBtn = document.getElementById('prev-image');
-  const nextBtn = document.getElementById('next-image');
-
-  if (prevBtn) {
-    prevBtn.addEventListener('click', () => {
-      currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
-      updateMainImage();
-    });
-  }
-
-  if (nextBtn) {
-    nextBtn.addEventListener('click', () => {
-      currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
-      updateMainImage();
-    });
-  }
-
-  document.addEventListener('keydown', (e) => {
-    if (document.getElementById('product-detail').classList.contains('hidden')) return;
-
-    if (e.key === 'ArrowLeft') {
-      currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
-      updateMainImage();
-    } else if (e.key === 'ArrowRight') {
-      currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
-      updateMainImage();
+function createFancyboxGallery() {
+  const existingLinks = document.querySelectorAll('[data-fancybox="product-gallery"]');
+  existingLinks.forEach(link => {
+    if (link.id !== 'main-image-link') {
+      link.remove();
     }
   });
+
+  galleryImages.forEach((imageData, index) => {
+    const imageSrc = imageData.src || imageData;
+    const imageAlt = imageData.alt || `${productData.name} - Image ${index + 1}`;
+    
+    const link = document.createElement('a');
+    link.href = imageSrc;
+    link.setAttribute('data-fancybox', 'product-gallery');
+    link.setAttribute('data-caption', imageAlt);
+    link.setAttribute('data-thumb', imageSrc);
+    link.style.display = 'none';
+    link.setAttribute('data-gallery-index', index);
+    document.body.appendChild(link);
+  });
+}
+
+function initializeFancybox(attempts = 0) {
+  const MAX_ATTEMPTS = 50; // 5 seconds max wait
+  
+  if (typeof Fancybox === 'undefined') {
+    if (attempts < MAX_ATTEMPTS) {
+      setTimeout(() => initializeFancybox(attempts + 1), 100);
+    } else {
+      console.error('Fancybox failed to load after 5 seconds');
+    }
+    return;
+  }
+
+  if (fancyboxInstance) {
+    fancyboxInstance.destroy();
+  }
+
+  fancyboxInstance = Fancybox.bind('[data-fancybox="product-gallery"]', {
+    Toolbar: {
+      display: {
+        left: ['infobar'],
+        middle: [],
+        right: ['slideshow', 'thumbs', 'close']
+      }
+    },
+    Thumbs: {
+      autoStart: window.innerWidth > 1024,
+      axis: 'x'
+    },
+    Images: {
+      zoom: true,
+      wheel: 'slide',
+      preload: [1, 1]
+    },
+    Carousel: {
+      infinite: true,
+      friction: 0.8,
+      Navigation: {
+        prevTpl: '<button class="fancybox__nav fancybox__nav--prev" aria-label="Previous"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg></button>',
+        nextTpl: '<button class="fancybox__nav fancybox__nav--next" aria-label="Next"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></button>'
+      }
+    },
+    Touch: {
+      vertical: false,
+      momentum: true
+    },
+    on: {
+      ready: (fancybox, slide) => {
+        if (slide) {
+          currentImageIndex = slide.index;
+          updateMainImage();
+        }
+      },
+      change: (fancybox, carousel, slide) => {
+        if (slide) {
+          currentImageIndex = slide.index;
+          updateMainImage();
+        }
+      }
+    }
+  });
+
+  const mainImageLink = document.getElementById('main-image-link');
+  if (mainImageLink) {
+    mainImageLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      const galleryLinks = document.querySelectorAll('[data-fancybox="product-gallery"]');
+      const targetLink = Array.from(galleryLinks).find(link => {
+        const linkIndex = parseInt(link.getAttribute('data-gallery-index'));
+        return linkIndex === currentImageIndex;
+      }) || galleryLinks[currentImageIndex] || galleryLinks[0];
+
+      if (targetLink) {
+        targetLink.click();
+      }
+    });
+  }
 }
 
 function displayCategories() {
@@ -298,6 +355,19 @@ function displaySpecifications() {
 
   detailedInfoContainer.innerHTML = tableHTML;
 }
+
+// Add cleanup function and call on page unload
+function cleanupGallery() {
+  const hiddenLinks = document.querySelectorAll('[data-fancybox="product-gallery"][data-gallery-index]');
+  hiddenLinks.forEach(link => link.remove());
+  
+  if (fancyboxInstance) {
+    fancyboxInstance.destroy();
+    fancyboxInstance = null;
+  }
+}
+
+window.addEventListener('beforeunload', cleanupGallery);
 
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', loadProduct);

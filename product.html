@@ -8,6 +8,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Product Details</title>
 </head>
@@ -51,30 +52,20 @@
             <!-- Left: Product Images -->
             <div>
               <div class="relative mb-4 max-w-lg mx-auto lg:mx-0">
-                <div class="aspect-square bg-gray-100 rounded-lg overflow-hidden border border-gray-200 cursor-pointer">
-                  <a id="main-image-link" href="" data-caption="" class="block w-full h-full">
+                <div class="aspect-square bg-gray-100 rounded-lg overflow-hidden border border-gray-200 cursor-pointer relative group">
+                  <a id="main-image-link" href="" data-fancybox="product-gallery" data-caption="" class="block w-full h-full">
                     <img id="main-product-image" src="" alt="Product image"
-                      class="w-full h-full object-cover transition-transform duration-300 ease-out">
+                      class="w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-105">
+                    <div class="absolute top-3 right-3 bg-black bg-opacity-50 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/>
+                      </svg>
+                    </div>
                   </a>
                 </div>
-                <!-- Navigation Arrows -->
-                <button id="prev-image"
-                  class="absolute left-4 top-1/2 -translate-y-1/2 bg-transparent hover:bg-white/20 rounded-full p-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-                  aria-label="Previous image">
-                  <svg class="w-6 h-6 text-white drop-shadow-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-                  </svg>
-                </button>
-                <button id="next-image"
-                  class="absolute right-4 top-1/2 -translate-y-1/2 bg-transparent hover:bg-white/20 rounded-full p-2 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-                  aria-label="Next image">
-                  <svg class="w-6 h-6 text-white drop-shadow-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                  </svg>
-                </button>
               </div>
               <!-- Thumbnails -->
-              <div id="thumbnail-container" class="flex flex-wrap gap-2 justify-center lg:justify-start">
+              <div id="thumbnail-container" class="grid grid-cols-4 md:grid-cols-6 gap-2">
               </div>
             </div>
 
@@ -231,6 +222,7 @@
   <div data-include="./partials/_footer.html"></div>
 
   <script type="module" src="/src/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
   <script type="module" src="/src/product-detail.js"></script>
 </body>
 
