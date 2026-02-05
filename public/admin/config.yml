@@ -12,43 +12,50 @@ public_folder: "/img/uploads"
 collections:
   - name: "products"
     label: "Products"
-    label_singular: "Product"
-    description: "Add, edit, and manage all products on the website here."
-    file: "public/products.json"
-    widget: "list"
-    fields:
-      - {label: "SKU (Unique Product Code)", name: "sku", widget: "string", hint: "The unique product code, e.g., KMZ-CS-HP7-ST."}
-      - {label: "Is this product in stock?", name: "in_stock", widget: "boolean", default: true}
-      - {label: "Model Number (e.g., HP7)", name: "model_number", widget: "string", required: false}
-      - {label: "Product Name", name: "name", widget: "string"}
-      # --- Images ---
-      - label: "Images"
-        name: "images"
-        widget: "object"
+    files:
+      - name: "products_file"
+        label: "All Products"
+        file: "public/products.json"
+        description: "Add, edit, and manage all products on the website here."
         fields:
-          - label: "Grid Image (for product cards)"
-            name: "grid_image"
-            widget: "object"
-            fields:
-              - {label: "Image File", name: "src", widget: "image"}
-              - {label: "Alt Text", name: "alt", widget: "string", hint: "A short description of the image for SEO and accessibility."}
-          - label: "Image Gallery"
-            name: "gallery_images"
+          - name: "products"
+            label: "Products"
             widget: "list"
+            summary: "{{fields.sku}} — {{fields.name}}"
             fields:
-              - {label: "Image File", name: "src", widget: "image"}
-              - {label: "Alt Text", name: "alt", widget: "string", hint: "A short description of the image."}
-      # --- Content ---
-      - {label: "Categories", name: "categories", widget: "list", hint: "Add one or more category slugs (e.g., burger-boxes)."}
-      - {label: "Short Description (for product card)", name: "short_description", widget: "text"}
-      - {label: "Full Description", name: "full_description", widget: "markdown"}
-      # --- Specifications ---
-      - label: "Specifications"
-        name: "specifications"
-        widget: "object"
-        fields:
-          - {label: "Raw Material", name: "raw_material", widget: "string", default: "Bagasse + Bamboo"}
-          - {label: "Capacity (ml)", name: "capacity_ml", widget: "number", value_type: "int", required: false}
-          - {label: "Weight (g)", name: "weight_g", widget: "number", value_type: "float", required: false}
-          - {label: "Open Size (mm)", name: "open_size_mm", widget: "string", hint: "e.g., 275 x 182 x H45. Use '/' if not applicable.", required: false}
-          - {label: "Fold Size (mm)", name: "fold_size_mm", widget: "string", hint: "e.g., 127 x 127 x H70", required: false}
+              - { label: "SKU (Unique Product Code)", name: "sku", widget: "string" }
+              - { label: "Is this product in stock?", name: "in_stock", widget: "boolean", default: true }
+              - { label: "Model Number (e.g., HP7)", name: "model_number", widget: "string", required: false }
+              - { label: "Product Name", name: "name", widget: "string" }
+
+              - label: "Images"
+                name: "images"
+                widget: "object"
+                fields:
+                  - label: "Grid Image (for product cards)"
+                    name: "grid_image"
+                    widget: "object"
+                    fields:
+                      - { label: "Image File", name: "src", widget: "image" }
+                      - { label: "Alt Text", name: "alt", widget: "string" }
+
+                  - label: "Image Gallery"
+                    name: "gallery_images"
+                    widget: "list"
+                    fields:
+                      - { label: "Image File", name: "src", widget: "image" }
+                      - { label: "Alt Text", name: "alt", widget: "string" }
+
+              - { label: "Categories", name: "categories", widget: "list" }
+              - { label: "Short Description (for product card)", name: "short_description", widget: "text" }
+              - { label: "Full Description", name: "full_description", widget: "markdown" }
+
+              - label: "Specifications"
+                name: "specifications"
+                widget: "object"
+                fields:
+                  - { label: "Raw Material", name: "raw_material", widget: "string", default: "Bagasse + Bamboo" }
+                  - { label: "Capacity (ml)", name: "capacity_ml", widget: "number", value_type: "int", required: false }
+                  - { label: "Weight (g)", name: "weight_g", widget: "number", value_type: "int", required: false }
+                  - { label: "Open Size (mm)", name: "open_size_mm", widget: "string", required: false }
+                  - { label: "Fold Size (mm)", name: "fold_size_mm", widget: "string", required: false }
