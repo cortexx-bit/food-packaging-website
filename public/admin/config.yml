@@ -2,7 +2,7 @@
 backend:
   name: git-gateway
   repo: cortexx-bit/food-packaging-website
-  branch: main
+  branch: master
   identity_url: https://auth.decapbridge.com/sites/12ade3f8-39db-4927-ae8c-10960ef4ec59
   gateway_url: https://gateway.decapbridge.com
 
