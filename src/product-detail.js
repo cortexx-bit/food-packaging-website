@@ -27,7 +27,7 @@ async function loadProduct() {
       throw new Error('Failed to load products');
     }
 
-    const products = await productsResponse.json();
+    const { products = [] } = await productsResponse.json();
     categoriesData = await categoriesResponse.json();
     productData = products.find(p => p.model_number === productModelNumber);
 

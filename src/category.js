@@ -27,7 +27,7 @@ async function loadCategory() {
       throw new Error('Failed to load categories');
     }
     
-    const products = await productsResponse.json();
+    const { products = [] } = await productsResponse.json();
     categoriesData = await categoriesResponse.json();
     
     // Find the category data

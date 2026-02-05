@@ -4,8 +4,8 @@ async function loadProducts() {
     if (!response.ok) {
       throw new Error('Failed to load products');
     }
-    const products = await response.json();
-    renderProducts(products);
+    const data = await response.json();
+    renderProducts(data.products ?? []);
   } catch (error) {
     console.error('Error loading products:', error);
     const grid = document.getElementById('products-grid');
