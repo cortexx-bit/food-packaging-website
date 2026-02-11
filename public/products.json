@@ -1,482 +1,508 @@
 {
   "products": [
-  {
-    "sku": "KMZ-CS-HP7-ST",
-    "in_stock": true,
-    "model_number": "HP7",
-    "name": "HP7 (5\") Bagasse Burger Box",
-    "images": {
-      "grid_image": {
-        "src": "/img/products/KMZ-CS-HP7-ST/grid-image.webp",
-        "alt": "HP7 5-inch bagasse burger box - two containers stacked showing size comparison"
+    {
+      "name": "HP7 (5\") Bagasse Burger Box",
+      "full_description": "The ideal eco-friendly solution for takeaways and food trucks. Made from 100% compostable sugarcane bagasse, this sturdy 5x5 inch container is grease-resistant and microwave-safe, keeping food secure and hot from your kitchen to your customer's hands.",
+      "specifications": {
+        "raw_material": "Bagasse + Bamboo",
+        "capacity_ml": 350,
+        "weight_g": 21,
+        "open_size_mm": "/",
+        "fold_size_mm": "127 x 127 x H70"
       },
-      "gallery_images": [
-        {
-          "src": "/img/products/KMZ-CS-HP7-ST/open.webp",
-          "alt": "Open HP7 burger clamshell showing interior food compartment"
+      "images": {
+        "grid_image": {
+          "src": "/img/products/KMZ-CS-HP7-ST/grid-image.webp",
+          "alt": "HP7 5-inch bagasse burger box - two containers stacked showing size comparison"
         },
-        {
-          "src": "/img/products/KMZ-CS-HP7-ST/side-open.webp",
-          "alt": "Open HP7 bagasse container front view with secure latch"
-        },
-        {
-          "src": "/img/products/KMZ-CS-HP7-ST/above-open.webp",
-          "alt": "Open HP7 5-inch bagasse burger box from above showing interior food compartment"
-        },
-        {
-          "src": "/img/products/KMZ-CS-HP7-ST/front.webp",
-          "alt": "Closed HP7 5-inch bagasse burger box from front view showing interior food compartment"
-        },
-        {
-          "src": "/img/products/KMZ-CS-HP7-ST/side.webp",
-          "alt": "Closed HP7 5-inch bagasse burger box from side view showing interior food compartment"
-        },
-        {
-          "src": "/img/products/KMZ-CS-HP7-ST/above.webp",
-          "alt": "Closed HP7 5-inch bagasse burger box from above view showing interior food compartment"
-        }
-      ]
-    },
-    "categories": [
-     "burger-boxes"
-    ],
-    "short_description": "Our classic 5-inch square clamshell, perfect for standard burgers and side orders.",
-    "full_description": "The ideal eco-friendly solution for takeaways and food trucks. Made from 100% compostable sugarcane bagasse, this sturdy 5x5 inch container is grease-resistant and microwave-safe, keeping food secure and hot from your kitchen to your customer's hands.",
-    "specifications": {
-    "raw_material": "Bagasse + Bamboo",
-    "capacity_ml": 350,
-    "weight_g": 21,
-    "open_size_mm": "/",
-    "fold_size_mm": "127 x 127 x H70"
-    }
-  },
-  {
-    "sku": "KMZ-CS-06-TY",
-    "in_stock": true,
-    "name": "6\" Bagasse Burger Box",
-    "model_number": "6x6-TY",
-    "images": {
-      "grid_image": {
-        "src": "/img/products/KMZ-CS-06-TY/grid-image.webp",
-        "alt": "6-inch bagasse burger box with Thank You embossed lid - eco-friendly takeaway container | KMZ Packaging"
+        "gallery_images": [
+          {
+            "src": "/img/products/KMZ-CS-HP7-ST/open.webp",
+            "alt": "Open HP7 burger clamshell showing interior food compartment"
+          },
+          {
+            "src": "/img/products/KMZ-CS-HP7-ST/side-open.webp",
+            "alt": "Open HP7 bagasse container front view with secure latch"
+          },
+          {
+            "src": "/img/products/KMZ-CS-HP7-ST/above-open.webp",
+            "alt": "Open HP7 5-inch bagasse burger box from above showing interior food compartment"
+          },
+          {
+            "src": "/img/products/KMZ-CS-HP7-ST/front.webp",
+            "alt": "Closed HP7 5-inch bagasse burger box from front view showing interior food compartment"
+          },
+          {
+            "src": "/img/products/KMZ-CS-HP7-ST/side.webp",
+            "alt": "Closed HP7 5-inch bagasse burger box from side view showing interior food compartment"
+          },
+          {
+            "src": "/img/products/KMZ-CS-HP7-ST/above.webp",
+            "alt": "Closed HP7 5-inch bagasse burger box from above view showing interior food compartment"
+          }
+        ]
       },
-      "gallery_images": [
-        {
-          "src": "/img/products/KMZ-CS-06-TY/open.webp",
-          "alt": "Open 6\" Thank You burger box showing interior food compartment | KMZ Packaging"
-        },
-        {
-          "src": "/img/products/KMZ-CS-06-TY/side-open.webp",
-          "alt": "6-inch bagasse clamshell - side view with lid open showing hinge design | KMZ Packaging"
-        },
-        {
-          "src": "/img/products/KMZ-CS-06-TY/above-open.webp",
-          "alt": "6\" Thank You burger box - top view of open sugarcane container | KMZ Packaging"
-        },
-        {
-          "src": "/img/products/KMZ-CS-06-TY/front.webp",
-          "alt": "Closed 6-inch bagasse burger box - front view showing Thank You embossing | KMZ Packaging"
-        },
-        {
-          "src": "/img/products/KMZ-CS-06-TY/side.webp",
-          "alt": "6\" compostable burger clamshell - side profile of closed container | KMZ Packaging"
-        }
-      ]
+      "short_description": "Our classic 5-inch square clamshell, perfect for standard burgers and side orders.",
+      "categories": [
+        "burger-boxes"
+      ],
+      "in_stock": true,
+      "sku": "KMZ-CS-HP7-ST",
+      "model_number": "HP7"
     },
-    "categories": [
-      "burger-boxes",
-      "thank-you-range"
-    ],
-    "short_description": "Show your appreciation with this sturdy 6x6\" burger box featuring a friendly 'THANK YOU' message.",
-    "full_description": "Elevate your customer's experience with a small touch of gratitude. This clamshell features 'THANK YOU' embossed on the lid, reinforcing your brand's commitment to service. It's fully compostable, durable, and perfect for building customer loyalty.",
-    "specifications": {
-    "raw_material": "Bagasse + Bamboo",
-    "capacity_ml": 450,
-    "weight_g": 21,
-    "open_size_mm": "305 x 152 x H45",
-    "fold_size_mm": "152 x 152 x H76"
-    }
-  },
-  {
-    "sku": "KMZ-CS-06-ST",
-    "in_stock": true,
-    "model_number": "6x6",
-    "name": "6\" Bagasse Burger Box",
-    "images": {
-      "grid_image": {
-        "src": "/img/products/KMZ-CS-06-ST/grid-image.webp",
-        "alt": "6-inch standard bagasse burger box - compostable sugarcane clamshell for takeaways | KMZ Packaging"
+    {
+      "name": "6\" Bagasse Burger Box",
+      "full_description": "Elevate your customer's experience with a small touch of gratitude. This clamshell features 'THANK YOU' embossed on the lid, reinforcing your brand's commitment to service. It's fully compostable, durable, and perfect for building customer loyalty.",
+      "specifications": {
+        "raw_material": "Bagasse + Bamboo",
+        "capacity_ml": 450,
+        "weight_g": 21,
+        "open_size_mm": "305 x 152 x H45",
+        "fold_size_mm": "152 x 152 x H76"
       },
-      "gallery_images": [
-        {
-          "src": "/img/products/KMZ-CS-06-ST/open.webp",
-          "alt": "Open 6\" bagasse burger box showing interior compartment for food | KMZ Packaging"
+      "images": {
+        "grid_image": {
+          "src": "/img/products/KMZ-CS-06-TY/grid-image.webp",
+          "alt": "6-inch bagasse burger box with Thank You embossed lid - eco-friendly takeaway container | KMZ Packaging"
         },
-        {
-          "src": "/img/products/KMZ-CS-06-ST/side-open.webp",
-          "alt": "6-inch sugarcane clamshell - side view with lid open showing hinge | KMZ Packaging"
-        },
-        {
-          "src": "/img/products/KMZ-CS-06-ST/above-open.webp",
-          "alt": "6\" bagasse burger container - top view of open eco-friendly box | KMZ Packaging"
-        },
-        {
-          "src": "/img/products/KMZ-CS-06-ST/front.webp",
-          "alt": "Closed 6-inch bagasse burger box - front view of compostable container | KMZ Packaging"
-        },
-        {
-          "src": "/img/products/KMZ-CS-06-ST/side.webp",
-          "alt": "6\" biodegradable burger clamshell - side profile showing secure closure | KMZ Packaging"
-        },
-        {
-          "src": "/img/products/KMZ-CS-06-ST/above.webp",
-          "alt": "Closed 6-inch bagasse burger box - top view of sugarcane takeaway container | KMZ Packaging"
-        }
-      ]
-    },
-    "categories": [
-      "burger-boxes"
-    ],
-    "short_description": "Perfectly sized for 6-inch burgers, fries, and sides. Made from sustainable bagasse.",
-    "full_description": "Sturdy 6-inch burger boxes crafted from renewable sugarcane fibers. This biodegradable clamshell is the perfect eco-friendly alternative to polystyrene, ideal for food on-the-go. Excellent for burgers, chips, loaded fries, chicken nuggets, and more.",
-    "specifications": {
-    "raw_material": "Bagasse + Bamboo",
-    "capacity_ml": 370,
-    "weight_g": 18,
-    "open_size_mm": "150 x 304 x H45",
-    "fold_size_mm": "/"
-    }
-  },
-  {
-    "sku": "KMZ-CS-HP6-ST",
-    "in_stock": true,
-    "name": "HP6 Bagasse Burger Box",
-    "model_number": "HP6",
-    "images": {
-      "grid_image": {
-        "src": "/img/products/KMZ-CS-HP6-ST/grid-image.webp",
-        "alt": "HP6 bagasse burger box - heavy-duty sugarcane clamshell for loaded meals | KMZ Packaging"
+        "gallery_images": [
+          {
+            "src": "/img/products/KMZ-CS-06-TY/open.webp",
+            "alt": "Open 6\" Thank You burger box showing interior food compartment | KMZ Packaging"
+          },
+          {
+            "src": "/img/products/KMZ-CS-06-TY/side-open.webp",
+            "alt": "6-inch bagasse clamshell - side view with lid open showing hinge design | KMZ Packaging"
+          },
+          {
+            "src": "/img/products/KMZ-CS-06-TY/above-open.webp",
+            "alt": "6\" Thank You burger box - top view of open sugarcane container | KMZ Packaging"
+          },
+          {
+            "src": "/img/products/KMZ-CS-06-TY/front.webp",
+            "alt": "Closed 6-inch bagasse burger box - front view showing Thank You embossing | KMZ Packaging"
+          },
+          {
+            "src": "/img/products/KMZ-CS-06-TY/side.webp",
+            "alt": "6\" compostable burger clamshell - side profile of closed container | KMZ Packaging"
+          }
+        ]
       },
-      "gallery_images": [
-        {
-          "src": "/img/products/KMZ-CS-HP6-ST/open.webp",
-          "alt": "Open HP6 burger box showing deep interior for saucy meals | KMZ Packaging"
-        },
-        {
-          "src": "/img/products/KMZ-CS-HP6-ST/side-open.webp",
-          "alt": "HP6 bagasse container - side view with lid open showing secure hinge | KMZ Packaging"
-        },
-        {
-          "src": "/img/products/KMZ-CS-HP6-ST/above-open.webp",
-          "alt": "HP6 burger clamshell - top view of open compostable food container | KMZ Packaging"
-        },
-        {
-          "src": "/img/products/KMZ-CS-HP6-ST/front.webp",
-          "alt": "Closed HP6 bagasse burger box - front view of eco-friendly takeaway packaging | KMZ Packaging"
-        },
-        {
-          "src": "/img/products/KMZ-CS-HP6-ST/side.webp",
-          "alt": "HP6 sugarcane burger box - side profile showing sturdy construction | KMZ Packaging"
-        }
-      ]
+      "short_description": "Show your appreciation with this sturdy 6x6\" burger box featuring a friendly 'THANK YOU' message.",
+      "categories": [
+        "burger-boxes",
+        "thank-you-range"
+      ],
+      "in_stock": true,
+      "sku": "KMZ-CS-06-TY",
+      "model_number": "6x6-TY"
     },
-    "categories": [
-      "burger-boxes"
-    ],
-    "short_description": "HP6 box for saucy, loaded burgers and messy meals. Made from sustainable bagasse.",
-    "full_description": "Heavy-duty HP6 burger boxes engineered from robust sugarcane fibers for maximum performance. A fully compostable, microwave-safe alternative to plastic, featuring a secure lock for reliable transport.",
-    "specifications": {
-    "raw_material": "Bagasse + Bamboo",
-    "capacity_ml": 480,
-    "weight_g": 20,
-    "open_size_mm": "305 x 152 x H49",
-    "fold_size_mm": "155 x 155 x H77"
-    }
-  },
-  {
-    "sku": "KMZ-CS-08-TY",
-    "in_stock": true,
-    "name": "8\" Bagasse Burger Box",
-    "model_number": "8x8",
-    "images": {
-      "grid_image": {
-        "src": "/img/products/KMZ-CS-08-TY/grid-image.webp",
-        "alt": "8-inch bagasse burger box with Thank You lid - large 1200ml eco clamshell | KMZ Packaging"
+    {
+      "name": "6\" Bagasse Burger Box",
+      "full_description": "Sturdy 6-inch burger boxes crafted from renewable sugarcane fibers. This biodegradable clamshell is the perfect eco-friendly alternative to polystyrene, ideal for food on-the-go. Excellent for burgers, chips, loaded fries, chicken nuggets, and more.",
+      "specifications": {
+        "raw_material": "Bagasse + Bamboo",
+        "capacity_ml": 370,
+        "weight_g": 18,
+        "open_size_mm": "150 x 304 x H45",
+        "fold_size_mm": "/"
       },
-      "gallery_images": [
-        {
-          "src": "/img/products/KMZ-CS-08-TY/open.webp",
-          "alt": "Open 8\" Thank You burger box showing spacious interior for full meals | KMZ Packaging"
+      "images": {
+        "grid_image": {
+          "src": "/img/products/KMZ-CS-06-ST/grid-image.webp",
+          "alt": "6-inch standard bagasse burger box - compostable sugarcane clamshell for takeaways | KMZ Packaging"
         },
-        {
-          "src": "/img/products/KMZ-CS-08-TY/side-open.webp",
-          "alt": "8-inch bagasse clamshell - side view with lid open showing large capacity | KMZ Packaging"
-        },
-        {
-          "src": "/img/products/KMZ-CS-08-TY/above.webp",
-          "alt": "Closed 8\" Thank You burger box - top view of sugarcane takeaway container | KMZ Packaging"
-        },
-        {
-          "src": "/img/products/KMZ-CS-08-TY/front.webp",
-          "alt": "8-inch compostable burger box - front view showing Thank You embossed design | KMZ Packaging"
-        },
-        {
-          "src": "/img/products/KMZ-CS-08-TY/side.webp",
-          "alt": "8\" bagasse meal container - side profile of closed eco-friendly box | KMZ Packaging"
-        }
-      ]
-    },
-    "categories": [
-      "burger-boxes",
-      "thank-you-range"
-    ],
-    "short_description": "Large 8x8 (1200ml) eco clamshell, perfect for full meals.",
-    "full_description": "Large 8x8 inch clamshell boxes made from 100% compostable sugarcane bagasse, perfect for packing generous portions and full meals. With a spacious 1200ml capacity, this sturdy eco-friendly container is ideal for loaded burgers, family-style sides, large salads, or complete dinner combos. The secure clamshell closure keeps food fresh during transport, while the natural bagasse material provides reliable performance with both hot and cold dishes.",
-    "specifications": {
-    "raw_material": "Bagasse + Bamboo",
-    "capacity_ml": 1200,
-    "weight_g": 37,
-    "open_size_mm": "437 x 203 x H47",
-    "fold_size_mm": "220 x 203 x H76"
-    }
-  },
-  {
-    "sku": "KMZ-CS-09-TY",
-    "in_stock": true,
-    "name": "9\" Bagasse Burger Box",
-    "model_number": "9x9",
-    "images": {
-      "grid_image": {
-        "src": "/img/products/KMZ-CS-09-TY/grid-image.webp",
-        "alt": "9-inch bagasse burger box with Thank You lid - extra large 1500ml eco container | KMZ Packaging"
+        "gallery_images": [
+          {
+            "src": "/img/products/KMZ-CS-06-ST/open.webp",
+            "alt": "Open 6\" bagasse burger box showing interior compartment for food | KMZ Packaging"
+          },
+          {
+            "src": "/img/products/KMZ-CS-06-ST/side-open.webp",
+            "alt": "6-inch sugarcane clamshell - side view with lid open showing hinge | KMZ Packaging"
+          },
+          {
+            "src": "/img/products/KMZ-CS-06-ST/above-open.webp",
+            "alt": "6\" bagasse burger container - top view of open eco-friendly box | KMZ Packaging"
+          },
+          {
+            "src": "/img/products/KMZ-CS-06-ST/front.webp",
+            "alt": "Closed 6-inch bagasse burger box - front view of compostable container | KMZ Packaging"
+          },
+          {
+            "src": "/img/products/KMZ-CS-06-ST/side.webp",
+            "alt": "6\" biodegradable burger clamshell - side profile showing secure closure | KMZ Packaging"
+          },
+          {
+            "src": "/img/products/KMZ-CS-06-ST/above.webp",
+            "alt": "Closed 6-inch bagasse burger box - top view of sugarcane takeaway container | KMZ Packaging"
+          }
+        ]
       },
-      "gallery_images": [
-        {
-          "src": "/img/products/KMZ-CS-09-TY/open.webp",
-          "alt": "Open 9\" Thank You burger box showing extra large interior for family portions | KMZ Packaging"
-        },
-        {
-          "src": "/img/products/KMZ-CS-09-TY/above.webp",
-          "alt": "Closed 9-inch bagasse clamshell - top view showing Thank You embossed lid | KMZ Packaging"
-        },
-        {
-          "src": "/img/products/KMZ-CS-09-TY/above-open.webp",
-          "alt": "9\" sugarcane meal container - top view of open compostable box | KMZ Packaging"
-        },
-        {
-          "src": "/img/products/KMZ-CS-09-TY/front.webp",
-          "alt": "9-inch bagasse burger box - front view of eco-friendly takeaway packaging | KMZ Packaging"
-        },
-        {
-          "src": "/img/products/KMZ-CS-09-TY/side.webp",
-          "alt": "9\" compostable meal clamshell - side profile showing sturdy construction | KMZ Packaging"
-        }
-      ]
+      "short_description": "Perfectly sized for 6-inch burgers, fries, and sides. Made from sustainable bagasse.",
+      "categories": [
+        "burger-boxes"
+      ],
+      "in_stock": true,
+      "sku": "KMZ-CS-06-ST",
+      "model_number": "6x6"
     },
-    "categories": [
-      "burger-boxes",
-      "thank-you-range"
-    ],
-    "short_description": "Large 9x9 (1500ml) eco clamshell, perfect for full meals.",
-    "full_description": "Large 9x9 inch clamshell boxes made from 100% compostable sugarcane bagasse, perfect for packing generous portions and full meals. With a spacious 1500ml capacity, this sturdy eco-friendly container is ideal for loaded burgers, family-style sides, large salads, or complete dinner combos. The secure clamshell closure keeps food fresh during transport, while the natural bagasse material provides reliable performance with both hot and cold dishes.",
-    "specifications": {
-    "raw_material": "Bagasse + Bamboo",
-    "capacity_ml": 1500,
-    "weight_g": 42,
-    "open_size_mm": "463 x 228 x H47.5",
-    "fold_size_mm": "228 x 228 x H76"
-    }
-  },
-
-  
-  {
-    "sku": "KMZ-TC-HP9L-ST",
-    "in_stock": true,
-    "name": "HP9 (lower lid) Bagasse Container",
-    "model_number": "HP9 (lower lid)",
-    "images": {
-      "grid_image": {
-        "src": "/img/products/KMZ-TC-HP9L-ST/grid-image.webp",
-        "alt": "HP9 lower lid bagasse meal container - versatile sugarcane takeaway box | KMZ Packaging"
+    {
+      "name": "HP6 Bagasse Burger Box",
+      "full_description": "Heavy-duty HP6 burger boxes engineered from robust sugarcane fibers for maximum performance. A fully compostable, microwave-safe alternative to plastic, featuring a secure lock for reliable transport.",
+      "specifications": {
+        "raw_material": "Bagasse + Bamboo",
+        "capacity_ml": 480,
+        "weight_g": 20,
+        "open_size_mm": "305 x 152 x H49",
+        "fold_size_mm": "155 x 155 x H77"
       },
-      "gallery_images": [
-        {
-          "src": "/img/products/KMZ-TC-HP9L-ST/open.webp",
-          "alt": "Open HP9 meal container showing single compartment for burger and chips | KMZ Packaging"
+      "images": {
+        "grid_image": {
+          "src": "/img/products/KMZ-CS-HP6-ST/grid-image.webp",
+          "alt": "HP6 bagasse burger box - heavy-duty sugarcane clamshell for loaded meals | KMZ Packaging"
         },
-        {
-          "src": "/img/products/KMZ-TC-HP9L-ST/side-open.webp",
-          "alt": "HP9 bagasse container - side view with lower lid open showing hinge design | KMZ Packaging"
-        },
-        {
-          "src": "/img/products/KMZ-TC-HP9L-ST/above-open.webp",
-          "alt": "HP9 sugarcane meal box - top view of open compostable takeaway container | KMZ Packaging"
-        },
-        {
-          "src": "/img/products/KMZ-TC-HP9L-ST/front.webp",
-          "alt": "Closed HP9 bagasse meal container - front view of eco-friendly food packaging | KMZ Packaging"
-        },
-        {
-          "src": "/img/products/KMZ-TC-HP9L-ST/side.webp",
-          "alt": "HP9 compostable container - side profile showing secure lower lid closure | KMZ Packaging"
-        }
-      ]
-    },
-    "categories": [
-      "takeaway-containers"
-    ],
-    "short_description": "Versatile single-compartment box, perfect for a burger with chips or other takeaway combinations.",
-    "full_description": "This versatile single-compartment container is designed to hold a complete meal like a burger with a side of chips. Its sustainable bagasse construction is naturally grease-resistant and features a secure lower lid, making it a superior, eco-friendly choice over plastic for a wide range of hot or cold takeaway foods.",
-    "specifications": {
-    "raw_material": "Bagasse + Bamboo",
-    "capacity_ml": 600,
-    "weight_g": 20,
-    "open_size_mm": "275 x 182 x H45",
-    "fold_size_mm": "182 x 136 x H68"
-    }
-  },
-  {
-    "sku": "KMZ-TC-HP10-TY",
-    "in_stock": true,
-    "name": "HP10 Extra Large Hinged Clamshell Container",
-    "model_number": "HP10",
-    "images": {
-      "grid_image": {
-        "src": "/img/products/KMZ-TC-HP10-TY/grid-image.webp",
-        "alt": "HP10 extra large bagasse clamshell - Thank You hinged container for hearty meals | KMZ Packaging"
+        "gallery_images": [
+          {
+            "src": "/img/products/KMZ-CS-HP6-ST/open.webp",
+            "alt": "Open HP6 burger box showing deep interior for saucy meals | KMZ Packaging"
+          },
+          {
+            "src": "/img/products/KMZ-CS-HP6-ST/side-open.webp",
+            "alt": "HP6 bagasse container - side view with lid open showing secure hinge | KMZ Packaging"
+          },
+          {
+            "src": "/img/products/KMZ-CS-HP6-ST/above-open.webp",
+            "alt": "HP6 burger clamshell - top view of open compostable food container | KMZ Packaging"
+          },
+          {
+            "src": "/img/products/KMZ-CS-HP6-ST/front.webp",
+            "alt": "Closed HP6 bagasse burger box - front view of eco-friendly takeaway packaging | KMZ Packaging"
+          },
+          {
+            "src": "/img/products/KMZ-CS-HP6-ST/side.webp",
+            "alt": "HP6 sugarcane burger box - side profile showing sturdy construction | KMZ Packaging"
+          }
+        ]
       },
-      "gallery_images": [
-        {
-          "src": "/img/products/KMZ-TC-HP10-TY/open.webp",
-          "alt": "Open HP10 container showing spacious interior for mega burgers and combo meals | KMZ Packaging"
-        },
-        {
-          "src": "/img/products/KMZ-TC-HP10-TY/side-open.webp",
-          "alt": "HP10 bagasse clamshell - side view with lid open showing large capacity | KMZ Packaging"
-        },
-        {
-          "src": "/img/products/KMZ-TC-HP10-TY/above-open.webp",
-          "alt": "HP10 sugarcane container - top view of open eco-friendly meal box | KMZ Packaging"
-        },
-        {
-          "src": "/img/products/KMZ-TC-HP10-TY/front.webp",
-          "alt": "Closed HP10 bagasse container - front view showing Thank You embossed lid | KMZ Packaging"
-        },
-        {
-          "src": "/img/products/KMZ-TC-HP10-TY/side.webp",
-          "alt": "HP10 compostable clamshell - side profile of extra large takeaway container | KMZ Packaging"
-        }
-      ]
+      "short_description": "HP6 box for saucy, loaded burgers and messy meals. Made from sustainable bagasse.",
+      "categories": [
+        "burger-boxes"
+      ],
+      "in_stock": true,
+      "sku": "KMZ-CS-HP6-ST",
+      "model_number": "HP6"
     },
-    "categories": [
-      "takeaway-containers",
-      "thank-you-range"
-    ],
-    "short_description": "The HP10 is our largest clamshell, built to handle serious portions and combo meals with confidence.",
-    "full_description": "Meet the HP10 Box—the most spacious container in our hinged clamshell range. Designed for extra-large, hearty meals, it's the ideal choice for mega burgers, mixed grills, loaded rice boxes, and festival-sized portions. Constructed from durable, food-grade EPS, it provides superior heat retention, structural strength, and leak resistance to keep food secure and fresh during delivery. Perfect for high-volume takeaways, food trucks, and outdoor catering, the HP10 delivers dependable performance and a professional presentation even under demanding conditions.",
-    "specifications": {
-    "raw_material": "Bagasse + Bamboo",
-    "capacity_ml": 900,
-    "weight_g": 30,
-    "open_size_mm": "312 x 228 x H46.5",
-    "fold_size_mm": "229 x 153 x H80"
-    }
-  },
-  {
-    "sku": "KMZ-TC-FC-SML",
-    "in_stock": true,
-    "name": "HP9 Fish & Chips Takeaway Container (Small)",
-    "model_number": "Fish-and-Chips-HP9",
-    "images": {
-      "grid_image": {
-        "src": "/img/products/KMZ-TC-FC-SML/grid-image.webp",
-        "alt": "HP9 small fish and chips bagasse container - 600ml compostable takeaway box | KMZ Packaging"
+    {
+      "name": "8\" Bagasse Burger Box",
+      "full_description": "Large 8x8 inch clamshell boxes made from 100% compostable sugarcane bagasse, perfect for packing generous portions and full meals. With a spacious 1200ml capacity, this sturdy eco-friendly container is ideal for loaded burgers, family-style sides, large salads, or complete dinner combos. The secure clamshell closure keeps food fresh during transport, while the natural bagasse material provides reliable performance with both hot and cold dishes.",
+      "specifications": {
+        "raw_material": "Bagasse + Bamboo",
+        "capacity_ml": 1200,
+        "weight_g": 37,
+        "open_size_mm": "437 x 203 x H47",
+        "fold_size_mm": "220 x 203 x H76"
       },
-      "gallery_images": [
-        {
-          "src": "/img/products/KMZ-TC-FC-SML/open.webp",
-          "alt": "Open HP9 fish and chips box showing interior for classic takeaway meals | KMZ Packaging"
+      "images": {
+        "grid_image": {
+          "src": "/img/products/KMZ-CS-08-TY/grid-image.webp",
+          "alt": "8-inch bagasse burger box with Thank You lid - large 1200ml eco clamshell | KMZ Packaging"
         },
-        {
-          "src": "/img/products/KMZ-TC-FC-SML/above.webp",
-          "alt": "Closed HP9 fish and chips container - top view of sugarcane eco box | KMZ Packaging"
-        },
-        {
-          "src": "/img/products/KMZ-TC-FC-SML/above-open.webp",
-          "alt": "HP9 bagasse fish box - top view of open biodegradable container | KMZ Packaging"
-        },
-        {
-          "src": "/img/products/KMZ-TC-FC-SML/front.webp",
-          "alt": "HP9 fish and chips takeaway box - front view of compostable packaging | KMZ Packaging"
-        },
-        {
-          "src": "/img/products/KMZ-TC-FC-SML/side.webp",
-          "alt": "HP9 sugarcane fish container - side profile showing secure closure design | KMZ Packaging"
-        }
-      ]
-    },
-    "categories": [
-      "fish-and-chip-boxes"
-    ],
-    "short_description": "A 600ml compostable box for fish & chips, crafted from certified sugarcane bagasse for eco-friendly takeaways.",
-    "full_description": "Made from 100% biodegradable sugarcane bagasse, these durable containers provide an eco-conscious solution for fish & chips and other classic takeaway meals. With a 600ml capacity and sturdy construction, they're certified by multiple environmental standards, ensuring peace of mind for both businesses and environmentally aware customers.",
-    "specifications": {
-    "raw_material": "Bagasse + Bamboo",
-    "capacity_ml": 600,
-    "weight_g": 20,
-    "open_size_mm": "/",
-    "fold_size_mm": "190 x 150 x H70"
-    }
-  },
-  {
-    "sku": "KMZ-TC-FC-MED",
-    "in_stock": true,
-    "name": "Fish & Chips Takeaway Container (Medium)",
-    "model_number": "Fish-and-Chips-MED",
-    "images": {
-      "grid_image": {
-        "src": "/img/products/KMZ-TC-FC-MED/grid-image.webp",
-        "alt": "Medium fish and chips bagasse container - 1000ml compostable takeaway box | KMZ Packaging"
+        "gallery_images": [
+          {
+            "src": "/img/products/KMZ-CS-08-TY/open.webp",
+            "alt": "Open 8\" Thank You burger box showing spacious interior for full meals | KMZ Packaging"
+          },
+          {
+            "src": "/img/products/KMZ-CS-08-TY/side-open.webp",
+            "alt": "8-inch bagasse clamshell - side view with lid open showing large capacity | KMZ Packaging"
+          },
+          {
+            "src": "/img/products/KMZ-CS-08-TY/above.webp",
+            "alt": "Closed 8\" Thank You burger box - top view of sugarcane takeaway container | KMZ Packaging"
+          },
+          {
+            "src": "/img/products/KMZ-CS-08-TY/front.webp",
+            "alt": "8-inch compostable burger box - front view showing Thank You embossed design | KMZ Packaging"
+          },
+          {
+            "src": "/img/products/KMZ-CS-08-TY/side.webp",
+            "alt": "8\" bagasse meal container - side profile of closed eco-friendly box | KMZ Packaging"
+          }
+        ]
       },
-      "gallery_images": [
-        {
-          "src": "/img/products/KMZ-TC-FC-MED/open.webp",
-          "alt": "Open medium fish and chips box showing spacious interior for generous portions | KMZ Packaging"
-        },
-        {
-          "src": "/img/products/KMZ-TC-FC-MED/side-open.webp",
-          "alt": "Medium bagasse fish container - side view with lid open showing hinge | KMZ Packaging"
-        },
-        {
-          "src": "/img/products/KMZ-TC-FC-MED/above.webp",
-          "alt": "Closed medium fish and chips container - top view of eco-friendly packaging | KMZ Packaging"
-        },
-        {
-          "src": "/img/products/KMZ-TC-FC-MED/above-open.webp",
-          "alt": "Medium sugarcane fish box - top view of open biodegradable container | KMZ Packaging"
-        },
-        {
-          "src": "/img/products/KMZ-TC-FC-MED/front.webp",
-          "alt": "Medium fish and chips takeaway box - front view of compostable clamshell | KMZ Packaging"
-        },
-        {
-          "src": "/img/products/KMZ-TC-FC-MED/side.webp",
-          "alt": "Medium bagasse fish container - side profile showing sturdy construction | KMZ Packaging"
-        }
-      ]
+      "short_description": "Large 8x8 (1200ml) eco clamshell, perfect for full meals.",
+      "categories": [
+        "burger-boxes",
+        "thank-you-range"
+      ],
+      "in_stock": true,
+      "sku": "KMZ-CS-08-TY",
+      "model_number": "8x8"
     },
-    "categories": [
-      "fish-and-chip-boxes"
-    ],
-    "short_description": "A 1000ml compostable box for fish & chips, crafted from certified sugarcane bagasse for eco-friendly takeaways.",
-    "full_description": "Made from 100% biodegradable sugarcane bagasse, these durable containers provide an eco-conscious solution for fish & chips and other classic takeaway meals. With a 1000ml capacity and sturdy construction, they're certified by multiple environmental standards, ensuring peace of mind for both businesses and environmentally aware customers.",
-    "specifications": {
-    "raw_material": "Bagasse + Bamboo",
-    "capacity_ml": 900,
-    "weight_g": 33,
-    "open_size_mm": "/",
-    "fold_size_mm": "250 x 155 x H60"
+    {
+      "name": "9\" Bagasse Burger Box",
+      "full_description": "Large 9x9 inch clamshell boxes made from 100% compostable sugarcane bagasse, perfect for packing generous portions and full meals. With a spacious 1500ml capacity, this sturdy eco-friendly container is ideal for loaded burgers, family-style sides, large salads, or complete dinner combos. The secure clamshell closure keeps food fresh during transport, while the natural bagasse material provides reliable performance with both hot and cold dishes.",
+      "specifications": {
+        "raw_material": "Bagasse + Bamboo",
+        "capacity_ml": 1500,
+        "weight_g": 42,
+        "open_size_mm": "463 x 228 x H47.5",
+        "fold_size_mm": "228 x 228 x H76"
+      },
+      "images": {
+        "grid_image": {
+          "src": "/img/products/KMZ-CS-09-TY/grid-image.webp",
+          "alt": "9-inch bagasse burger box with Thank You lid - extra large 1500ml eco container | KMZ Packaging"
+        },
+        "gallery_images": [
+          {
+            "src": "/img/products/KMZ-CS-09-TY/open.webp",
+            "alt": "Open 9\" Thank You burger box showing extra large interior for family portions | KMZ Packaging"
+          },
+          {
+            "src": "/img/products/KMZ-CS-09-TY/above.webp",
+            "alt": "Closed 9-inch bagasse clamshell - top view showing Thank You embossed lid | KMZ Packaging"
+          },
+          {
+            "src": "/img/products/KMZ-CS-09-TY/above-open.webp",
+            "alt": "9\" sugarcane meal container - top view of open compostable box | KMZ Packaging"
+          },
+          {
+            "src": "/img/products/KMZ-CS-09-TY/front.webp",
+            "alt": "9-inch bagasse burger box - front view of eco-friendly takeaway packaging | KMZ Packaging"
+          },
+          {
+            "src": "/img/products/KMZ-CS-09-TY/side.webp",
+            "alt": "9\" compostable meal clamshell - side profile showing sturdy construction | KMZ Packaging"
+          }
+        ]
+      },
+      "short_description": "Large 9x9 (1500ml) eco clamshell, perfect for full meals.",
+      "categories": [
+        "burger-boxes",
+        "thank-you-range"
+      ],
+      "in_stock": true,
+      "sku": "KMZ-CS-09-TY",
+      "model_number": "9x9"
+    },
+    {
+      "name": "HP9 (lower lid) Bagasse Container",
+      "full_description": "This versatile single-compartment container is designed to hold a complete meal like a burger with a side of chips. Its sustainable bagasse construction is naturally grease-resistant and features a secure lower lid, making it a superior, eco-friendly choice over plastic for a wide range of hot or cold takeaway foods.",
+      "specifications": {
+        "raw_material": "Bagasse + Bamboo",
+        "capacity_ml": 600,
+        "weight_g": 20,
+        "open_size_mm": "275 x 182 x H45",
+        "fold_size_mm": "182 x 136 x H68"
+      },
+      "images": {
+        "grid_image": {
+          "src": "/img/products/KMZ-TC-HP9L-ST/grid-image.webp",
+          "alt": "HP9 lower lid bagasse meal container - versatile sugarcane takeaway box | KMZ Packaging"
+        },
+        "gallery_images": [
+          {
+            "src": "/img/products/KMZ-TC-HP9L-ST/open.webp",
+            "alt": "Open HP9 meal container showing single compartment for burger and chips | KMZ Packaging"
+          },
+          {
+            "src": "/img/products/KMZ-TC-HP9L-ST/side-open.webp",
+            "alt": "HP9 bagasse container - side view with lower lid open showing hinge design | KMZ Packaging"
+          },
+          {
+            "src": "/img/products/KMZ-TC-HP9L-ST/above-open.webp",
+            "alt": "HP9 sugarcane meal box - top view of open compostable takeaway container | KMZ Packaging"
+          },
+          {
+            "src": "/img/products/KMZ-TC-HP9L-ST/front.webp",
+            "alt": "Closed HP9 bagasse meal container - front view of eco-friendly food packaging | KMZ Packaging"
+          },
+          {
+            "src": "/img/products/KMZ-TC-HP9L-ST/side.webp",
+            "alt": "HP9 compostable container - side profile showing secure lower lid closure | KMZ Packaging"
+          }
+        ]
+      },
+      "short_description": "Versatile single-compartment box, perfect for a burger with chips or other takeaway combinations.",
+      "categories": [
+        "takeaway-containers"
+      ],
+      "in_stock": true,
+      "sku": "KMZ-TC-HP9L-ST",
+      "model_number": "HP9 (lower lid)"
+    },
+    {
+      "name": "HP10 Extra Large Hinged Clamshell Container",
+      "full_description": "Meet the HP10 Box—the most spacious container in our hinged clamshell range. Designed for extra-large, hearty meals, it's the ideal choice for mega burgers, mixed grills, loaded rice boxes, and festival-sized portions. Constructed from durable, food-grade EPS, it provides superior heat retention, structural strength, and leak resistance to keep food secure and fresh during delivery. Perfect for high-volume takeaways, food trucks, and outdoor catering, the HP10 delivers dependable performance and a professional presentation even under demanding conditions.",
+      "specifications": {
+        "raw_material": "Bagasse + Bamboo",
+        "capacity_ml": 900,
+        "weight_g": 30,
+        "open_size_mm": "312 x 228 x H46.5",
+        "fold_size_mm": "229 x 153 x H80"
+      },
+      "images": {
+        "grid_image": {
+          "src": "/img/products/KMZ-TC-HP10-TY/grid-image.webp",
+          "alt": "HP10 extra large bagasse clamshell - Thank You hinged container for hearty meals | KMZ Packaging"
+        },
+        "gallery_images": [
+          {
+            "src": "/img/products/KMZ-TC-HP10-TY/open.webp",
+            "alt": "Open HP10 container showing spacious interior for mega burgers and combo meals | KMZ Packaging"
+          },
+          {
+            "src": "/img/products/KMZ-TC-HP10-TY/side-open.webp",
+            "alt": "HP10 bagasse clamshell - side view with lid open showing large capacity | KMZ Packaging"
+          },
+          {
+            "src": "/img/products/KMZ-TC-HP10-TY/above-open.webp",
+            "alt": "HP10 sugarcane container - top view of open eco-friendly meal box | KMZ Packaging"
+          },
+          {
+            "src": "/img/products/KMZ-TC-HP10-TY/front.webp",
+            "alt": "Closed HP10 bagasse container - front view showing Thank You embossed lid | KMZ Packaging"
+          },
+          {
+            "src": "/img/products/KMZ-TC-HP10-TY/side.webp",
+            "alt": "HP10 compostable clamshell - side profile of extra large takeaway container | KMZ Packaging"
+          }
+        ]
+      },
+      "short_description": "The HP10 is our largest clamshell, built to handle serious portions and combo meals with confidence.",
+      "categories": [
+        "takeaway-containers",
+        "thank-you-range"
+      ],
+      "in_stock": true,
+      "sku": "KMZ-TC-HP10-TY",
+      "model_number": "HP10"
+    },
+    {
+      "name": "HP9 Fish & Chips Takeaway Container (Small)",
+      "full_description": "Made from 100% biodegradable sugarcane bagasse, these durable containers provide an eco-conscious solution for fish & chips and other classic takeaway meals. With a 600ml capacity and sturdy construction, they're certified by multiple environmental standards, ensuring peace of mind for both businesses and environmentally aware customers.",
+      "specifications": {
+        "raw_material": "Bagasse + Bamboo",
+        "capacity_ml": 600,
+        "weight_g": 20,
+        "open_size_mm": "/",
+        "fold_size_mm": "190 x 150 x H70"
+      },
+      "images": {
+        "grid_image": {
+          "src": "/img/products/KMZ-TC-FC-SML/grid-image.webp",
+          "alt": "HP9 small fish and chips bagasse container - 600ml compostable takeaway box | KMZ Packaging"
+        },
+        "gallery_images": [
+          {
+            "src": "/img/products/KMZ-TC-FC-SML/open.webp",
+            "alt": "Open HP9 fish and chips box showing interior for classic takeaway meals | KMZ Packaging"
+          },
+          {
+            "src": "/img/products/KMZ-TC-FC-SML/above.webp",
+            "alt": "Closed HP9 fish and chips container - top view of sugarcane eco box | KMZ Packaging"
+          },
+          {
+            "src": "/img/products/KMZ-TC-FC-SML/above-open.webp",
+            "alt": "HP9 bagasse fish box - top view of open biodegradable container | KMZ Packaging"
+          },
+          {
+            "src": "/img/products/KMZ-TC-FC-SML/front.webp",
+            "alt": "HP9 fish and chips takeaway box - front view of compostable packaging | KMZ Packaging"
+          },
+          {
+            "src": "/img/products/KMZ-TC-FC-SML/side.webp",
+            "alt": "HP9 sugarcane fish container - side profile showing secure closure design | KMZ Packaging"
+          }
+        ]
+      },
+      "short_description": "A 600ml compostable box for fish & chips, crafted from certified sugarcane bagasse for eco-friendly takeaways.",
+      "categories": [
+        "fish-and-chip-boxes"
+      ],
+      "in_stock": true,
+      "sku": "KMZ-TC-FC-SML",
+      "model_number": "Fish-and-Chips-HP9"
+    },
+    {
+      "name": "Fish & Chips Takeaway Container (Medium)",
+      "full_description": "Made from 100% biodegradable sugarcane bagasse, these durable containers provide an eco-conscious solution for fish & chips and other classic takeaway meals. With a 1000ml capacity and sturdy construction, they're certified by multiple environmental standards, ensuring peace of mind for both businesses and environmentally aware customers.",
+      "specifications": {
+        "raw_material": "Bagasse + Bamboo",
+        "capacity_ml": 900,
+        "weight_g": 33,
+        "open_size_mm": "/",
+        "fold_size_mm": "250 x 155 x H60"
+      },
+      "images": {
+        "grid_image": {
+          "src": "/img/products/KMZ-TC-FC-MED/grid-image.webp",
+          "alt": "Medium fish and chips bagasse container - 1000ml compostable takeaway box | KMZ Packaging"
+        },
+        "gallery_images": [
+          {
+            "src": "/img/products/KMZ-TC-FC-MED/open.webp",
+            "alt": "Open medium fish and chips box showing spacious interior for generous portions | KMZ Packaging"
+          },
+          {
+            "src": "/img/products/KMZ-TC-FC-MED/side-open.webp",
+            "alt": "Medium bagasse fish container - side view with lid open showing hinge | KMZ Packaging"
+          },
+          {
+            "src": "/img/products/KMZ-TC-FC-MED/above.webp",
+            "alt": "Closed medium fish and chips container - top view of eco-friendly packaging | KMZ Packaging"
+          },
+          {
+            "src": "/img/products/KMZ-TC-FC-MED/above-open.webp",
+            "alt": "Medium sugarcane fish box - top view of open biodegradable container | KMZ Packaging"
+          },
+          {
+            "src": "/img/products/KMZ-TC-FC-MED/front.webp",
+            "alt": "Medium fish and chips takeaway box - front view of compostable clamshell | KMZ Packaging"
+          },
+          {
+            "src": "/img/products/KMZ-TC-FC-MED/side.webp",
+            "alt": "Medium bagasse fish container - side profile showing sturdy construction | KMZ Packaging"
+          }
+        ]
+      },
+      "short_description": "A 1000ml compostable box for fish & chips, crafted from certified sugarcane bagasse for eco-friendly takeaways.",
+      "categories": [
+        "fish-and-chip-boxes"
+      ],
+      "in_stock": true,
+      "sku": "KMZ-TC-FC-MED",
+      "model_number": "Fish-and-Chips-MED"
+    },
+    {
+      "name": "8oz Bagasse bowl",
+      "full_description": "100% biodegradable compostable disposable eco-friendly bagasse soup bowl\n\nCatering for weddings or parties，takeaway packing for restaurants",
+      "specifications": {
+        "raw_material": "Bagasse + Bamboo",
+        "open_size_mm": "/",
+        "fold_size_mm": "/",
+        "capacity_ml": 220
+      },
+      "images": {
+        "grid_image": {
+          "src": "/img/uploads/bowl.jpg"
+        },
+        "gallery_images": [
+          {
+            "src": "/img/uploads/bowl.jpg",
+            "alt": "test"
+          }
+        ]
+      },
+      "short_description": "100% biodegradable compostable disposable eco-friendly bagasse soup bowl",
+      "categories": [
+        "Bagasse-bowl"
+      ],
+      "in_stock": true,
+      "sku": "KMZ-AB-CD-EFD",
+      "model_number": "80z"
     }
-  }
-]
+  ]
 }
