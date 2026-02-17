@@ -475,35 +475,6 @@
       "in_stock": true,
       "sku": "KMZ-TC-FC-MED",
       "model_number": "Fish-and-Chips-MED"
-    },
-    {
-      "name": "8oz Bagasse bowl (edited product name)",
-      "full_description": "100% biodegradable compostable disposable eco-friendly bagasse soup bowl\n\nCatering for weddings or parties，takeaway packing for restaurants",
-      "specifications": {
-        "raw_material": "Bagasse + Bamboo",
-        "open_size_mm": "/",
-        "fold_size_mm": "/",
-        "capacity_ml": 220
-      },
-      "images": {
-        "grid_image": {
-          "src": "/img/uploads/bowl.jpg",
-          "alt": "Alt text for 8oz bowl"
-        },
-        "gallery_images": [
-          {
-            "src": "/img/uploads/bowl.jpg",
-            "alt": "test"
-          }
-        ]
-      },
-      "short_description": "100% biodegradable compostable disposable eco-friendly bagasse soup bowl",
-      "categories": [
-        "Bagasse-bowl"
-      ],
-      "in_stock": true,
-      "sku": "KMZ-AB-CD-EFD",
-      "model_number": "80z"
     }
   ]
 }
