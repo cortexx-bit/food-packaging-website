@@ -477,7 +477,7 @@
       "model_number": "Fish-and-Chips-MED"
     },
     {
-      "name": "8oz Bagasse bowl",
+      "name": "8oz Bagasse bowl (edited product name)",
       "full_description": "100% biodegradable compostable disposable eco-friendly bagasse soup bowl\n\nCatering for weddings or parties，takeaway packing for restaurants",
       "specifications": {
         "raw_material": "Bagasse + Bamboo",
@@ -487,7 +487,8 @@
       },
       "images": {
         "grid_image": {
-          "src": "/img/uploads/bowl.jpg"
+          "src": "/img/uploads/bowl.jpg",
+          "alt": "Alt text for 8oz bowl"
         },
         "gallery_images": [
           {
