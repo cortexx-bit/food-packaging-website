@@ -17,6 +17,7 @@ export default defineConfig({
         privacy_policy: './privacy.html',
         cookie_policy: './cookie-policy.html',
         terms_of_use: './terms-of-use.html',
+        thank_you: './thank-you.html',
       }
     }
   }
