@@ -9,6 +9,125 @@
     href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
     rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" id="silktide-consent-manager-css" href="/cookie-banner/silktide-consent-manager.css">
+    <script src="/cookie-banner/silktide-consent-manager.js"></script>
+    <script>
+      silktideCookieBannerManager.updateCookieBannerConfig({
+        background: {
+          showBackground: true
+        },
+        cookieIcon: {
+          position: "bottomRight"
+        },
+        cookieTypes: [
+          {
+            id: "necessary",
+            name: "Necessary",
+            description: "<p>These cookies are necessary for the website to function properly and cannot be switched off. They help with things like logging in and setting your privacy preferences.</p>",
+            required: true,
+            onAccept: function() {
+              console.log('Add logic for the required Necessary here');
+            }
+          },
+          {
+            id: "analytics",
+            name: "Analytics",
+            description: "<p>These cookies help us improve the site by tracking which pages are most popular and how visitors move around the site.</p>",
+            required: false,
+            onAccept: function() {
+              if (typeof gtag === 'function') {
+                gtag('consent', 'update', {
+                  analytics_storage: 'granted',
+                });
+              }
+              if (window.dataLayer && typeof dataLayer.push === 'function') {
+                dataLayer.push({
+                  'event': 'consent_accepted_analytics',
+                });
+              }
+            },
+            onReject: function() {
+              if (typeof gtag === 'function') {
+                gtag('consent', 'update', {
+                  analytics_storage: 'denied',
+                });
+              }
+            }
+          },
+          {
+            id: "functional",
+            name: "Functional",
+            description: "<p>These cookies provide extra features and personalization to improve your\n experience. They may be set by us or by partners whose services we use.</p>",
+            required: false,
+            onAccept: function() {
+              if (typeof gtag === 'function') {
+                gtag('consent', 'update', {
+                  functionality_storage: 'granted',
+                });
+              }
+              if (window.dataLayer && typeof dataLayer.push === 'function') {
+                dataLayer.push({
+                  'event': 'consent_accepted_functional',
+                });
+              }
+            },
+            onReject: function() {
+              if (typeof gtag === 'function') {
+                gtag('consent', 'update', {
+                  functionality_storage: 'denied',
+                });
+              }
+            }
+          },
+          {
+            id: "advertising",
+            name: "Advertising",
+            description: "<span _ngcontent-ng-c3227742768=\"\" class=\"router-outlet-wrapper ng-tns-c3227742768-0\"><span _ngcontent-ng-c1352109670=\"\" class=\"ng-star-inserted\">These\n cookies may be set through our site by our advertising partners, such \nas Google. They may be used by those companies to build a profile of \nyour interests and show you relevant adverts on other sites. They do not\n store directly personal information, but are based on uniquely \nidentifying your browser and internet device. If you do not allow these \ncookies, you will experience less targeted advertising.</span></span>",
+            required: false,
+            onAccept: function() {
+              if (typeof gtag === 'function') {
+                gtag('consent', 'update', {
+                  ad_storage: 'granted',
+                  ad_user_data: 'granted',
+                  ad_personalization: 'granted',
+                });
+              }
+              if (window.dataLayer && typeof dataLayer.push === 'function') {
+                dataLayer.push({
+                  'event': 'consent_accepted_advertising',
+                });
+              }
+            },
+            onReject: function() {
+              if (typeof gtag === 'function') {
+                gtag('consent', 'update', {
+                  ad_storage: 'denied',
+                  ad_user_data: 'denied',
+                  ad_personalization: 'denied',
+                });
+              }
+            }
+          }
+        ],
+        text: {
+          banner: {
+            description: "<p>We use cookies on our site to enhance your user experience, provide personalized content, and analyze our traffic. <a href=\"https://your-website.com/cookie-policy\" target=\"_blank\">Cookie Policy.</a></p>",
+            acceptAllButtonText: "Accept all",
+            acceptAllButtonAccessibleLabel: "Accept all cookies",
+            rejectNonEssentialButtonText: "Reject non-essential",
+            rejectNonEssentialButtonAccessibleLabel: "Reject non-essential",
+            preferencesButtonText: "Preferences",
+            preferencesButtonAccessibleLabel: "Toggle preferences"
+          },
+          preferences: {
+            title: "Customize your cookie preferences",
+            description: "<p>We respect your right to privacy. You can choose not to allow some types of cookies. Your cookie preferences will apply across our website.</p>",
+            creditLinkText: "Get this banner for free",
+            creditLinkAccessibleLabel: "Get this banner for free"
+          }
+        }
+      });
+      </script>
   <title>Terms of Use</title>
 </head>
 
@@ -24,7 +143,7 @@
         <p>We are BOZKAYA&amp;SONS LTD, doing business as Trading as KMZ Packaging (<strong>'Company'</strong>, <strong>'we'</strong>, <strong>'us'</strong>, or <strong>'our'</strong>), a company registered in the United Kingdom at 1 Lynfield Close, Connah's Quay CH5 4TR. Our VAT number is 451729485.</p>
         <p>We operate the website <a href="https://kmz-boxes.netlify.app">https://kmz-boxes.netlify.app</a> (the <strong>'Site'</strong>), as well as any other related products and services that refer or link to these legal terms (the <strong>'Legal Terms'</strong>) (collectively, the <strong>'Services'</strong>).</p>
         <p>A business-to-business website used to display a catalog of sustainable food packaging solutions and to facilitate customer inquiries for quotes, samples, and further information.</p>
-        <p>You can contact us by phone at +447907652100, email at <a href="mailto:burak@kmzboxes.info">burak@kmzboxes.info</a>, or by mail to Brymau Four Trading, River Lane, Unit 13, Saltney, Wales CH4 8RF, United Kingdom.</p>
+        <p>You can contact us by phone at +447907652100, email at <a href="mailto:sales@kmzpackaging.co.uk">sales@kmzpackaging.co.uk</a>, or by mail to Brymau Four Trading, River Lane, Unit 13, Saltney, Wales CH4 8RF, United Kingdom.</p>
         <p>These Legal Terms constitute a legally binding agreement made between you, whether personally or on behalf of an entity (<strong>'you'</strong>), and BOZKAYA&amp;SONS LTD, concerning your access to and use of the Services. You agree that by accessing the Services, you have read, understood, and agreed to be bound by all of these Legal Terms. IF YOU DO NOT AGREE WITH ALL OF THESE LEGAL TERMS, THEN YOU ARE EXPRESSLY PROHIBITED FROM USING THE SERVICES AND YOU MUST DISCONTINUE USE IMMEDIATELY.</p>
         <p>We may update our legal terms from time to time. The updated version will be indicated by an updated "Revised" date and the updated version will be effective as soon as it is accessible. We encourage you to review our legal terms frequently to be informed of how we are protecting your information.</p>
         <p>The Services are intended for users who are at least 18 years old. Persons under the age of 18 are not permitted to use or register for the Services.</p>
@@ -74,7 +193,7 @@
         </ul>
         <p>solely for your internal business purpose.</p>
         <p>Except as set out in this section or elsewhere in our Legal Terms, no part of the Services and no Content or Marks may be copied, reproduced, aggregated, republished, uploaded, posted, publicly displayed, encoded, translated, transmitted, distributed, sold, licensed, or otherwise exploited for any commercial purpose whatsoever, without our express prior written permission.</p>
-        <p>If you wish to make any use of the Services, Content, or Marks other than as set out in this section or elsewhere in our Legal Terms, please address your request to: <a href="mailto:burak@kmzboxes.info">burak@kmzboxes.info</a>. If we ever grant you the permission to post, reproduce, or publicly display any part of our Services or Content, you must identify us as the owners or licensors of the Services, Content, or Marks and ensure that any copyright or proprietary notice appears or is visible on posting, reproducing, or displaying our Content.</p>
+        <p>If you wish to make any use of the Services, Content, or Marks other than as set out in this section or elsewhere in our Legal Terms, please address your request to: <a href="mailto:sales@kmzpackaging.co.uk">sales@kmzpackaging.co.uk</a>. If we ever grant you the permission to post, reproduce, or publicly display any part of our Services or Content, you must identify us as the owners or licensors of the Services, Content, or Marks and ensure that any copyright or proprietary notice appears or is visible on posting, reproducing, or displaying our Content.</p>
         <p>We reserve all rights not expressly granted to you in and to the Services, Content, and Marks.</p>
         <p>Any breach of these Intellectual Property Rights will constitute a material breach of our Legal Terms and your right to use our Services will terminate immediately.</p>
 
@@ -222,7 +341,7 @@
           Saltney, Wales CH4 8RF<br>
           United Kingdom<br>
           Phone: +447907652100<br>
-          <a href="mailto:burak@kmzboxes.info">burak@kmzboxes.info</a>
+          <a href="mailto:sales@kmzpackaging.co.uk">sales@kmzpackaging.co.uk</a>
         </p>
       </div>
     </section>

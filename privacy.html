@@ -9,6 +9,125 @@
     href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
     rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" id="silktide-consent-manager-css" href="/cookie-banner/silktide-consent-manager.css">
+  <script src="/cookie-banner/silktide-consent-manager.js"></script>
+  <script>
+    silktideCookieBannerManager.updateCookieBannerConfig({
+      background: {
+        showBackground: true
+      },
+      cookieIcon: {
+        position: "bottomRight"
+      },
+      cookieTypes: [
+        {
+          id: "necessary",
+          name: "Necessary",
+          description: "<p>These cookies are necessary for the website to function properly and cannot be switched off. They help with things like logging in and setting your privacy preferences.</p>",
+          required: true,
+          onAccept: function() {
+            console.log('Add logic for the required Necessary here');
+          }
+        },
+        {
+          id: "analytics",
+          name: "Analytics",
+          description: "<p>These cookies help us improve the site by tracking which pages are most popular and how visitors move around the site.</p>",
+          required: false,
+          onAccept: function() {
+            if (typeof gtag === 'function') {
+              gtag('consent', 'update', {
+                analytics_storage: 'granted',
+              });
+            }
+            if (window.dataLayer && typeof dataLayer.push === 'function') {
+              dataLayer.push({
+                'event': 'consent_accepted_analytics',
+              });
+            }
+          },
+          onReject: function() {
+            if (typeof gtag === 'function') {
+              gtag('consent', 'update', {
+                analytics_storage: 'denied',
+              });
+            }
+          }
+        },
+        {
+          id: "functional",
+          name: "Functional",
+          description: "<p>These cookies provide extra features and personalization to improve your\n experience. They may be set by us or by partners whose services we use.</p>",
+          required: false,
+          onAccept: function() {
+            if (typeof gtag === 'function') {
+              gtag('consent', 'update', {
+                functionality_storage: 'granted',
+              });
+            }
+            if (window.dataLayer && typeof dataLayer.push === 'function') {
+              dataLayer.push({
+                'event': 'consent_accepted_functional',
+              });
+            }
+          },
+          onReject: function() {
+            if (typeof gtag === 'function') {
+              gtag('consent', 'update', {
+                functionality_storage: 'denied',
+              });
+            }
+          }
+        },
+        {
+          id: "advertising",
+          name: "Advertising",
+          description: "<span _ngcontent-ng-c3227742768=\"\" class=\"router-outlet-wrapper ng-tns-c3227742768-0\"><span _ngcontent-ng-c1352109670=\"\" class=\"ng-star-inserted\">These\n cookies may be set through our site by our advertising partners, such \nas Google. They may be used by those companies to build a profile of \nyour interests and show you relevant adverts on other sites. They do not\n store directly personal information, but are based on uniquely \nidentifying your browser and internet device. If you do not allow these \ncookies, you will experience less targeted advertising.</span></span>",
+          required: false,
+          onAccept: function() {
+            if (typeof gtag === 'function') {
+              gtag('consent', 'update', {
+                ad_storage: 'granted',
+                ad_user_data: 'granted',
+                ad_personalization: 'granted',
+              });
+            }
+            if (window.dataLayer && typeof dataLayer.push === 'function') {
+              dataLayer.push({
+                'event': 'consent_accepted_advertising',
+              });
+            }
+          },
+          onReject: function() {
+            if (typeof gtag === 'function') {
+              gtag('consent', 'update', {
+                ad_storage: 'denied',
+                ad_user_data: 'denied',
+                ad_personalization: 'denied',
+              });
+            }
+          }
+        }
+      ],
+      text: {
+        banner: {
+          description: "<p>We use cookies on our site to enhance your user experience, provide personalized content, and analyze our traffic. <a href=\"https://your-website.com/cookie-policy\" target=\"_blank\">Cookie Policy.</a></p>",
+          acceptAllButtonText: "Accept all",
+          acceptAllButtonAccessibleLabel: "Accept all cookies",
+          rejectNonEssentialButtonText: "Reject non-essential",
+          rejectNonEssentialButtonAccessibleLabel: "Reject non-essential",
+          preferencesButtonText: "Preferences",
+          preferencesButtonAccessibleLabel: "Toggle preferences"
+        },
+        preferences: {
+          title: "Customize your cookie preferences",
+          description: "<p>We respect your right to privacy. You can choose not to allow some types of cookies. Your cookie preferences will apply across our website.</p>",
+          creditLinkText: "Get this banner for free",
+          creditLinkAccessibleLabel: "Get this banner for free"
+        }
+      }
+    });
+    </script>
   <title>Privacy Policy</title>
 </head>
 
@@ -33,7 +152,7 @@
     <p><strong>Questions or concerns?</strong> Reading this Privacy Notice will help you understand your privacy
       rights and choices. We are responsible for making decisions about how your personal information is processed. If
       you do not agree with our policies and practices, please do not use our Services. If you still have any
-      questions or concerns, please contact us at <a href="mailto:burak@kmzboxes.info">burak@kmzboxes.info</a>.</p>
+      questions or concerns, please contact us at <a href="mailto:sales@kmzpackaging.co.uk">sales@kmzpackaging.co.uk</a>.</p>
     <h2>SUMMARY OF KEY POINTS</h2>
     <p><strong>This summary provides key points from our Privacy Notice, but you can find out more details about any
         of these topics by clicking the link following each key point or by using our <a
@@ -69,7 +188,7 @@
         href="#what-are-your-privacy-rights">your
         privacy rights</a>.</p>
     <p><strong>How do you exercise your rights?</strong> The easiest way to exercise your rights is by visiting By
-      emailing us at: <a href="mailto:burak@kmzboxes.info">burak@kmzboxes.info</a>, or by contacting us. We will
+      emailing us at: <a href="mailto:sales@kmzpackaging.co.uk">sales@kmzpackaging.co.uk</a>, or by contacting us. We will
       consider and act upon any request in
       accordance with applicable data protection laws.</p>
     <p>Want to learn more about what we do with any information we collect? <a
@@ -293,7 +412,7 @@
       learn that personal information from users less than 18 years of age has been collected, we will deactivate the
       account and take reasonable measures to promptly delete such data from our records. If you become aware of any
       data we may have collected from children under age 18, please contact us at <a
-        href="mailto:burak@kmzboxes.info">burak@kmzboxes.info</a>.</p>
+        href="mailto:sales@kmzpackaging.co.uk">sales@kmzpackaging.co.uk</a>.</p>
     <h2 id="what-are-your-privacy-rights">9. WHAT ARE YOUR PRIVACY RIGHTS?</h2>
     <p><strong>In Short:</strong> <em>In some regions, such as the European Economic Area (EEA), United Kingdom (UK),
         and Switzerland, you have rights that allow you greater access to and control over your personal information.
@@ -330,7 +449,7 @@
       you choose to remove cookies or reject cookies, this could affect certain features or services of our Services.
     </p>
     <p>If you have questions or comments about your privacy rights, you may email us at <a
-        href="mailto:burak@kmzboxes.info">burak@kmzboxes.info</a>.</p>
+        href="mailto:sales@kmzpackaging.co.uk">sales@kmzpackaging.co.uk</a>.</p>
     <h2 id="controls-for-do-not-track-features">10. CONTROLS FOR DO-NOT-TRACK FEATURES</h2>
     <p>Most web browsers and some mobile operating systems and mobile applications include a Do-Not-Track ('DNT')
       feature or setting you can activate to signal your privacy preference not to have data about your online
@@ -349,7 +468,7 @@
     </p>
     <h2 id="how-can-you-contact-us-about-this-notice">12. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?</h2>
     <p>If you have questions or comments about this notice, you may email us at <a
-        href="mailto:burak@kmzboxes.info">burak@kmzboxes.info</a> or contact us by
+        href="mailto:sales@kmzpackaging.co.uk">sales@kmzpackaging.co.uk</a> or contact us by
       post at:</p>
     <p>BOZKAYA&amp;SONS LTD<br>
       Brymau Four Trading, River Lane<br>
@@ -362,7 +481,7 @@
       information we collect from you, details about how we have processed it, correct inaccuracies, or delete your
       personal information. You may also have the right to withdraw your consent to our processing of your personal
       information. These rights may be limited in some circumstances by applicable law. To request to review, update,
-      or delete your personal information, email us at: <a href="mailto:burak@kmzboxes.info">burak@kmzboxes.info</a>.
+      or delete your personal information, email us at: <a href="mailto:sales@kmzpackaging.co.uk">sales@kmzpackaging.co.uk</a>.
     </p>
 
   </main>

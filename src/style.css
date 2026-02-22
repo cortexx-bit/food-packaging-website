@@ -4,8 +4,8 @@
   --font-inter: "Inter", sans-serif;
   
   /* Color Palette */
-  --color-primary: #1A73E8;
-  --color-secondary: #5F6C7B;
+  --color-primary: #1252A1;
+  --color-secondary: #334155;
   --color-accent: #FFB74D;
   --color-text: #1A1A1A;
   --color-background: #F5F7FA;
@@ -40,6 +40,11 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 3px;
 }
 
 a {
@@ -156,6 +161,7 @@ h3 {
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
