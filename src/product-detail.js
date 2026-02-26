@@ -143,10 +143,11 @@ function createThumbnails() {
     const imageAlt = imageData.alt || `${productData.name} - Thumbnail ${index + 1}`;
     
     const thumbnail = document.createElement('button');
-    thumbnail.className = `thumbnail w-full aspect-square bg-gray-100 rounded-lg overflow-hidden border-2 transition-all ${index === currentImageIndex
-      ? 'border-[var(--color-primary)] ring-2 ring-[var(--color-primary)] ring-offset-2 shadow-md'
-      : 'border-gray-200 hover:border-gray-300'
-      }`;
+    thumbnail.className = `thumbnail w-full aspect-square bg-gray-100 rounded-lg overflow-hidden border-2 transition-all flex items-center justify-center p-2 ${
+      index === currentImageIndex
+        ? 'border-[var(--color-primary)] ring-2 ring-[var(--color-primary)] ring-offset-2 shadow-md'
+        : 'border-gray-200 hover:border-gray-300'
+    }`;
     thumbnail.setAttribute('data-thumb-index', index);
     thumbnail.addEventListener('click', () => {
       currentImageIndex = index;
@@ -158,7 +159,7 @@ function createThumbnails() {
     img.alt = imageAlt;
     img.loading = 'lazy';
     img.decoding = 'async';
-    img.className = 'w-full h-full object-cover';
+    img.className = 'w-full h-full object-contain';
     img.onerror = function () {
       console.error('Failed to load image:', imageSrc);
       this.src = '/img/box.png';
