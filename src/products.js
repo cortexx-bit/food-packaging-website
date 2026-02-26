@@ -1,3 +1,23 @@
+function ensureMetaDescriptionTag() {
+  let tag = document.querySelector('meta[name="description"]');
+  if (!tag) {
+    tag = document.createElement('meta');
+    tag.setAttribute('name', 'description');
+    document.head.appendChild(tag);
+  }
+  return tag;
+}
+
+function setProductsMetaTags(inStockCount) {
+  const descTag = ensureMetaDescriptionTag();
+
+  const description =
+    `Browse our range of compostable food packaging made from sugarcane bagasse. ` +
+    `Sturdy, grease-resistant and microwave-safe — ${inStockCount} products available.`;
+
+  descTag.setAttribute("content", description.substring(0, 155));
+}
+
 async function loadProducts() {
   try {
     const response = await fetch('/products.json');
@@ -26,6 +46,7 @@ function renderProducts(products) {
     grid.innerHTML = '<p class="text-center text-[var(--color-text)] col-span-full">No products available.</p>';
     return;
   }
+  setProductsMetaTags(inStockProducts.length);
 
   grid.innerHTML = inStockProducts.map(product => {
     const gridImage = product.images?.grid_image;

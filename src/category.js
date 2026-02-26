@@ -1,5 +1,73 @@
 let categoriesData = null;
 
+function ensureMetaDescriptionTag() {
+  let tag = document.querySelector('meta[name="description"]');
+  if (!tag) {
+    tag = document.createElement('meta');
+    tag.setAttribute('name', 'description');
+    document.head.appendChild(tag);
+  }
+  return tag;
+}
+
+function titleCase(str) {
+  return (str || "")
+    .replace(/[-_]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .replace(/\b\w/g, (m) => m.toUpperCase());
+}
+
+// Try to guess a better "use" phrase per category.
+// Can be expanded over time.
+function getCategoryKeyUse(nameOrSlug) {
+  const s = (nameOrSlug || "").toLowerCase();
+
+  if (s.includes("fish") && s.includes("chip")) return "Fish & Chips Takeaway Packaging";
+  if (s.includes("burger")) return "Takeaway Packaging for Burgers";
+  if (s.includes("pizza")) return "Pizza Takeaway Packaging";
+  if (s.includes("salad")) return "Packaging for Salads";
+  if (s.includes("soup")) return "Packaging for Soups";
+  if (s.includes("tray")) return "Meal Trays for Takeaway";
+  if (s.includes("bowl")) return "Food Bowls for Takeaway";
+  if (s.includes("cup")) return "Hot & Cold Drink Cups";
+
+  return "Takeaway Food Packaging";
+}
+
+// Title format: {Category Name} — {Key Use} | KMZ Packaging
+// Description: includes category, key benefits, and optional product count.
+function setCategoryMetaTags(categorySlug, categoryData, products = []) {
+  const BRAND = "KMZ Packaging";
+
+  const categoryName =
+    categoryData?.name ||
+    titleCase(categorySlug) ||
+    "Category";
+
+  const keyUse = getCategoryKeyUse(categoryName || categorySlug);
+
+  const seoTitle = `${categoryName} — ${keyUse} | ${BRAND}`;
+  document.title = seoTitle;
+
+  const productCount = Array.isArray(products) ? products.length : 0;
+
+  let base = (categoryData?.description || "").replace(/\s+/g, " ").trim();
+
+  if (!base || base.length < 30) {
+    base = `Browse our range of ${categoryName.toLowerCase()}. Durable, compostable options ideal for restaurants, takeaways, and food service.`;
+  }
+
+  const countBit =
+    productCount > 0 ? ` View ${productCount} product${productCount === 1 ? "" : "s"}.` : "";
+
+  let seoDescription = `${base}${countBit}`;
+  seoDescription = seoDescription.substring(0, 155);
+
+  const tag = ensureMetaDescriptionTag();
+  tag.setAttribute("content", seoDescription);
+}
+
 function getCategorySlug() {
   const urlParams = new URLSearchParams(window.location.search);
   return urlParams.get('name');
@@ -63,8 +131,7 @@ function displayCategory(categoryData, products) {
   document.getElementById('category-not-found').classList.add('hidden');
   document.getElementById('category-content').classList.remove('hidden');
   
-  // Update page title
-  document.title = `${categoryData.name} - KMZ-Packaging`;
+  setCategoryMetaTags(getCategorySlug(), categoryData, products);
   
   // Display category name and description
   document.getElementById('category-title').textContent = categoryData.name;

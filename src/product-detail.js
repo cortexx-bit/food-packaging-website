@@ -3,6 +3,64 @@ let productData = null;
 let galleryImages = [];
 let categoriesData = null;
 
+function setProductMetaTags(product) {
+  if (!product) return;
+
+  const BRAND = "KMZ Packaging";
+  let size = "";
+
+  if (product.specifications?.capacity_ml) {
+    size = `${product.specifications.capacity_ml}ml`;
+  } else {
+    const sizeMatch = product.name.match(/\d+(\.\d+)?\s*(ml|cm|mm|inch|in|″|”)/i);
+    if (sizeMatch) size = sizeMatch[0];
+  }
+
+  let material = product.specifications?.raw_material || "";
+
+  if (!material) {
+    if (/bagasse/i.test(product.name)) material = "Bagasse";
+    else if (/paper/i.test(product.name)) material = "Paper";
+    else if (/plastic/i.test(product.name)) material = "Plastic";
+  }
+
+  let productName = product.name
+    .replace(size, "")
+    .replace(material, "")
+    .trim();
+
+  let keyUse = "Food Container";
+  const nameLower = product.name.toLowerCase();
+
+  if (nameLower.includes("burger")) keyUse = "Takeaway Container";
+  else if (nameLower.includes("tray")) keyUse = "Meal Tray";
+  else if (nameLower.includes("bowl")) keyUse = "Soup & Salad Container";
+  else if (nameLower.includes("box")) keyUse = "Takeaway Box";
+  const titleParts = [size, material, productName]
+    .filter(Boolean)
+    .join(" ");
+
+  const title = `${titleParts} — ${keyUse} | ${BRAND}`;
+  document.title = title;
+  const descriptionTag =
+    document.querySelector('meta[name="description"]') ||
+    createMetaDescriptionTag();
+  const description =
+    `${titleParts}. Compostable, grease-resistant, microwave safe. Ideal for restaurants and takeaway businesses.`.substring(
+      0,
+      155
+    );
+
+  descriptionTag.setAttribute("content", description);
+}
+
+function createMetaDescriptionTag() {
+  const meta = document.createElement("meta");
+  meta.name = "description";
+  document.head.appendChild(meta);
+  return meta;
+}
+
 function getProductModelNumber() {
   const urlParams = new URLSearchParams(window.location.search);
   return urlParams.get('id');
@@ -58,7 +116,14 @@ function displayProduct() {
   document.getElementById('product-not-found').classList.add('hidden');
   document.getElementById('product-detail').classList.remove('hidden');
 
-  document.title = `${productData.name} - KMZ-Packaging`;
+  setProductMetaTags(productData);
+  const description = document.querySelector('meta[name="description"]');
+  if (description) {
+    description.setAttribute(
+      "content",
+      `${productData.name}. ${productData.full_description.substring(0, 140)}`
+    );
+  }
 
   const breadcrumb = document.getElementById('breadcrumb');
   const breadcrumbProductName = document.getElementById('breadcrumb-product-name');
