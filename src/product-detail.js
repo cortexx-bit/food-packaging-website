@@ -2,7 +2,6 @@ let currentImageIndex = 0;
 let productData = null;
 let galleryImages = [];
 let categoriesData = null;
-let fancyboxInstance = null;
 
 function getProductModelNumber() {
   const urlParams = new URLSearchParams(window.location.search);
@@ -104,7 +103,6 @@ function displayProduct() {
 
   updateMainImage();
   createThumbnails();
-  createFancyboxGallery();
   initializeFancybox();
   displaySpecifications();
 }
@@ -153,9 +151,6 @@ function createThumbnails() {
     thumbnail.addEventListener('click', () => {
       currentImageIndex = index;
       updateMainImage();
-      if (fancyboxInstance && fancyboxInstance.isVisible) {
-        fancyboxInstance.jumpTo(index);
-      }
     });
 
     const img = document.createElement('img');
@@ -187,32 +182,9 @@ function updateThumbnailActiveState() {
   });
 }
 
-function createFancyboxGallery() {
-  const existingLinks = document.querySelectorAll('[data-fancybox="product-gallery"]');
-  existingLinks.forEach(link => {
-    if (link.id !== 'main-image-link') {
-      link.remove();
-    }
-  });
-
-  galleryImages.forEach((imageData, index) => {
-    const imageSrc = imageData.src || imageData;
-    const imageAlt = imageData.alt || `${productData.name} - Image ${index + 1}`;
-    
-    const link = document.createElement('a');
-    link.href = imageSrc;
-    link.setAttribute('data-fancybox', 'product-gallery');
-    link.setAttribute('data-caption', imageAlt);
-    link.setAttribute('data-thumb', imageSrc);
-    link.style.display = 'none';
-    link.setAttribute('data-gallery-index', index);
-    document.body.appendChild(link);
-  });
-}
-
 function initializeFancybox(attempts = 0) {
-  const MAX_ATTEMPTS = 50; // 5 seconds max wait
-  
+  const MAX_ATTEMPTS = 50;
+
   if (typeof Fancybox === 'undefined') {
     if (attempts < MAX_ATTEMPTS) {
       setTimeout(() => initializeFancybox(attempts + 1), 100);
@@ -222,70 +194,68 @@ function initializeFancybox(attempts = 0) {
     return;
   }
 
-  if (fancyboxInstance) {
-    fancyboxInstance.destroy();
-  }
+  const mainImageLink = document.getElementById('main-image-link');
 
-  fancyboxInstance = Fancybox.bind('[data-fancybox="product-gallery"]', {
-    Toolbar: {
-      display: {
-        left: ['infobar'],
-        middle: [],
-        right: ['slideshow', 'thumbs', 'close']
-      }
-    },
-    Thumbs: {
-      autoStart: window.innerWidth > 1024,
-      axis: 'x'
-    },
-    Images: {
-      zoom: true,
-      wheel: 'slide',
-      preload: [1, 1]
-    },
-    Carousel: {
-      infinite: true,
-      friction: 0.8,
-      Navigation: {
-        prevTpl: '<button class="fancybox__nav fancybox__nav--prev" aria-label="Previous"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg></button>',
-        nextTpl: '<button class="fancybox__nav fancybox__nav--next" aria-label="Next"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></button>'
-      }
-    },
-    Touch: {
-      vertical: false,
-      momentum: true
-    },
-    on: {
-      ready: (fancybox, slide) => {
-        if (slide) {
-          currentImageIndex = slide.index;
-          updateMainImage();
+  if (!mainImageLink) return;
+
+  mainImageLink.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    const items = galleryImages.map((imageData, index) => {
+      const src = imageData.src || imageData;
+      const caption =
+        imageData.alt || `${productData.name} - Image ${index + 1}`;
+
+      return {
+        src: src,
+        type: "image",
+        caption: caption,
+        thumb: src
+      };
+    });
+
+    Fancybox.show(items, {
+      startIndex: currentImageIndex,
+
+      Toolbar: {
+        display: {
+          left: ['infobar'],
+          middle: [],
+          right: ['slideshow', 'thumbs', 'close']
         }
       },
-      change: (fancybox, carousel, slide) => {
-        if (slide) {
-          currentImageIndex = slide.index;
-          updateMainImage();
+
+      Thumbs: {
+        autoStart: window.innerWidth > 1024,
+        axis: 'x'
+      },
+
+      Images: {
+        zoom: true,
+        wheel: 'slide',
+        preload: [1, 1]
+      },
+
+      Carousel: {
+        infinite: true,
+        friction: 0.8
+      },
+
+      Touch: {
+        vertical: false,
+        momentum: true
+      },
+
+      on: {
+        change: (fancybox, carousel, slide) => {
+          if (slide) {
+            currentImageIndex = slide.index;
+            updateMainImage();
+          }
         }
       }
-    }
-  });
-
-  const mainImageLink = document.getElementById('main-image-link');
-  if (mainImageLink) {
-    mainImageLink.addEventListener('click', (e) => {
-      e.preventDefault();
-      const galleryLinks = document.querySelectorAll('[data-fancybox="product-gallery"]');
-      const targetLink = Array.from(galleryLinks).find(link => {
-        const linkIndex = parseInt(link.getAttribute('data-gallery-index'));
-        return linkIndex === currentImageIndex;
-      }) || galleryLinks[currentImageIndex] || galleryLinks[0];
-
-      if (targetLink) {
-        targetLink.click();
-      }
     });
-  }
+  });
 }
 
 function displayCategories() {
@@ -360,11 +330,6 @@ function displaySpecifications() {
 function cleanupGallery() {
   const hiddenLinks = document.querySelectorAll('[data-fancybox="product-gallery"][data-gallery-index]');
   hiddenLinks.forEach(link => link.remove());
-  
-  if (fancyboxInstance) {
-    fancyboxInstance.destroy();
-    fancyboxInstance = null;
-  }
 }
 
 window.addEventListener('beforeunload', cleanupGallery);
