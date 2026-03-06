@@ -4,7 +4,7 @@
   --font-inter: "Inter", sans-serif;
   
   /* Color Palette */
-  --color-primary: #1252A1;
+  --color-primary: #005FCC;
   --color-secondary: #334155;
   --color-accent: #FFB74D;
   --color-text: #1A1A1A;
@@ -22,7 +22,7 @@
 
 :root {
   /* Color Palette */
-  --color-primary: #1A73E8;
+  --color-primary: #005FCC;
   --color-secondary: #5F6C7B;
   --color-accent: #FFB74D;
   --color-text: #1A1A1A;
@@ -59,7 +59,8 @@ a:hover {
 /* Link styling for privacy page and emails */
 .cookie-policy-page main a,
 .privacy-page main a,
-a[href^="mailto:"] {
+.cookie-policy-page main a[href^="mailto:"],
+.privacy-page main a[href^="mailto:"] {
   color: var(--color-primary, #1A73E8);
   text-decoration: underline;
   text-decoration-color: var(--color-primary, #1A73E8);
@@ -68,7 +69,8 @@ a[href^="mailto:"] {
 
 .cookie-policy-page main a:hover,
 .privacy-page main a:hover,
-a[href^="mailto:"]:hover {
+.cookie-policy-page main a[href^="mailto:"]:hover,
+.privacy-page main a[href^="mailto:"]:hover{
   color: var(--color-primary, #1A73E8);
   text-decoration: none;
 }

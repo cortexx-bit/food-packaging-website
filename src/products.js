@@ -76,7 +76,7 @@ function renderProducts(products) {
         </div>
       </div>
       <div class="p-6 pt-0">
-        <h3 class="text-xl font-bold text-[var(--color-text)] mb-2 transition-colors">
+        <h2 class="text-xl font-bold text-[var(--color-text)] mb-2 transition-colors">
           ${product.name}
         </h3>
         <p class="text-[var(--color-text)] text-sm leading-relaxed mb-3">
@@ -84,7 +84,7 @@ function renderProducts(products) {
         </p>
         <div class="flex items-center justify-between">
           <div class="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0 hover:underline">
-            <img src="/img/details.png" alt="Details" class="w-5 h-5">
+            <img src="/img/details.png" alt="" class="w-5 h-5">
             <span class="text-sm font-semibold text-[var(--color-text)]">Details</span>
           </div>
           <span class="text-xs text-gray-500">${product.sku}</span>

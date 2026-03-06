@@ -1,16 +1,19 @@
-import './style.css'
+import './style.css';
 
 async function loadPartials() {
   const includeEls = document.querySelectorAll('[data-include]');
 
   for (const el of includeEls) {
     const src = el.getAttribute('data-include');
+
     try {
       const res = await fetch(src);
+
       if (!res.ok) {
         console.error(`Failed to load partial ${src}:`, res.status);
         continue;
       }
+
       const html = await res.text();
       el.outerHTML = html;
     } catch (err) {
@@ -19,87 +22,111 @@ async function loadPartials() {
   }
 }
 
-
-// Mobile Menu Toggle
-const mobileMenuButton = document.getElementById('mobile-menu-button');
-const mobileMenu = document.getElementById('mobile-menu');
-
-if (mobileMenuButton) {
-  mobileMenuButton.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-  });
-}
-
 function initializeMobileMenu() {
   const mobileMenuButton = document.getElementById('mobile-menu-button');
   const mobileMenu = document.getElementById('mobile-menu');
 
   if (mobileMenuButton && mobileMenu) {
+    mobileMenuButton.setAttribute(
+      'aria-expanded',
+      mobileMenu.classList.contains('hidden') ? 'false' : 'true'
+    );
+
     mobileMenuButton.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
+      const isNowHidden = mobileMenu.classList.toggle('hidden');
+      mobileMenuButton.setAttribute('aria-expanded', isNowHidden ? 'false' : 'true');
     });
   }
-  
-  // Initialize mobile products dropdown
+
   const mobileProductsButton = document.getElementById('mobile-products-button');
   const mobileProductsDropdown = document.getElementById('mobile-products-dropdown');
   const mobileProductsArrow = document.getElementById('mobile-products-arrow');
-  
+
   if (mobileProductsButton && mobileProductsDropdown && mobileProductsArrow) {
+    mobileProductsButton.setAttribute(
+      'aria-expanded',
+      mobileProductsDropdown.classList.contains('hidden') ? 'false' : 'true'
+    );
+
     mobileProductsButton.addEventListener('click', (e) => {
       e.preventDefault();
-      mobileProductsDropdown.classList.toggle('hidden');
-      mobileProductsArrow.classList.toggle('rotate-180');
+
+      const isNowHidden = mobileProductsDropdown.classList.toggle('hidden');
+      mobileProductsArrow.classList.toggle('rotate-180', !isNowHidden);
+      mobileProductsButton.setAttribute('aria-expanded', isNowHidden ? 'false' : 'true');
     });
   }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      if (mobileMenuButton && mobileMenu && !mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.add('hidden');
+        mobileMenuButton.setAttribute('aria-expanded', 'false');
+      }
+
+      if (
+        mobileProductsButton &&
+        mobileProductsDropdown &&
+        mobileProductsArrow &&
+        !mobileProductsDropdown.classList.contains('hidden')
+      ) {
+        mobileProductsDropdown.classList.add('hidden');
+        mobileProductsArrow.classList.remove('rotate-180');
+        mobileProductsButton.setAttribute('aria-expanded', 'false');
+      }
+    }
+  });
 }
 
 async function loadCategoriesDropdown() {
   try {
     const response = await fetch('/categories.json');
+
     if (!response.ok) {
       console.warn('Failed to load categories for dropdown');
       return;
     }
-    
+
     const categoriesData = await response.json();
-    
-    // Populate desktop dropdown
+
     const desktopDropdown = document.getElementById('products-dropdown-content');
     if (desktopDropdown) {
-      let html = '<a href="/products.html" class="block px-4 py-2 text-sm text-[var(--color-text)] hover:bg-gray-100 hover:text-[var(--color-primary)] transition-colors font-semibold">View All</a>';
+      let html =
+        '<a href="/products.html" class="block px-4 py-2 text-sm text-[var(--color-text)] hover:bg-gray-100 hover:text-[var(--color-primary)] transition-colors font-semibold">View All</a>';
       html += '<div class="border-t border-gray-200 my-1"></div>';
-      
-      Object.keys(categoriesData).forEach(slug => {
+
+      Object.keys(categoriesData).forEach((slug) => {
         const category = categoriesData[slug];
         html += `<a href="/category.html?name=${slug}" class="block px-4 py-2 text-sm text-[var(--color-text)] hover:bg-gray-100 hover:text-[var(--color-primary)] transition-colors">${category.name}</a>`;
       });
-      
+
       desktopDropdown.innerHTML = html;
     }
-    
-    // Populate mobile dropdown
-    const mobileDropdown = document.getElementById('mobile-products-dropdown-content');
+
+    const mobileDropdownContent = document.getElementById('mobile-products-dropdown-content');
     const mobileProductsDropdown = document.getElementById('mobile-products-dropdown');
     const mobileProductsArrow = document.getElementById('mobile-products-arrow');
-    
-    if (mobileDropdown) {
-      let html = '<a href="/products.html" class="block py-2 px-6 text-sm text-[var(--color-text)] hover:text-[var(--color-primary)] font-semibold bg-gray-100">View All</a>';
-      
-      Object.keys(categoriesData).forEach(slug => {
+    const mobileProductsButton = document.getElementById('mobile-products-button');
+
+    if (mobileDropdownContent) {
+      let html =
+        '<a href="/products.html" class="block py-2 px-6 text-sm text-[var(--color-text)] hover:text-[var(--color-primary)] font-semibold bg-gray-100">View All</a>';
+
+      Object.keys(categoriesData).forEach((slug) => {
         const category = categoriesData[slug];
         html += `<a href="/category.html?name=${slug}" class="block py-2 px-6 text-sm text-[var(--color-text)] hover:text-[var(--color-primary)]">${category.name}</a>`;
       });
-      
-      mobileDropdown.innerHTML = html;
-      
-      // Close dropdown when clicking on a link (after content is loaded)
-      if (mobileProductsDropdown && mobileProductsArrow) {
+
+      mobileDropdownContent.innerHTML = html;
+
+      if (mobileProductsDropdown && mobileProductsArrow && mobileProductsButton) {
         const mobileDropdownLinks = mobileProductsDropdown.querySelectorAll('a');
-        mobileDropdownLinks.forEach(link => {
+
+        mobileDropdownLinks.forEach((link) => {
           link.addEventListener('click', () => {
             mobileProductsDropdown.classList.add('hidden');
             mobileProductsArrow.classList.remove('rotate-180');
+            mobileProductsButton.setAttribute('aria-expanded', 'false');
           });
         });
       }
@@ -109,7 +136,10 @@ async function loadCategoriesDropdown() {
   }
 }
 
-loadPartials().then(() => {
+async function initializeSite() {
+  await loadPartials();
   initializeMobileMenu();
-  loadCategoriesDropdown();
-});
+  await loadCategoriesDropdown();
+}
+
+initializeSite();
