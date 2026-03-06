@@ -172,28 +172,48 @@ function displayProduct() {
   displaySpecifications();
 }
 
+function preloadMainImage(src) {
+  if (!src) return;
+
+  const existing = document.querySelector('link[data-main-product-preload]');
+  if (existing) {
+    existing.remove();
+  }
+
+  const link = document.createElement('link');
+  link.rel = 'preload';
+  link.as = 'image';
+  link.href = src;
+  link.setAttribute('data-main-product-preload', 'true');
+  document.head.appendChild(link);
+}
+
 function updateMainImage() {
   const mainImage = document.getElementById('main-product-image');
   const mainImageLink = document.getElementById('main-image-link');
 
-  if (galleryImages.length > 0) {
-    const currentImageData = galleryImages[currentImageIndex];
-    const imageSrc = currentImageData.src || currentImageData;
-    const imageAlt = currentImageData.alt || `${productData.name} - Image ${currentImageIndex + 1}`;
-    
-    // Add error handler for main image
-    mainImage.onerror = function() {
-      console.error('Failed to load image:', imageSrc);
-      this.src = '/img/box.png';
-    };
-    
-    mainImage.src = imageSrc;
-    mainImage.alt = imageAlt;
+  if (!mainImage || galleryImages.length === 0) {
+    return;
+  }
 
-    if (mainImageLink) {
-      mainImageLink.href = imageSrc;
-      mainImageLink.setAttribute('data-caption', imageAlt);
-    }
+  const currentImageData = galleryImages[currentImageIndex];
+  const imageSrc = currentImageData.src || currentImageData;
+  const imageAlt = currentImageData.alt || `${productData.name} - Image ${currentImageIndex + 1}`;
+
+  preloadMainImage(imageSrc);
+
+  mainImage.onerror = function () {
+    console.error('Failed to load image:', imageSrc);
+    this.src = '/img/box.png';
+  };
+
+  mainImage.fetchPriority = 'high';
+  mainImage.src = imageSrc;
+  mainImage.alt = imageAlt;
+
+  if (mainImageLink) {
+    mainImageLink.href = imageSrc;
+    mainImageLink.setAttribute('data-caption', imageAlt);
   }
 
   updateThumbnailActiveState();
