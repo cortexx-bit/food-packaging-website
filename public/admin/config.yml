@@ -25,7 +25,7 @@ collections:
             fields:
               - { label: "SKU (Unique Product Code)", name: "sku", widget: "string" }
               - { label: "Is this product in stock?", name: "in_stock", widget: "boolean", default: true }
-              - { label: "Model Number (e.g., HP7)", name: "model_number", widget: "string", required: false }
+              - { label: "Model Number (e.g., HP7); Used in URL path", name: "model_number", widget: "string", required: true }
               - { label: "Product Name", name: "name", widget: "string" }
 
               - label: "Images"

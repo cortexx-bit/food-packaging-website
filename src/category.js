@@ -107,11 +107,15 @@ async function loadCategory() {
     }
     
     // Filter products that belong to this category
-    const categoryProducts = products.filter(product => 
-      product.in_stock === true && 
-      product.categories && 
-      product.categories.includes(categorySlug)
-    );
+    const categoryProducts = products.filter((product) => {
+      const modelNumber = product.model_number?.trim();
+      return (
+        product.in_stock === true &&
+        Boolean(modelNumber) &&
+        product.categories &&
+        product.categories.includes(categorySlug)
+      );
+    });
     
     displayCategory(categoryData, categoryProducts);
   } catch (error) {

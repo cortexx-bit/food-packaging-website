@@ -39,8 +39,11 @@ function renderProducts(products) {
   const grid = document.getElementById('products-grid');
   if (!grid) return;
 
-  // Filter products to only show those in stock
-  const inStockProducts = products.filter(product => product.in_stock === true);
+  // Only render products that can be reached via a valid detail URL.
+  const inStockProducts = products.filter((product) => {
+    const modelNumber = product.model_number?.trim();
+    return product.in_stock === true && Boolean(modelNumber);
+  });
 
   if (inStockProducts.length === 0) {
     grid.innerHTML = '<p class="text-center text-[var(--color-text)] col-span-full">No products available.</p>';
