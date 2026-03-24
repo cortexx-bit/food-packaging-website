@@ -23,7 +23,7 @@ collections:
             widget: "list"
             summary: "{{fields.sku}} — {{fields.name}}"
             fields:
-              - { label: "SKU (Unique Product Code)", name: "sku", widget: "string", required: true default: "KMZ-" }
+              - { label: "SKU (Unique Product Code)", name: "sku", widget: "string", required: true, default: "KMZ-" }
               - { label: "Is this product in stock?", name: "in_stock", widget: "boolean", default: true }
               - { label: "Model Number (e.g., HP7); Used in URL path", name: "model_number", widget: "string", required: true }
               - { label: "Product Name", name: "name", widget: "string", required: true }
