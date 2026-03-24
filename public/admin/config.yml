@@ -66,8 +66,8 @@ collections:
                 widget: "object"
                 fields:
                   - { label: "Raw Material", name: "raw_material", widget: "string", default: "Bagasse + Bamboo" }
-                  - { label: "Capacity (ml)", name: "capacity_ml", widget: "number", value_type: "int", default: "/" }
-                  - { label: "Weight (g)", name: "weight_g", widget: "number", value_type: "int", default: "/" }
+                  - { label: "Capacity (ml)", name: "capacity_ml", widget: "string", default: "/" }
+                  - { label: "Weight (g)", name: "weight_g", widget: "string", default: "/" }
                   - { label: "Open Size (mm)", name: "open_size_mm", widget: "string", default: "/" }
                   - { label: "Fold Size (mm)", name: "fold_size_mm", widget: "string", default: "/" }
   - name: "categories"
