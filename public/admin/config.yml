@@ -23,10 +23,10 @@ collections:
             widget: "list"
             summary: "{{fields.sku}} — {{fields.name}}"
             fields:
-              - { label: "SKU (Unique Product Code)", name: "sku", widget: "string" }
+              - { label: "SKU (Unique Product Code)", name: "sku", widget: "string", required: true }
               - { label: "Is this product in stock?", name: "in_stock", widget: "boolean", default: true }
               - { label: "Model Number (e.g., HP7); Used in URL path", name: "model_number", widget: "string", required: true }
-              - { label: "Product Name", name: "name", widget: "string" }
+              - { label: "Product Name", name: "name", widget: "string", required: true }
 
               - label: "Images"
                 name: "images"
@@ -35,6 +35,7 @@ collections:
                   - label: "Grid Image (for product cards)"
                     name: "grid_image"
                     widget: "object"
+                    required: true
                     fields:
                       - { label: "Image File", name: "src", widget: "image" }
                       - { label: "Alt Text", name: "alt", widget: "string" }
@@ -42,20 +43,21 @@ collections:
                   - label: "Image Gallery"
                     name: "gallery_images"
                     widget: "list"
+                    required: true
                     fields:
                       - { label: "Image File", name: "src", widget: "image" }
                       - { label: "Alt Text", name: "alt", widget: "string" }
 
-              - { label: "Categories", name: "categories", widget: "list" }
-              - { label: "Short Description (for product card)", name: "short_description", widget: "text" }
-              - { label: "Full Description", name: "full_description", widget: "markdown" }
+              - { label: "Categories", name: "categories", widget: "list", required: true }
+              - { label: "Short Description (for product card)", name: "short_description", widget: "text", required: true }
+              - { label: "Full Description", name: "full_description", widget: "markdown", required: true }
 
               - label: "Specifications"
                 name: "specifications"
                 widget: "object"
                 fields:
                   - { label: "Raw Material", name: "raw_material", widget: "string", default: "Bagasse + Bamboo" }
-                  - { label: "Capacity (ml)", name: "capacity_ml", widget: "number", value_type: "int", required: false }
-                  - { label: "Weight (g)", name: "weight_g", widget: "number", value_type: "int", required: false }
-                  - { label: "Open Size (mm)", name: "open_size_mm", widget: "string", required: false }
-                  - { label: "Fold Size (mm)", name: "fold_size_mm", widget: "string", required: false }
+                  - { label: "Capacity (ml)", name: "capacity_ml", widget: "number", value_type: "int", default: "/" }
+                  - { label: "Weight (g)", name: "weight_g", widget: "number", value_type: "int", default: "/" }
+                  - { label: "Open Size (mm)", name: "open_size_mm", widget: "string", default: "/" }
+                  - { label: "Fold Size (mm)", name: "fold_size_mm", widget: "string", default: "/" }

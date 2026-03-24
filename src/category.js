@@ -155,11 +155,11 @@ function renderProducts(products) {
   }
 
   grid.innerHTML = products.map(product => {
-    // Use default_image field from product data
-    const defaultImage = product.default_image || `/img/products/${product.sku}/front.webp`;
+    const gridImage = product.images?.grid_image;
+    const defaultImage = gridImage?.src || '/img/box.png';
     
-    // Use hover_image field if provided, otherwise use default open.webp path
-    const hoverImage = product.hover_image || `/img/products/${product.sku}/open.webp`;
+    const firstGalleryImage = product.images?.gallery_images?.[0];
+    const hoverImage = firstGalleryImage?.src || defaultImage;
     
     return `
     <a href="/product.html?id=${product.model_number}" class="group bg-transparent rounded-lg shadow-md hover:shadow-xl hover:bg-[#FFB74D]/10 transition-all duration-300 overflow-hidden border border-gray-200">

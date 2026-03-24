@@ -53,11 +53,11 @@ function renderProducts(products) {
 
   grid.innerHTML = inStockProducts.map(product => {
     const gridImage = product.images?.grid_image;
-    const defaultImage = gridImage?.src || `/img/products/${product.sku}/front.webp`;
+    const defaultImage = gridImage?.src || `/img/box.png`;
     const defaultAlt = gridImage?.alt || product.name;
 
     const firstGalleryImage = product.images?.gallery_images?.[0];
-    const hoverImage = firstGalleryImage?.src || `/img/products/${product.sku}/open.webp`;
+    const hoverImage = firstGalleryImage?.src || defaultImage;
     const hoverAlt = firstGalleryImage?.alt || `${product.name} - open view`;
 
     return `
