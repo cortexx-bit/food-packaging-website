@@ -23,7 +23,7 @@ collections:
             widget: "list"
             summary: "{{fields.sku}} — {{fields.name}}"
             fields:
-              - { label: "SKU (Unique Product Code)", name: "sku", widget: "string", required: true }
+              - { label: "SKU (Unique Product Code)", name: "sku", widget: "string", required: true default: "KMZ-" }
               - { label: "Is this product in stock?", name: "in_stock", widget: "boolean", default: true }
               - { label: "Model Number (e.g., HP7); Used in URL path", name: "model_number", widget: "string", required: true }
               - { label: "Product Name", name: "name", widget: "string", required: true }
@@ -48,7 +48,16 @@ collections:
                       - { label: "Image File", name: "src", widget: "image" }
                       - { label: "Alt Text", name: "alt", widget: "string" }
 
-              - { label: "Categories", name: "categories", widget: "list", required: true }
+              - label: "Categories"
+                name: "categories"
+                widget: "relation"
+                collection: "categories"
+                file: "categories_file"
+                search_fields: ["categories.*.name", "categories.*.slug"]
+                display_fields: ["categories.*.name"]
+                value_field: "categories.*.slug"
+                multiple: true
+                required: true
               - { label: "Short Description (for product card)", name: "short_description", widget: "text", required: true }
               - { label: "Full Description", name: "full_description", widget: "markdown", required: true }
 
@@ -61,3 +70,19 @@ collections:
                   - { label: "Weight (g)", name: "weight_g", widget: "number", value_type: "int", default: "/" }
                   - { label: "Open Size (mm)", name: "open_size_mm", widget: "string", default: "/" }
                   - { label: "Fold Size (mm)", name: "fold_size_mm", widget: "string", default: "/" }
+  - name: "categories"
+    label: "Categories"
+    files:
+      - name: "categories_file"
+        label: "All Categories"
+        file: "public/categories.json"
+        description: "Add, edit, and manage all categories on the website here."
+        fields:
+          - name: "categories"
+            label: "Categories"
+            widget: "list"
+            summary: "{{fields.slug}} — {{fields.name}}"
+            fields:
+              - { label: "Slug (used in URL path)", name: "slug", widget: "string", required: true }
+              - { label: "Name", name: "name", widget: "string", required: true }
+              - { label: "Description", name: "description", widget: "text", required: true }

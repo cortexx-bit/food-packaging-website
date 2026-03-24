@@ -96,7 +96,11 @@ async function loadCategory() {
     }
     
     const { products = [] } = await productsResponse.json();
-    categoriesData = await categoriesResponse.json();
+    const categoriesJson = await categoriesResponse.json();
+    const categories = categoriesJson.categories ?? [];
+    categoriesData = Object.fromEntries(
+      categories.map((category) => [category.slug, category])
+    );
     
     // Find the category data
     const categoryData = categoriesData[categorySlug];

@@ -61,7 +61,10 @@ async function main() {
   const categoriesRaw = JSON.parse(fs.readFileSync(CATEGORIES_JSON_PATH, "utf8"));
 
   const products = productsRaw.products ?? [];
-  const categorySlugs = Object.keys(categoriesRaw ?? {});
+  const categories = categoriesRaw.categories ?? [];
+  const categorySlugs = categories
+    .map((category) => category.slug)
+    .filter(Boolean);
 
   const urls = [];
 

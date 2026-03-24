@@ -85,7 +85,11 @@ async function loadProduct() {
     }
 
     const { products = [] } = await productsResponse.json();
-    categoriesData = await categoriesResponse.json();
+    const categoriesJson = await categoriesResponse.json();
+    const categories = categoriesJson.categories ?? [];
+    categoriesData = Object.fromEntries(
+      categories.map((category) => [category.slug, category])
+    );
     productData = products.find(p => p.model_number === productModelNumber);
 
     if (!productData) {

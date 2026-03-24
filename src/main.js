@@ -87,7 +87,8 @@ async function loadCategoriesDropdown() {
       return;
     }
 
-    const categoriesData = await response.json();
+    const categoriesJson = await response.json();
+    const categories = categoriesJson.categories ?? [];
 
     const desktopDropdown = document.getElementById('products-dropdown-content');
     if (desktopDropdown) {
@@ -95,9 +96,8 @@ async function loadCategoriesDropdown() {
         '<a href="/products.html" class="block px-4 py-2 text-sm text-[var(--color-text)] hover:bg-gray-100 hover:text-[var(--color-primary)] transition-colors font-semibold">View All</a>';
       html += '<div class="border-t border-gray-200 my-1"></div>';
 
-      Object.keys(categoriesData).forEach((slug) => {
-        const category = categoriesData[slug];
-        html += `<a href="/category.html?name=${slug}" class="block px-4 py-2 text-sm text-[var(--color-text)] hover:bg-gray-100 hover:text-[var(--color-primary)] transition-colors">${category.name}</a>`;
+      categories.forEach((category) => {
+        html += `<a href="/category.html?name=${category.slug}" class="block px-4 py-2 text-sm text-[var(--color-text)] hover:bg-gray-100 hover:text-[var(--color-primary)] transition-colors">${category.name}</a>`;
       });
 
       desktopDropdown.innerHTML = html;
@@ -112,9 +112,8 @@ async function loadCategoriesDropdown() {
       let html =
         '<a href="/products.html" class="block py-2 px-6 text-sm text-[var(--color-text)] hover:text-[var(--color-primary)] font-semibold bg-gray-100">View All</a>';
 
-      Object.keys(categoriesData).forEach((slug) => {
-        const category = categoriesData[slug];
-        html += `<a href="/category.html?name=${slug}" class="block py-2 px-6 text-sm text-[var(--color-text)] hover:text-[var(--color-primary)]">${category.name}</a>`;
+      categories.forEach((category) => {
+        html += `<a href="/category.html?name=${category.slug}" class="block py-2 px-6 text-sm text-[var(--color-text)] hover:text-[var(--color-primary)]">${category.name}</a>`;
       });
 
       mobileDropdownContent.innerHTML = html;
