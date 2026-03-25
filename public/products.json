@@ -475,6 +475,36 @@
       "in_stock": true,
       "sku": "KMZ-TC-FC-MED",
       "model_number": "Fish-and-Chips-MED"
+    },
+    {
+      "name": "test product",
+      "full_description": "full description",
+      "specifications": {
+        "raw_material": "Bagasse + Bamboo",
+        "capacity_ml": "9999",
+        "weight_g": "100",
+        "open_size_mm": "/",
+        "fold_size_mm": "/"
+      },
+      "images": {
+        "grid_image": {
+          "src": "/img/uploads/photo.webp",
+          "alt": "alt text for grid image"
+        },
+        "gallery_images": [
+          {
+            "src": "/img/uploads/bowl.jpg",
+            "alt": "alt text"
+          }
+        ]
+      },
+      "short_description": "short description",
+      "categories": [
+        "thank-you-range"
+      ],
+      "in_stock": true,
+      "sku": "KMZ-123-456",
+      "model_number": "hp7"
     }
   ]
 }
